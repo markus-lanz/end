@@ -1,0 +1,723 @@
+<!--
+  Generated template for the Form page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-row padding center responsive-sm responsive-md  responsive-lg>
+      <ion-col width-33>
+        <img heigth="20%" src="assets/img/images.jpg">
+      </ion-col>
+      <ion-col width-33></ion-col>
+      <ion-col width-33>
+        <img src="assets/img/images.jpg">
+      </ion-col>
+    </ion-row>
+    </ion-toolbar>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>From</ion-title>
+  </ion-navbar>
+
+</ion-header>
+-->
+
+<ion-content>
+
+  <ion-navbar backButtonText="StartSeite" style="height: 30px !important">
+    <ion-title>Exhabition Report</ion-title>
+  </ion-navbar>
+
+  <ion-grid>
+  <ion-row responsive-sm responsive-md  responsive-lg>
+    <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="wizzardStep">
+        <ion-segment-button value="visitor_data" >
+          Visitor Data
+        </ion-segment-button>
+        <ion-segment-button value="meetings_details" [disabled]="step_2">
+          Meetings Details{{step_2}}
+        </ion-segment-button>
+        <ion-segment-button value="required_actions" [disabled]="step_3">
+          Required Actions
+        </ion-segment-button>
+        <ion-segment-button value="sample_order" [disabled]="step_4">
+          Sample Order
+        </ion-segment-button>
+        <ion-segment-button value="literatur" [disabled]="step_5">
+          Utertatur
+        </ion-segment-button>
+        <ion-segment-button value="role_class" [disabled]="step_6">
+          Role & Classification
+        </ion-segment-button>
+        <ion-segment-button value="end_use" [disabled]="step_7">
+          End Use
+        </ion-segment-button>
+        <ion-segment-button value="author_date" [disabled]="step_8">
+          Author & Date
+        </ion-segment-button>
+        <ion-segment-button value="process" [disabled]="step_9">
+          <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+        </ion-segment-button>
+
+      </ion-segment>
+    </ion-toolbar>
+  </ion-row>
+
+  <ion-row padding responsive-sm responsive-md  responsive-lg>
+
+
+      <form   name="myForm" novalidate (ngSubmit)="save(myForm)">
+
+
+          <div *ngIf="wizzardStep === 'visitor_data'">
+
+            <!-- name -->
+            <ion-row>
+            <ion-col width-67>
+            <ion-row>
+
+              <ion-col>
+                <ion-label>VISITOR DATA</ion-label>
+              </ion-col>
+              <ion-col width-20>
+                <ion-item>
+                  <ion-label>Mr*</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-20>
+                <ion-item>
+                  <ion-label>Mrs*</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+
+
+
+            </ion-row>
+            <ion-row>
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label>Name*</ion-label>
+                  <ion-input mode="md" type="text" [(ngModel)]="contentFromModel.name" name="name"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50 >
+                <ion-item>
+                  <ion-label>Company</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.company" name="company"></ion-input>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Dept.</ion-label>
+                  <ion-input type="text"  [(ngModel)]="contentFromModel.dept" name="dept"></ion-input>
+                </ion-item>
+
+              </ion-col>
+            </ion-row>
+
+
+            <ion-row>
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label>Adress</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.adress" name="adress"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+
+
+            <ion-row>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Country</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.country" name="country"></ion-input>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Language</ion-label>
+                  <ion-input type="text"  [(ngModel)]="contentFromModel.language" name="language"></ion-input>
+                </ion-item>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Phone</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.phone" name="phone"></ion-input>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Fax</ion-label>
+                  <ion-input type="text"  [(ngModel)]="contentFromModel.fax" name="fax"></ion-input>
+                </ion-item>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label>Email*</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.e_mail" name="e_mail"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            </ion-col>
+            <ion-col width-33 responsive-sm responsive-md  responsive-lg>
+              <ion-row>
+                <ion-label>
+                  SCAN BUSINESS CARD
+                </ion-label>
+
+              </ion-row>
+              <ion-row>
+                <ion-col width-50>
+                  <div style="text-align: center">
+                    <button ion-button icon-right outline small (click)="presentPicModal()">
+                      Renew scan
+                      <ion-icon name=camera></ion-icon>
+                    </button>
+                  </div>
+                </ion-col>
+                <ion-col width-50>
+                  <div style="text-align: center">
+                    <button ion-button icon-right  outline small >
+                      Delete
+                      <ion-icon name="ios-trash"></ion-icon>
+                    </button>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <ion-row >
+                <ion-col>
+                  <div style="text-align: center">
+                    <img id="bsCard" width="300" height="200" style="text-align: center;margin: auto;display: block">
+                  </div>
+
+                </ion-col>
+
+
+              </ion-row>
+
+            </ion-col>
+            </ion-row>
+          </div>
+
+          <div *ngIf="wizzardStep ==='meetings_details'" >
+
+            <ion-row>
+              <ion-col>
+                <ion-label>MEETING DETAILS</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-20>
+                <ion-label>CRM RECORD</ion-label>
+              </ion-col>
+              <ion-col width-20>
+                <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+              <ion-row >
+                <ion-col width-100>
+                  <ion-label >Message</ion-label>
+                    <ion-item>
+                      <ion-textarea rows="8" [(ngModel)]="contentFromModel.crm_record.details" placeholder="Enter your Text..." name="details" class="textarea"> </ion-textarea>
+
+                    </ion-item>
+                  </ion-col>
+
+                </ion-row>
+          </div>
+          <div *ngIf="wizzardStep ==='required_actions'" class="ra">
+            <ion-row>
+              <ion-label>REQUIRED ACTIONS</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-col width-100>
+                <ion-item style="width: 100% !important;">
+                  <ion-label>Activity:</ion-label>
+                  <ion-input type="text" [(ngModel)]="activitiesObject.activity" name="activity"></ion-input>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label>Who?</ion-label>
+                  <ion-input type="text"  [(ngModel)]="activitiesObject.who" name="who"></ion-input>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-10>
+                <button   ion-button [disabled]="!activitiesObject.activity" icon-only  clear   (click)="addActivity($event)">
+                  <ion-icon name="ios-add-circle" ></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+
+                <ion-row  *ngFor="let act of  contentFromModel.required_action; let i=index">
+                <ion-col width-100>
+                  <ion-item>
+
+                    {{ act.activity }}
+                  </ion-item>
+
+                </ion-col>
+                <ion-col width-100>
+                  <ion-item>
+                    {{act.who}}
+                  </ion-item>
+
+                </ion-col>
+                <ion-col width-5>
+                  <button ion-button (click)="deleteActivity(i)" icon-only  clear >
+                    <ion-icon name="ios-trash"></ion-icon>
+                  </button>
+                </ion-col>
+                </ion-row>
+
+
+          </div>
+          <div *ngIf="wizzardStep ==='sample_order'">
+            <ion-row>
+              <ion-label>SAMPLE ORDER</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-col width-45 >
+                <ion-item>
+                  <ion-label>Select a Product</ion-label>
+                  <ion-select [(ngModel)]="ordersObject.product" name="selectOp" placeholder="Product">
+                    <ion-option *ngFor="let pro of products" >{{pro.title}}</ion-option>
+                  </ion-select>
+                </ion-item>
+                <!--
+                  <ion-searchbar  [(ngModel)]="ordersObject.product" name="selection" (ionInput)="getProducts($event)"></ion-searchbar>
+                  <ion-list>
+                    <ion-item *ngFor="let item of products">
+                      {{ item.title }}
+                    </ion-item>
+                  </ion-list>
+                     -->
+
+              </ion-col>
+              <ion-col width-45>
+                <ion-item>
+                  <ion-label>Unit</ion-label>
+                  <ion-select [(ngModel)]="ordersObject.unit" name="selectOp" placeholder="Unit">
+                    <ion-option *ngFor="let unt of units" >{{unt.title}}</ion-option>
+                  </ion-select>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-10>
+                <button ion-button [disabled]="(!ordersObject.unit) && (!ordersObject.product)" icon-only  clear (click)="addOrder($event)">
+                  <ion-icon  name="ios-add-circle"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row  *ngFor="let ord of  contentFromModel.orders; let i=index">
+              <ion-col width-10>
+                  <ion-icon name="ios-download-outline"></ion-icon>
+              </ion-col>
+
+              <ion-col width-40>
+                <ion-item>
+                  {{ ord.product }}
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-40>
+                <ion-item>
+                  {{ord.unit}}
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-10>
+                <button ion-button (click)="deleteOrder(i)" icon-only  clear >
+                  <ion-icon name="ios-trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label >Order a product <br> that is no Listed</ion-label>
+                  <ion-input type="text" rows="8"  [(ngModel)]="contentFromModel.orderNewProduct" name="orderNewProduct"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </div>
+          <!-- literatur -->
+          <div *ngIf="wizzardStep ==='literatur'">
+            <ion-label>Literatur</ion-label>
+            <ion-row>
+              <ion-col width-45>
+                <ion-item>
+                  <ion-label>Select a topic</ion-label>
+                  <ion-select [(ngModel)]="literaturObject.topic" name="selectTopic" placeholder="topic">
+                    <ion-option *ngFor="let pro of products" >{{pro.title}}</ion-option>
+                  </ion-select>
+                </ion-item>
+                </ion-col>
+              <ion-col width-10>
+                <button ion-button [disabled]="(!literaturObject.topic)" icon-only  clear (click)="addLiteratur($event)">
+                  <ion-icon  name="ios-add-circle"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row  *ngFor="let lit of  contentFromModel.literatur; let i=index">
+              <ion-col width-10>
+
+              </ion-col>
+              <ion-col width-5 style="text-align: end">
+                <ion-icon name="ios-download-outline" icon-only style="font-size:3rem" clear></ion-icon>
+              </ion-col>
+
+              <ion-col width-45>
+                <ion-item>
+                  {{ lit.topic }}
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-20 style="text-align:start">
+                <button ion-button (click)="deleteLiteratur(i)" icon-only  clear >
+                  <ion-icon name="ios-trash"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col width-20>
+
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label>Order a product <br> that is no Listed</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.addionalInformationToOrder" name="addionalInformationToOrder"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </div>
+
+
+         <div *ngIf="wizzardStep === 'role_class'">
+           <ion-label>CUSTOMER ROLE</ion-label>
+           <ion-row>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+           </ion-row>
+           <ion-row padding></ion-row>
+           <ion-label>CLASSIFICATION</ion-label>
+           <ion-row>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+             <ion-col width-20>
+               <ion-item>
+                 <ion-label>Friends</ion-label>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+               </ion-item>
+             </ion-col>
+           </ion-row>
+         </div>
+
+          <div *ngIf="wizzardStep ==='end_use'">
+            <ion-label>END USE</ion-label>
+            <ion-row>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>others</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.endUseOthers" name="EndUseOthers"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row padding></ion-row>
+            <ion-label>PRODUCT GROUP</ion-label>
+            <ion-row>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label>Friends</ion-label>
+                  <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.radio" name="radio_1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <ion-item>
+                  <ion-label stacked>Others</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.endUseOthers" name="EndUseOthers"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div *ngIf="wizzardStep === 'author_date'">
+            <ion-label>Author & Date</ion-label>
+            <ion-row>
+              <ion-col width-100>
+                <ion-item>
+                  <ion-label>Select your name</ion-label>
+                  <ion-select [(ngModel)]="contentFromModel.authorName" name="selectAuthor" placeholder="Name,Surname">
+                    <ion-option *ngFor="let auth of authors" >{{auth.name}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50 >
+                <ion-item>
+                  <ion-label>Add a new Author</ion-label>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.authorName" name="authName"></ion-input>
+                </ion-item>
+
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>E-Mail</ion-label>
+                  <ion-input type="text"  [(ngModel)]="contentFromModel.authorEmail" name="authEmail"></ion-input>
+                </ion-item>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Date</ion-label>
+                  <ion-datetime displayFormat="MMMM,DD,YYYY" [(ngModel)]="contentFromModel.date" name="date"></ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+
+
+
+      </form>
+
+
+
+
+
+
+
+  </ion-row>
+   <!-- <div class="margin-20">
+      <div>myForm details:-</div>
+      <pre>Is myForm valid?: <br>{{contentFromModel | json}}</pre>
+      <pre>form value: <br>{{myForm | json}}</pre>
+      <pre>form value: <br>{{model | json}}</pre>
+    </div> -->
+  <ion-row responsive-sm responsive-md  responsive-lg>
+    <ion-fab right bottom>
+      <button  ion-button outline icon-right (click)="nextStep(wizzardStep)">
+        Save and Continue
+        <ion-icon name="ios-arrow-dropright-circle">
+        </ion-icon></button>
+    </ion-fab>
+    <ion-fab left bottom  *ngIf="wizzardStep !== 'visitor_data'">
+      <button  ion-button outline icon-left  (click)="prvStep(wizzardStep)">
+        <ion-icon name="ios-arrow-dropleft-circle">
+        </ion-icon>
+       Back
+      </button>
+    </ion-fab>
+    <ion-fab middel bottom  >
+      <button  ion-button outline icon-left  (click)="parseResutl()">
+        <ion-icon name="ios-arrow-dropleft-circle">
+        </ion-icon>
+        Back
+      </button>
+    </ion-fab>
+
+    <!--
+    <ion-col width-50>
+      <button ion-button outline icon-left style="float:left" *ngIf="wizzardStep !== 'visitor_data'" (click)="prvStep(wizzardStep)">
+        <ion-icon name="ios-arrow-dropleft-circle"></ion-icon>
+        Back
+      </button>
+    </ion-col>
+    <ion-col width-50  >
+      <button ion-button outline icon-right  style="float: right" (click)="nextStep(wizzardStep)">
+        Save and Continue
+        <ion-icon name="ios-arrow-dropright-circle"></ion-icon>
+      </button>
+    </ion-col>
+    -->
+  </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<!--{{contentFromModel}} -->

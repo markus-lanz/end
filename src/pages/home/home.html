@@ -1,0 +1,243 @@
+
+
+
+<ion-content   class="card-background-page">
+<ion-grid>
+  <ion-row padding center responsive-sm responsive-md  responsive-lg>
+    <ion-col width-20 >
+    <!--  <ion-card (click)="CardIsClicked('card1')" > -->
+      <!--<ion-card (click)="navigateToForm()" > -->
+      <ion-card>
+        <ion-item>
+          <p><strong>START<br>SOMETHING NEW !</strong></p>
+        </ion-item>
+        <img src="assets/img/menu_background.png" [@visibilityImgChanged]="showImgC1"/>
+
+        <ion-row>
+          <ion-col width-20 offset-80>
+            <button *ngIf="showbtnC1"  ion-button  icon-only  clear   right (click)="CardIsClicked('card1')" style="float: right">
+              <ion-icon name="ios-list-box" end></ion-icon>
+            </button>
+            <button *ngIf="!showbtnC1" ion-button  icon-only  clear  right  (click)="CardIsClickedBack('card1')" style="float: right">
+              <ion-icon name="ios-list-outline" end></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <div class="card-title" [@visibilityChanged]="shown ==='card1'" >
+          <ion-list>
+            <!-- <button ion-item class="card-items" (click)="navigateToForm()">-->
+            <button ion-item class="card-items" (click)="navigateToForm()">
+                EXHIBITION REPORT
+            </button>
+
+            <button ion-item class="card-items">
+              SCAN BUSINESS CARD
+            </button>
+
+            <button ion-item class="card-items">
+              A GLANCE
+            </button>
+
+            <button ion-item class="card-items">
+              VIDEO
+            </button>
+
+            <button ion-item class="card-items">
+              SHOW NEWS
+            </button>
+          </ion-list>
+
+        </div>
+
+
+      </ion-card>
+
+    </ion-col>
+
+
+    <ion-col width-20  >
+      <ion-card>
+        <ion-item>
+          <p><strong> NEWS <br> </strong></p>
+        </ion-item>
+          <img src="assets/img/menu_background.png" [@visibilityImgChanged]="showImgC2"/>
+
+        <ion-row>
+          <ion-col width-20 offset-80>
+            <button *ngIf="showbtnC2"  ion-button  icon-only  clear   right (click)="CardIsClicked('card2')" style="float: right">
+              <ion-icon name="ios-list-box" end></ion-icon>
+            </button>
+            <button *ngIf="!showbtnC2" ion-button  icon-only  clear  right  (click)="CardIsClickedBack('card2')" style="float: right">
+              <ion-icon name="ios-list-outline" end></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <div class="card-title" [@visibilityChanged]="shown ==='card2'" >
+          <ion-list>
+            <!-- <button ion-item class="card-items" (click)="navigateToForm()">-->
+            <button ion-item class="card-items">
+              NEW PRODUCTS
+            </button>
+
+            <button ion-item class="card-items">
+              ECS SHOWNEWS
+            </button>
+
+            <button ion-item class="card-items">
+              PRODUCT OVERVIEW
+            </button>
+
+            <button ion-item class="card-items">
+              MEDIA INTERVIEW
+            </button>
+          </ion-list>
+
+        </div>
+      </ion-card>
+    </ion-col>
+
+
+
+
+    <ion-col width-20 >
+      <ion-card>
+        <ion-item>
+          <p><strong> MARKETS <br> </strong></p>
+        </ion-item>
+          <img  src="assets/img/menu_background.png" [@visibilityImgChanged]="showImgC3"/>
+
+        <ion-row>
+          <ion-col width-20 offset-80>
+            <button *ngIf="showbtnC3"  ion-button  icon-only  clear   right (click)="CardIsClicked('card3')" style="float: right">
+              <ion-icon name="ios-list-box" end></ion-icon>
+            </button>
+            <button *ngIf="!showbtnC3" ion-button  icon-only  clear  right  (click)="CardIsClickedBack('card3')" style="float: right">
+              <ion-icon name="ios-list-outline" end></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <div class="card-title" [@visibilityChanged]="shown ==='card3'" >
+          <ion-list>
+            <!-- <button ion-item class="card-items" (click)="navigateToForm()">-->
+            <button ion-item class="card-items">
+              DECORATIVE COATINGS
+            </button>
+
+            <button ion-item class="card-items">
+              WOOD & FURNITURE
+            </button>
+
+            <button ion-item class="card-items">
+               TRANSPORTATION
+            </button>
+
+            <button ion-item class="card-items">
+              MARINE & PROTECTIVE
+            </button>
+
+            <button ion-item class="card-items">
+              SPECIAL COATINGS
+            </button>
+          </ion-list>
+
+        </div>
+      </ion-card>
+    </ion-col>
+
+
+
+
+    <ion-col width-20 >
+      <ion-card>
+        <ion-item>
+          <p><strong> PRODUCT <br> GROUPS </strong></p>
+        </ion-item>
+          <img  src="assets/img/menu_background.png" [@visibilityImgChanged]="showImgC4"/>
+
+        <ion-row>
+          <ion-col width-20 offset-80>
+            <button *ngIf="showbtnC4"  ion-button  icon-only  clear   right (click)="CardIsClicked('card4')" style="float: right">
+              <ion-icon name="ios-list-box" end></ion-icon>
+            </button>
+            <button *ngIf="!showbtnC4" ion-button  icon-only  clear  right  (click)="CardIsClickedBack('card4')" style="float: right">
+              <ion-icon name="ios-list-outline" end></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <div class="card-title" [@visibilityChanged]="shown ==='card4'" >
+          <ion-list>
+            <!-- <button ion-item class="card-items" (click)="navigateToForm()">-->
+            <button ion-item class="card-items">
+              WETTING DISPERSING
+            </button>
+
+            <button ion-item class="card-items">
+              SURFACE ADDITIVES
+            </button>
+
+            <button ion-item class="card-items">
+              RHEOLOGY ADDITIVES
+            </button>
+
+            <button ion-item class="card-items">
+              D AND AIR ADDI
+            </button>
+
+            <button ion-item class="card-items">
+              WAX ADDITIVES
+            </button>
+          </ion-list>
+
+        </div>
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col width-20 >
+      <ion-card>
+        <ion-item>
+          <p><strong> PRODUCTS & <br> SOLUTIONS </strong></p>
+        </ion-item>
+          <img  src="assets/img/menu_background.png" [@visibilityImgChanged]="showImgC5"/>
+
+        <ion-row>
+          <ion-col width-20 offset-80>
+            <button *ngIf="showbtnC5"  ion-button  icon-only  clear   right (click)="CardIsClicked('card5')" style="float: right">
+              <ion-icon name="ios-list-box" end></ion-icon>
+            </button>
+            <button *ngIf="!showbtnC5" ion-button  icon-only  clear  right  (click)="CardIsClickedBack('card5')" style="float: right">
+              <ion-icon name="ios-list-outline" end></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <div class="card-title" [@visibilityChanged]="shown ==='card5'" >
+          <ion-list>
+            <!-- <button ion-item class="card-items" (click)="navigateToForm()">-->
+            <button ion-item class="card-items">
+              TECHNICAL BROCHURES
+            </button>
+
+            <button ion-item class="card-items">
+              TECHNICAL DATA SHEETS
+            </button>
+
+            <button ion-item class="card-items">
+              ADDITIVES GUIDE
+            </button>
+
+            <button ion-item class="card-items">
+              LAP APPLICATIONS VIDEOS
+            </button>
+
+            <button ion-item class="card-items">
+              BRANDES
+            </button>
+          </ion-list>
+
+        </div>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+</ion-content>

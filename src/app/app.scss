@@ -1,0 +1,97 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+/**
+@media (min-width: 768px) {
+  .ion-page{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0;
+    width: 91%;
+    height: 100%;
+    opacity: 0;
+    margin-left: 10%;
+    margin-right: 2%;
+
+  }
+  ion-menu{
+
+    width: 10% !important;
+    display:block !important;
+   // z-index:100;
+   // right: 0 !important;
+    left: 0 !important;
+  }
+
+  .bar-button-menutoggle {
+    display: none;
+  }
+
+  ion-menu ion-backdrop {
+    display:none;
+  }
+  ion-content {
+    border-left: none;
+  }
+  ion-menu[type=overlay] .menu-inner {
+    -webkit-transform: translateX(0px)!important;
+    transform: translateX(0px)!important;
+    box-shadow: none;
+    width:100%;
+
+  }
+}
+**/
+.no-scroll .scroll-content{
+  overflow: hidden;
+}
+.ios .modal-wrapper{
+  border-radius: 0px;
+}
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+video::-internal-media-controls-download-button {
+  display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow:hidden;
+}
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px); /* Adjust as needed */
+}
+
+.toast-success .toast-wrapper{
+  text-align: center;
+  color: white;
+  background: green;
+}
+.toast-error .toast-wrapper {
+  text-align: center;
+  color: white;
+  background: red;
+}
+.list-ios {
+  margin: -1px 0 10px 0;
+}
+.back-button-ios {
+  min-height: 1.2rem;
+}
