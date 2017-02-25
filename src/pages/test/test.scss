@@ -14,3 +14,10 @@ page-test {
 a[target="_blank"] {
   background-color: yellow;
 }
+
+.aa {
+  .content {
+    background-image: url('../assets/img/home/background.jpg');
+    background-size: cover;
+  }
+}

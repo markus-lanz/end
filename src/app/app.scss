@@ -95,3 +95,11 @@ video::-webkit-media-controls-panel {
 .back-button-ios {
   min-height: 1.2rem;
 }
+
+.tabbar{
+  justify-content: flex-end !important;
+
+  .tab-button{
+    max-width: 140px;
+  }
+}
