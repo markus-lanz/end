@@ -106,3 +106,14 @@ video::-webkit-media-controls-panel {
 }
 /******************************************************** END TABBAR **************************************************/
 
+.linklist{
+  .item{
+    .label{
+      white-space: normal;
+      color: #333;
+      margin: 4px 8px 4px 0 !important;
+      font-size: 14px !important;
+      text-transform: lowercase;
+    }
+  }
+}
