@@ -28,7 +28,7 @@
             </ion-col>
           </ion-row>
 
-          <div class="card-title" [@visibilityChanged]="shown ==='card1'" >
+          <div class="card-title" [@visibilityChanged]="shown ==='card1'" *ngIf="shown==='card1'">
             <ion-list class="linklist">
               <button ion-item class="card-items" (click)="navigateToForm()">NEW PRODUCTS</button>
               <button ion-item class="card-items" (click)="navigateToForm()">ECS SHOWNEWS</button>
@@ -64,7 +64,7 @@
             </ion-col>
           </ion-row>
 
-          <div class="card-title" [@visibilityChanged]="shown ==='card2'" >
+          <div class="card-title" [@visibilityChanged]="shown ==='card2'" *ngIf="shown==='card2'">
             <ion-list class="linklist">
               <button ion-item class="card-items" (click)="navigateToForm()">SCAN & EXHIBITION REPORT</button>
               <button ion-item class="card-items">BYK AT A GLANCE</button>
@@ -100,7 +100,7 @@
             </ion-col>
           </ion-row>
 
-          <div class="card-title" [@visibilityChanged]="shown ==='card3'" >
+          <div class="card-title" [@visibilityChanged]="shown ==='card3'" *ngIf="shown==='card3'">
             <ion-list class="linklist">
               <button ion-item class="card-items" (click)="navigateToForm()">DECORATIVE COATINGS</button>
               <button ion-item class="card-items" (click)="navigateToForm()">WOORD & FURNITURE</button>
@@ -138,7 +138,7 @@
             </ion-col>
           </ion-row>
 
-          <div class="card-title" [@visibilityChanged]="shown ==='card4'" >
+          <div class="card-title" [@visibilityChanged]="shown ==='card4'" *ngIf="shown==='card4'">
             <ion-list class="linklist">
               <button ion-item class="card-items" (click)="navigateToForm()">WETTING & DISPERING</button>
               <button ion-item class="card-items" (click)="navigateToForm()">SURFACE ADDITIVES</button>
@@ -179,7 +179,7 @@
             </ion-col>
           </ion-row>
 
-          <div class="card-title" [@visibilityChanged]="shown ==='card5'" >
+          <div class="card-title" [@visibilityChanged]="shown ==='card5'" *ngIf="shown==='card5'">
             <ion-list class="linklist">
               <button ion-item class="card-items" (click)="navigateToForm()">TECHNICAL DATA SHEETS & BROSCHURES</button>
               <button ion-item class="card-items" (click)="navigateToForm()">ADDITIVES BY NAME</button>
