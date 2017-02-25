@@ -237,8 +237,9 @@ save(form){
       })
     }
   }
-
+/*
   parseResutl(){
     this.cFormService.parseJsonToXML(this.contentFromModel);
   }
+  */
 }

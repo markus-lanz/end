@@ -5,12 +5,12 @@ import {File} from 'ionic-native';
 declare let cordova: any;
 import {UtilityService} from '../providers/utility-service';
 import {ToastController} from 'ionic-angular';
-import 'jsonfile';
-import 'xmlcreate';
-import 'js2xmlparser';
-declare let jsonfile: any;
-declare let js2xmlparser : any;
-declare let xmlcreate:any;
+//import 'jsonfile';
+//import 'xmlcreate';
+//import 'js2xmlparser';
+//declare let jsonfile: any;
+//declare let js2xmlparser : any;
+//declare let xmlcreate:any;
 
 
 /*
@@ -152,7 +152,7 @@ export class ContentForm {
   getNewRequiredAction():any {
     return this._newRequiredAction;
   }
-
+/*
   parseModel2xml(model){
    // let Js2Xml = js2xml.Js2Xml;
     let js2xml = new js2xmlparser();
@@ -195,7 +195,8 @@ export class ContentForm {
 
 
    }
-  createFile(dirPath,dirName,model){
+
+   createFile(dirPath,dirName,model){
     const path= `${dirPath}${dirName}`;
     const fileName ='newTempFile.json';
     let toastFileSucce = this.toastCtrl.create({
@@ -248,4 +249,5 @@ export class ContentForm {
     )
 
   }
+  */
 }

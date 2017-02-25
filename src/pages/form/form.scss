@@ -8,6 +8,16 @@ page-form {
     align-content: center;
   }
 }
+
+#contentform{
+  .toolbar{
+    background: #fff;
+
+    .toolbar-background{
+      background: #fff;
+    }
+  }
+}
 .item-ios {
   position: relative;
   padding-left: 16px;
@@ -30,4 +40,42 @@ page-form {
 }
 form{
   width:100%;
+}
+.segment-button{
+  overflow: visible;
+
+  &:after{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #fff;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    left: 100%;
+    z-index: 5;
+  }
+
+  &:before{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #cfcfcf;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+  }
+  color: #fff;
+  //background-color: red !important;
+  opacity: 1;
+  transition: 100ms all linear;
 }
