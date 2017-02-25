@@ -1,5 +1,5 @@
 page-home {
-  .card-background-page {
+  .home {
 
     ion-card {
       position: relative;
@@ -13,6 +13,12 @@ page-home {
       width: 100%;
       font-weight: bold;
       color: #fff;
+    }
+
+    .carditem-title{
+      color: #00abef;
+      font-size: 20px;
+      height: 50px;
     }
 
 
