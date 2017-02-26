@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import {InAppBrowser} from 'ionic-native';
 /*
   Generated class for the ProductModals page.
@@ -15,7 +15,7 @@ export class ProductModalsPage {
 
 
   Data = null;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.Data = navParams.get('data');
   }
 
@@ -27,5 +27,9 @@ export class ProductModalsPage {
     //InAppBrowser.open('assets/ng-book.pdf','_system','location=yes');
     new InAppBrowser(`assets/productfiles/${file}`,'_blank','location=no');
 
+  }
+
+  dismiss(){
+    this.viewCtrl.dismiss();
   }
 }
