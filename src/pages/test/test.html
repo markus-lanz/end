@@ -7,22 +7,16 @@
 
 
 <ion-header>
-    <ion-row  center responsive-sm responsive-md  responsive-lg>
-      <ion-col width-33 style="text-align: left">
-        <img heigth="20%" src="assets/img/logo/byk_logo.png">
-      </ion-col>
-      <ion-col width-33></ion-col>
-      <ion-col width-33 style="text-align: right">
-        <img heigth="20%" src="assets/img/logo/byk_logo_2.png">
-      </ion-col>
-    </ion-row>
-    </ion-header>
--->
-<!--
-
-
-
--->
+  <ion-row  center responsive-sm responsive-md  responsive-lg>
+    <ion-col width-33 style="text-align: left">
+      <img heigth="20%" src="assets/img/logo/byk_logo.png">
+    </ion-col>
+    <ion-col width-33></ion-col>
+    <ion-col width-33 style="text-align: right">
+      <img heigth="20%" src="assets/img/logo/byk_logo_2.png">
+    </ion-col>
+  </ion-row>
+</ion-header>
 
 
 <ion-content padding>
@@ -32,10 +26,10 @@
     </button>
   </ion-fab>
   <ion-tabs top [selectedIndex]="mySelectedIndex">
-    <ion-tab tabIcon="ios-home" class="aa" tabTitle="Home" [root]="tab1"></ion-tab>
-    <ion-tab tabIcon="compass" tabTitle="WebSite" [root]="tab2"></ion-tab>
-    <ion-tab tabIcon="ios-film" tabTitle="Videos" [root]="tab3"></ion-tab>
-    <ion-tab tabIcon="ios-chatbubbles" tabTitle="News" [root]="tab4"></ion-tab>
-    <ion-tab tabIcon="ios-book" tabTitle="Ebooks" [root]="tab5"></ion-tab>
+    <ion-tab tabIcon="ios-chatbubbles" tabTitle="Show News"      [root]="tab1"></ion-tab>
+    <ion-tab tabIcon="ios-book"        tabTitle="Ebooks"         [root]="tab5"></ion-tab>
+    <ion-tab tabIcon="ios-navigate"    tabTitle="Additive Guide" [root]="tab4"></ion-tab>
+    <ion-tab tabIcon="md-globe"        tabTitle="WebSite"        [root]="tab2"></ion-tab>
+    <ion-tab tabIcon="ios-film"        tabTitle="Videos"         [root]="tab3"></ion-tab>
   </ion-tabs>
 </ion-content>
