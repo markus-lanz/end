@@ -13,6 +13,7 @@ import {VideosPage} from'../videos/videos';
 import {NewsPage} from'../news/news';
 import{EbooksPage} from '../ebooks/ebooks';
 import{DataGlancePage} from '../data-glance/data-glance';
+import{MarketsPage} from '../markets/markets';
 
 @Component({
   selector: 'page-test',
@@ -25,6 +26,7 @@ export class TestPage {
   tab4 = NewsPage;
   tab5 = EbooksPage;
   tab6 = DataGlancePage;
+  tab7 = MarketsPage;
   mySelectedIndex: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     console.log(navCtrl.canGoBack())

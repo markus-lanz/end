@@ -2,22 +2,24 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import  {FormPage} from '../pages/form/form';
-import {VideosPage} from '../pages/videos/videos';
-import {TestPage} from '../pages/test/test';
-import {NavbarPage} from '../pages/navbar/navbar';
-import {VideomodalPage} from '../pages/videomodal/videomodal';
-import {PdfmodalPage} from '../pages/pdfmodal/pdfmodal';
-import {EbooksPage} from '../pages/ebooks/ebooks';
-import{ProductssolutionsPage} from '../pages/productssolutions/productssolutions';
-import{SomethingnewPage} from '../pages/somethingnew/somethingnew';
-import{MarketsPage} from '../pages/markets/markets';
-import{NewsPage} from '../pages/news/news';
-import {DataGlancePage} from '../pages/data-glance/data-glance';
-import{PicmodalPage} from '../pages/picmodal/picmodal';
-import {MediainterviewPage} from '../pages/mediainterview/mediainterview';
-import {NewproductsPage} from '../pages/newproducts/newproducts';
-import {ProductoverviewPage} from '../pages/productoverview/productoverview';
+import { FormPage } from '../pages/form/form';
+import { VideosPage } from '../pages/videos/videos';
+import { TestPage } from '../pages/test/test';
+import { NavbarPage } from '../pages/navbar/navbar';
+import { VideomodalPage } from '../pages/videomodal/videomodal';
+import { PdfmodalPage } from '../pages/pdfmodal/pdfmodal';
+import { EbooksPage } from '../pages/ebooks/ebooks';
+import { ProductssolutionsPage } from '../pages/productssolutions/productssolutions';
+import { SomethingnewPage } from '../pages/somethingnew/somethingnew';
+import { MarketsPage } from '../pages/markets/markets';
+import { NewsPage } from '../pages/news/news';
+import { DataGlancePage } from '../pages/data-glance/data-glance';
+import { PicmodalPage } from '../pages/picmodal/picmodal';
+import { MediainterviewPage } from '../pages/mediainterview/mediainterview';
+import { NewproductsPage } from '../pages/newproducts/newproducts';
+import { ProductoverviewPage } from '../pages/productoverview/productoverview';
+import { ProductModalsPage } from '../pages/product-modals/product-modals';
+import { ProductOVDetailsPage } from '../pages/product-ov-details/product-ov-details';
 
 // products Group
 import {ProductsgroupsPage} from  '../pages/productsgroups/productsgroups';
@@ -42,6 +44,7 @@ import{BrandsPage} from '../pages/brands/brands';
 // services
 import {ContentForm} from '../providers/content-form';
 import {UtilityService} from '../providers/utility-service';
+import {OrderBy} from '../providers/orderBy';
 
 @NgModule({
   declarations: [
@@ -71,10 +74,14 @@ import {UtilityService} from '../providers/utility-service';
     MarineprotectivePage,
     SpecialCoatingsPage,
     TechnicalBroshuresPage,
-      TechDataSheetPage,
-      AdditivesGuidePage,
-      LapappVideosPage,
-      BrandsPage
+    TechDataSheetPage,
+    AdditivesGuidePage,
+    LapappVideosPage,
+    BrandsPage,
+    MarketsPage,
+    ProductModalsPage,
+    OrderBy,
+    ProductOVDetailsPage
 
 
 
@@ -126,7 +133,10 @@ import {UtilityService} from '../providers/utility-service';
     TechDataSheetPage,
     AdditivesGuidePage,
     LapappVideosPage,
-    BrandsPage
+    BrandsPage,
+    MarketsPage,
+    ProductModalsPage,
+    ProductOVDetailsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},ContentForm,UtilityService]
 })

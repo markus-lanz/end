@@ -12,7 +12,102 @@
 
 </ion-header>
 
+  <ion-content  padding>
+    <ion-label>New Products</ion-label>
+    <ion-row>
+      <ion-col>
+        <p>Our detailed product pages provide you with all relevant in-depth information on a single page.</p>
+        <p>You have a free access to download technical data and fact sheets</p>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm responsive-md  responsive-lg>
+      <ion-col width-25 *ngFor="let card of productNewList1">
+        <ion-card>
 
-<ion-content padding>
 
+          <ion-card-header text-center>
+            {{card.productName}}
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item (click)="openDataSheet(card.file)">
+              Technical Data Sheet
+              <ion-icon name="ios-download" item-left>
+
+              </ion-icon>
+            </ion-item>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm responsive-md  responsive-lg>
+      <ion-col width-25 *ngFor="let card2 of productNewList2">
+        <ion-card>
+
+          <ion-card-header text-center>
+            {{card2.productName}}
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item (click)="openDataSheet(card2.file)">
+              Technical Data Sheet
+              <ion-icon name="ios-download" item-left>
+
+              </ion-icon>
+            </ion-item>
+
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm responsive-md  responsive-lg>
+      <ion-col width-25  *ngFor="let card2 of productNewList2">
+        <ion-card>
+
+
+
+          <ion-card-header text-center>
+            {{card2.productName}}
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item (click)="openDataSheet(card2.file)">
+              Technical Data Sheet
+              <ion-icon name="ios-download" item-left>
+
+              </ion-icon>
+            </ion-item>
+
+          </ion-card-content>
+
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm responsive-md  responsive-lg>
+      <ion-col width-25 *ngFor="let card3 of productNewList2">
+        <ion-card>
+
+
+
+          <ion-card-header text-center>
+            {{card3.productName}}
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item (click)="openDataSheet(card3.file)">
+              Technical Data Sheet
+              <ion-icon name="ios-download" item-left>
+
+              </ion-icon>
+            </ion-item>
+
+          </ion-card-content>
+
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
 </ion-content>

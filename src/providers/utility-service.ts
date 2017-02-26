@@ -15,6 +15,8 @@ export class UtilityService {
 
   public xmlItems :any;
   public _eBooks :any;
+  public _products:any;
+
   constructor(public http: Http, public toastCtrl:ToastController) {
     console.log('Hello UtilityService Provider');
 
@@ -38,9 +40,119 @@ export class UtilityService {
     toast.present().then(() => toast.dismiss()).catch(() => toast.dismiss());
   }
 
+  getProduct():any{
+    return this._products;
+  }
+  setProduct(arr:any){
+  this._products = arr;
+  }
+   _resultArray = null;
+  getResultArray():any{
+    return this._resultArray;
+  }
+  setResultArray(arr:any){
+    this._resultArray = arr;
+  }
+  groupResult = ( $array ) => {
+    let tempArray = $array.sort();
+    $array = tempArray;
+        // Group index
+    const alpha = ['A','B','C','D','F','G','H','L','M','N','O','R','S','T','V'];
 
+    // Container for return value
+    const result = [];
 
+    // Loop through all letters
+    for( let i in alpha){
 
+      // Save letter index
+      const letter = alpha[i];
+
+      // Create new array type from letter in the end result variable
+      result[letter] = [];
+
+      // Loop through all data items
+      for(let item in $array){
+
+        // If the first letter of familiyname match the letter index, store this item
+        if($array[item].famName.charAt(0).toUpperCase() === letter ){
+          result[letter].push($array[item]);
+        }
+      }
+    }
+
+    this.setResultArray(result);
+
+  };
+
+  loadProductData(){
+    this.http.get('assets/app-data-files/data3.xml')
+      .map(res => res.text())
+      .subscribe((dataPro)=>
+      {
+        console.log('heelo from parseProduct');
+        this.parseProductData(dataPro)
+          .then((dataPro)=>
+          {
+            this._products = dataPro;
+
+            this.groupResult( this._products );
+
+            this.setProduct(this._products);
+            console.log(this._products);
+            this.presentToast('success','Your Data has been successfully processed');
+          })
+          .catch(()=>{
+            this.presentToast('error','Your Data cannot be processed');
+
+          });
+      });
+  }
+  parseProductData(data){
+    return new Promise(resolve =>
+    {
+      let k,
+        arr    = [],arr2 =[],j,
+        parser = new xml2js.Parser(
+          {
+            trim: true,
+            explicitArray: true
+          });
+
+      parser.parseString(data, function (err, result)
+      {
+        const obj = result.dataSet;
+        for(let index in obj.item)
+
+        {
+          const item = obj.item[index];
+          console.log(item);
+           arr.push({
+            famName 		    : item.familiyname[0],
+            product 	    : item.productname[0],
+            text : item.text[0],
+            description : item.description[0],
+            title:item.title[0],
+            file :item.file[0]
+          });
+        }
+
+        resolve(arr);
+      });
+    });
+  }
+  productParse(item) {
+    const tempObj = {
+      name: '',
+      attr: ''
+    };
+
+    for (let data of item) {
+     tempObj.name = data[0];
+     tempObj.attr= data[1];
+    }
+    return tempObj;
+  }
   loadXml(){
     this.http.get('assets/app-data-files/xml-data.xml')
       .map(res => res.text())

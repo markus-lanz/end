@@ -8,6 +8,8 @@ import { TestPage }   from '../pages/test/test';
 import { NewsPage }   from '../pages/news/news';
 import { EbooksPage } from '../pages/ebooks/ebooks';
 
+import { MarketsPage } from '../pages/markets/markets';
+
 import {NavbarPage} from '../pages/navbar/navbar'
 import {VideomodalPage} from '../pages/videomodal/videomodal'
 
@@ -87,8 +89,6 @@ export class MyApp {
       {title: 'Video', component: TestPage,tabComponent:VideosPage,index: 2,icon: 'information-circle'},
       {title: 'Ebooks', component: TestPage, tabComponent: EbooksPage, index: 4, icon: 'ios-book'},
       {title: 'News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'},
-      {title: 'Glanz', component: TestPage, tabComponent: DataGlancePage, index: 5, icon: 'ios-book'},
-
 
     ];
     /**
@@ -99,29 +99,26 @@ export class MyApp {
        */
     //  this.openPage(this.pages[0].component);
 
-
-    this.MenuPages2 = [
-
-      {title: 'Exhabition Report', component: DataGlancePage, icon: 'calendar'},
-      {title: 'Glanz', component: TestPage, tabComponent: DataGlancePage, index: 5, icon: 'ios-book'},
-      /*{title: 'BYK at a glance',   component: DataGlancePage, icon: 'contacts'},*/
-      {title: 'Product Groups',    component: ProductsgroupsPage, icon: 'contacts'},
-      {title: 'Video',             component: TestPage, tabComponent: VideosPage,index: 2,icon: 'information-circle'},
-      {title: 'News',              component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
-
-  ];
-
+    // SHOW NEWS
     this.MenuPages1 = [
-
       {title: 'New Products', component: NewproductsPage, icon: 'calendar'},
       {title: 'ECS Show News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'},
       {title: 'Product Overview', component: ProductoverviewPage, icon: 'contacts'},
       {title: 'Media Interview', component: MediainterviewPage,icon: 'information-circle'}
-
     ];
 
-    this.MenuPages3 = [
+    // START SOMETHING NEW!
+    this.MenuPages2 = [
+      {title: 'Exhabition Report', component: DataGlancePage, icon: 'calendar'},
+      {title: 'BYK at a glance',   component: TestPage, tabComponent: DataGlancePage, index: 5, icon: 'ios-book'},
+      {title: 'Product Groups',    component: ProductsgroupsPage, icon: 'contacts'},
+      {title: 'Video',             component: TestPage, tabComponent: VideosPage,index: 2,icon: 'information-circle'},
+      {title: 'News',              component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
+    ];
 
+    // MARKETS
+    this.MenuPages3 = [
+      {title: 'Markets', component: TestPage, tabComponent: MarketsPage, index: 6, icon: 'calendar'},
       {title: 'DECORATIVE COATINGS', component: DeCoatingsPage, icon: 'calendar'},
       {title: 'WOOD & FURNITURE', component: WoodFurniturePage, icon: 'ios-book'},
       {title: 'Transportation', component: TransportationPage, icon: 'contacts'},
@@ -129,8 +126,8 @@ export class MyApp {
       {title: 'Special Coatings ', component: SpecialCoatingsPage,icon: 'information-circle'}
     ];
 
+    // PRODUCT GROUPS
     this.MenuPages4 = [
-
       {title: 'Technical Brochures', component: TechnicalBroshuresPage, icon: 'calendar'},
       {title: 'Technical Data Sheet', component:TechDataSheetPage, icon: 'ios-book'},
       {title: 'Additives Guide', component: AdditivesGuidePage, icon: 'contacts'},
@@ -139,6 +136,7 @@ export class MyApp {
     ];
 
     this.utilityService.loadXml();
+    this.utilityService.loadProductData();
   }
 
 
@@ -157,6 +155,7 @@ export class MyApp {
     });
 
   }
+
   navigateTo(page){
     this.menu.close();
     this.nav.push(page);
