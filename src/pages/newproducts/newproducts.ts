@@ -77,7 +77,7 @@ export class NewproductsPage {
    console.log(filename)
     const name = 'ng-book.pdf';
     //InAppBrowser.open('assets/ng-book.pdf','_system','location=yes');
-    new InAppBrowser(`assets/${name}`, '_blank', 'location=no');
+    new InAppBrowser(`assets/productfiles/${filename}`, '_blank', 'location=no');
 
   }
 }

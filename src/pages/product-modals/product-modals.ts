@@ -25,7 +25,7 @@ export class ProductModalsPage {
   openProductPdf(file){
     const name = 'ng-book.pdf';
     //InAppBrowser.open('assets/ng-book.pdf','_system','location=yes');
-    new InAppBrowser(`assets/${file}`,'_blank','location=no');
+    new InAppBrowser(`assets/productfiles/${file}`,'_blank','location=no');
 
   }
 }
