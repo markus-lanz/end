@@ -142,7 +142,7 @@
             <ion-list-header>
    T
  </ion-list-header>
-            <ion-item  *ngFor="let catT of productT" (click)="gotoDetailsPage(catT.famName,'T')">{{catT.famName}}</ion-item>
+            <ion-item  *ngFor="let catT of productT | orderBy" (click)="gotoDetailsPage(catT.famName,'T')">{{catT.famName}}</ion-item>
             </ion-list>
         </ion-col>
         <ion-col width-20>
