@@ -7,7 +7,7 @@ import { VideosPage } from '../pages/videos/videos';
 import { TestPage }   from '../pages/test/test';
 import { NewsPage }   from '../pages/news/news';
 import { EbooksPage } from '../pages/ebooks/ebooks';
-
+//
 import { MarketsPage } from '../pages/markets/markets';
 
 import {NavbarPage} from '../pages/navbar/navbar'
