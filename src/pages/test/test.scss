@@ -9,6 +9,9 @@ page-test {
   background-color: transparent;
 }
 
+a.tab-button:not(.has-title){
+  display: none;
+}
 
 
 a[target="_blank"] {

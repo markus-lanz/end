@@ -12,7 +12,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DataGlancePage {
 
+  //fromTab=false;
+
   constructor(public navCtrl:NavController, public navParams:NavParams) {
+    //console.log(navParams.get('fromTab'))
+    //this.fromTab = navParams.get('fromTab');
   }
 
 

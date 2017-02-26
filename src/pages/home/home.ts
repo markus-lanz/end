@@ -1,9 +1,10 @@
 import { Component,animate,transition,trigger,state,style  } from '@angular/core';
 
-import { NavController,NavParams} from 'ionic-angular';
-import {ContentForm} from '../../providers/content-form';
-import {FormPage} from "../form/form";
-import{TestPage} from "../test/test";
+import { NavController, NavParams } from 'ionic-angular';
+import { ContentForm } from '../../providers/content-form';
+import { FormPage } from "../form/form";
+import { TestPage } from "../test/test";
+import { DataGlancePage } from "../data-glance/data-glance";
 import{SomethingnewPage} from'../somethingnew/somethingnew';
 import {ProductsgroupsPage} from '../productsgroups/productsgroups';
 
@@ -27,6 +28,8 @@ import {ProductsgroupsPage} from '../productsgroups/productsgroups';
 })
 export class HomePage {
 
+  pageName = null;
+
   pages: Array<{title: string, component: any,icon:string}>;
 
   wizzardStep:string = null;
@@ -39,13 +42,16 @@ export class HomePage {
       { title: 'TEST', component: TestPage,icon: 'calendar' }];
 
 
+    this.pageName = DataGlancePage;
+
   }
 
 
-  navigateToForm(){
+  navigateToPage( pageInstanceName ){
     console.log(this.navCtrl.getViews());
-    this.navCtrl.push(FormPage,{from: 'StartSeite', to:'Form'});
+    this.navCtrl.push( pageInstanceName, {from: 'StartSeite', to:'Form', fromTab : false} );
   }
+
   shown:string = '';
   showImgC1:boolean =true;
   showImgC2:boolean =true;

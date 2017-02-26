@@ -66,8 +66,8 @@
 
           <div class="card-title" [@visibilityChanged]="shown ==='card2'" *ngIf="shown==='card2'">
             <ion-list class="linklist">
-              <button ion-item class="card-items" (click)="navigateToForm()">SCAN & EXHIBITION REPORT</button>
-              <button ion-item class="card-items">BYK AT A GLANCE</button>
+              <button ion-item class="card-items" (click)="navigateToPage('FormPage')">SCAN & EXHIBITION REPORT</button>
+              <button ion-item class="card-items" (click)="navigateToPage(pageName)">Byk at a glance</button>
               <button ion-item class="card-items">VIDEO</button>
             </ion-list>
           </div>

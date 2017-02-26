@@ -2,12 +2,11 @@ import { Component,ViewChild } from '@angular/core';
 import { Platform,Events,MenuController, Nav,ToastController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HomePage } from '../pages/home/home';
-
-import {VideosPage} from '../pages/videos/videos';
-import {TestPage} from '../pages/test/test';
-import {NewsPage} from '../pages/news/news';
-import {EbooksPage} from '../pages/ebooks/ebooks';
+import { HomePage }   from '../pages/home/home';
+import { VideosPage } from '../pages/videos/videos';
+import { TestPage }   from '../pages/test/test';
+import { NewsPage }   from '../pages/news/news';
+import { EbooksPage } from '../pages/ebooks/ebooks';
 
 import {NavbarPage} from '../pages/navbar/navbar'
 import {VideomodalPage} from '../pages/videomodal/videomodal'
@@ -87,7 +86,9 @@ export class MyApp {
       {title: 'StartSeite', component: TestPage, tabComponent: HomePage, index: 0, icon: 'contacts'},
       {title: 'Video', component: TestPage,tabComponent:VideosPage,index: 2,icon: 'information-circle'},
       {title: 'Ebooks', component: TestPage, tabComponent: EbooksPage, index: 4, icon: 'ios-book'},
-      {title: 'News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
+      {title: 'News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'},
+      {title: 'Glanz', component: TestPage, tabComponent: DataGlancePage, index: 5, icon: 'ios-book'},
+
 
     ];
     /**
@@ -99,17 +100,18 @@ export class MyApp {
     //  this.openPage(this.pages[0].component);
 
 
-    this.MenuPages1 = [
+    this.MenuPages2 = [
 
       {title: 'Exhabition Report', component: DataGlancePage, icon: 'calendar'},
-      {title: 'BYK at a glance',   component: DataGlancePage, icon: 'contacts'},
+      {title: 'Glanz', component: TestPage, tabComponent: DataGlancePage, index: 5, icon: 'ios-book'},
+      /*{title: 'BYK at a glance',   component: DataGlancePage, icon: 'contacts'},*/
       {title: 'Product Groups',    component: ProductsgroupsPage, icon: 'contacts'},
-      {title: 'Video',             component: TestPage, tabComponent:VideosPage,index: 2,icon: 'information-circle'},
+      {title: 'Video',             component: TestPage, tabComponent: VideosPage,index: 2,icon: 'information-circle'},
       {title: 'News',              component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
 
   ];
 
-    this.MenuPages2 = [
+    this.MenuPages1 = [
 
       {title: 'New Products', component: NewproductsPage, icon: 'calendar'},
       {title: 'ECS Show News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'},
@@ -127,7 +129,7 @@ export class MyApp {
       {title: 'Special Coatings ', component: SpecialCoatingsPage,icon: 'information-circle'}
     ];
 
-    this.MenuPages5 = [
+    this.MenuPages4 = [
 
       {title: 'Technical Brochures', component: TechnicalBroshuresPage, icon: 'calendar'},
       {title: 'Technical Data Sheet', component:TechDataSheetPage, icon: 'ios-book'},
@@ -173,7 +175,8 @@ export class MyApp {
       }); */
       // this.nav.setRoot(page.component);
 
-      this.nav.push(page.component);
+      let fromTab = true;
+      this.nav.push(page.component, true);
     }
   }
 }
