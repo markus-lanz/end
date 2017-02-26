@@ -64,7 +64,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav:Nav;
   rootPage:any = TestPage;
-  tapPages:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
+  tapPages:Array<{title: string, component: any,tabComponent?: any,index?: number, icon?:string}>;
 
   MenuPages1:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
   MenuPages2:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
@@ -101,11 +101,11 @@ export class MyApp {
 
     this.MenuPages1 = [
 
-       {title: 'Exhabition Report', component: DataGlancePage, icon: 'calendar'},
-       {title: 'Data Glance', component: DataGlancePage, icon: 'contacts'},
-       {title: 'Product Groups', component: ProductsgroupsPage, icon: 'contacts'},
-      {title: 'Video', component: TestPage,tabComponent:VideosPage,index: 2,icon: 'information-circle'},
-      {title: 'News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
+      {title: 'Exhabition Report', component: DataGlancePage, icon: 'calendar'},
+      {title: 'BYK at a glance',   component: DataGlancePage, icon: 'contacts'},
+      {title: 'Product Groups',    component: ProductsgroupsPage, icon: 'contacts'},
+      {title: 'Video',             component: TestPage, tabComponent:VideosPage,index: 2,icon: 'information-circle'},
+      {title: 'News',              component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
 
   ];
 

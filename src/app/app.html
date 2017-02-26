@@ -1,25 +1,9 @@
 <ion-menu type="push"  [content]="content" swipeEnabled="true">
 
-  <!--ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header-->
-
   <ion-content class="outer-content">
 
 
-    <ion-list>
-      <ion-list-header>
-        Start something new
-      </ion-list-header>
-      <button ion-item *ngFor="let L1 of MenuPages1" (click)="openPage(L1)">
-        <label>{{L1.title}} </label>
-      </button>
-    </ion-list>
-
-
-
+    <!-- NEWS -->
     <ion-list>
       <ion-list-header>
         News
@@ -27,9 +11,23 @@
       <button ion-item *ngFor="let L1 of MenuPages2" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
-    </ion-list>
+    </ion-list><!-- END NEWS -->
 
 
+
+    <!-- START SOMETHING NEW -->
+    <ion-list>
+      <ion-list-header>
+        Start something new
+      </ion-list-header>
+      <button ion-item *ngFor="let L1 of MenuPages1" (click)="openPage(L1)">
+        <label>{{L1.title}} </label>
+      </button>
+    </ion-list><!-- END SOMETHING NEW -->
+
+
+
+    <!-- MARKETS -->
     <ion-list>
       <ion-list-header>
         Markets
@@ -37,12 +35,11 @@
       <button ion-item *ngFor="let L1 of MenuPages3" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
-    </ion-list>
+    </ion-list><!-- END MARKETS -->
 
 
 
-
-
+    <!-- PRODUCT GROUPS -->
     <ion-list>
       <ion-list-header>
         Product Groups
@@ -50,9 +47,11 @@
       <button ion-item *ngFor="let L1 of MenuPages1" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
-    </ion-list>
+    </ion-list><!-- END PRODUCT GROUPS -->
 
 
+
+    <!-- PRODUCTS & SOLUTIONS -->
     <ion-list>
       <ion-list-header>
         Products & Solutions
@@ -60,7 +59,9 @@
       <button ion-item *ngFor="let L1 of MenuPages5" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
-    </ion-list>
+    </ion-list><!-- PRODUCT & SOLUTIONS -->
+
+
   </ion-content>
 
 </ion-menu>
