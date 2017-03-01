@@ -99,11 +99,17 @@ video::-webkit-media-controls-panel {
 
 
 /******************************************************** TABBAR ******************************************************/
-.tabbar{
-  justify-content: flex-end !important;
+.tabbar {
+  justify-content : flex-end !important;
+  padding         : 6px 0;
 
-  .tab-button{
-    max-width: 100px;
+  .tab-button {
+    max-width    : 100px;
+    border-right : 1px solid #c0c0c0;
+
+    &:last-child{
+      border-right : none;
+    }
   }
 }
 /******************************************************** END TABBAR **************************************************/
@@ -114,13 +120,28 @@ video::-webkit-media-controls-panel {
 /******************************************************** MENU ********************************************************/
 .menu-inner{
   .scroll-content{
-    padding: 0 !important;
+    padding : 0 !important;
 
     .list-header{
-      color: #00abef;
-      background: #e9edee;
-      border-color: #333;
+      color        : #00abef;
+      background   : #e9edee;
+      border-color : #333;
+      margin       : 0
+    }
+
+    .list{
+      margin-bottom : 0;
     }
   }
 }
 /******************************************************** END MENU ****************************************************/
+
+.contenttitle .toolbar-title {
+  text-transform: uppercase;
+  color: #00abef;
+  text-align: left;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding: 0;
+}

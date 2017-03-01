@@ -4,16 +4,13 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>{{pageTitle}}</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
 
 <ion-content padding>
+
+    <!-- CONTENT TITLE -->
+    <div class="contenttitle">
+        <ion-title>{{pageTitle}}</ion-title>
+    </div><!-- END CONTENT TITLE -->
 
 
       <ion-searchbar [(ngModel)]="searchedProduct.product" name="selection" [showCancelButton]="true" (ionInput)="getProductsList($event)"></ion-searchbar>

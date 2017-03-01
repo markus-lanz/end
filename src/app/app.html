@@ -6,36 +6,33 @@
     <!-- NEWS -->
     <ion-list>
       <ion-list-header>
-        News
+        NEWS
       </ion-list-header>
-      <button ion-item *ngFor="let L1 of MenuPages1" (click)="openPage(L1)">
+      <button ion-item *ngFor="let L1 of showNews" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
     </ion-list><!-- END NEWS -->
 
 
 
-    <!-- START SOMETHING NEW -->
+    <!-- BYK -->
     <ion-list>
       <ion-list-header>
-        Start something new
+        BYK
       </ion-list-header>
-      <button ion-item *ngFor="let L1 of MenuPages2" (click)="openPage(L1)">
+      <button ion-item *ngFor="let L1 of byk" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
-    </ion-list><!-- END START SOMETHING NEW -->
+    </ion-list><!-- END BYK -->
 
 
 
     <!-- MARKETS -->
     <ion-list>
-      <!--ion-list-header>
+      <ion-list-header>
         Markets
-      </ion-list-header-->
-    <ion-item-divider>
-      Item Divider
-    </ion-item-divider>
-      <button ion-item *ngFor="let L1 of MenuPages3" (click)="openPage(L1)">
+      </ion-list-header>
+      <button ion-item *ngFor="let L1 of markets" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
     </ion-list><!-- END MARKETS -->
@@ -47,7 +44,7 @@
       <ion-list-header>
         Product Groups
       </ion-list-header>
-      <button ion-item *ngFor="let L1 of MenuPages4" (click)="openPage(L1)">
+      <button ion-item *ngFor="let L1 of productGroups" (click)="openPage(L1)">
         <label>{{L1.title}} </label>
       </button>
     </ion-list><!-- END PRODUCT GROUPS -->

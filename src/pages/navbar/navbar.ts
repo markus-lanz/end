@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
 import  {FormPage} from '../form/form';
 import {VideosPage} from '../videos/videos';
-import {TestPage} from '../test/test';
+import {TestPage} from '../tab-main/test';
 
 // services
 import {ContentForm} from '../providers/content-form';

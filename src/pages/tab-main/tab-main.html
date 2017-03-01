@@ -1,0 +1,72 @@
+<!--
+  Generated template for the TabMain page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!---------------------------------------------- TAB HEADER ----------------------------------------------------------->
+<ion-header>
+  <ion-row  center responsive-sm responsive-md  responsive-lg>
+    <ion-col width-33 style="text-align: left">
+      <img heigth="20%" src="assets/img/logo/byk_logo.png">
+    </ion-col>
+    <ion-col width-33></ion-col>
+    <ion-col width-33 style="text-align: right">
+      <img heigth="20%" src="assets/img/logo/byk_logo_2.png">
+    </ion-col>
+  </ion-row>
+</ion-header>
+<!---------------------------------------------- END TAB HEADER ------------------------------------------------------->
+
+
+
+
+
+<!---------------------------------------------- TAB CONTENT ---------------------------------------------------------->
+<ion-content padding>
+
+  <!-- MENU BUTTON -->
+  <ion-fab>
+    <button ion-fab top left clear edge mini menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-fab><!-- END MENU BUTTON -->
+
+
+  <!-- REGISTER ALL TABS -->
+  <ion-tabs top [selectedIndex]="mySelectedIndex">
+
+    <!-- INDEX: 00--><ion-tab [root]="pagesInTabs.home" tabIcon="ios-menu" tabTitle="Menu"></ion-tab>
+
+    <!--------------------------------- NEWS ---------------------------------->
+    <!-- INDEX: 01--><ion-tab [root]="pagesInTabs.newproducts"></ion-tab>
+    <!-- INDEX: 02--><ion-tab [root]="pagesInTabs.productoverview"></ion-tab>
+    <!-- INDEX: 03--><ion-tab [root]="pagesInTabs.news" tabIcon="ios-chatbubbles" tabTitle="ECS Show News"></ion-tab>
+    <!-- INDEX: 04--><ion-tab [root]="pagesInTabs.mediainterview"></ion-tab>
+
+    <!--------------------------------- BYK ---------------------------------->
+    <!-- INDEX: 05--><ion-tab [root]="pagesInTabs.form"></ion-tab>
+    <!-- INDEX: 06--><ion-tab [root]="pagesInTabs.dataglance"></ion-tab>
+    <!-- INDEX: 07--><ion-tab tabIcon="ios-film" tabTitle="Videos" [root]="pagesInTabs.videos"></ion-tab>
+
+
+    <!--------------------------------- MARKETS ---------------------------------->
+    <!-- INDEX: 08--><ion-tab [root]="pagesInTabs.decorativecatings"></ion-tab>
+    <!-- INDEX: 09--><ion-tab [root]="pagesInTabs.woodsfurniture"></ion-tab>
+
+
+    <!-- INDEX: 02--><ion-tab tabIcon="ios-book"        tabTitle="Ebooks"         [root]="pagesInTabs.ebooks"></ion-tab>
+
+    <!-- INDEX: 03--><ion-tab [root]="pagesInTabs.form"></ion-tab>
+
+    <!-- INDEX: 03--><ion-tab tabIcon="ios-navigate"    tabTitle="Additive Guide" [root]="pagesInTabs.additiveguid"></ion-tab>
+    <!-- INDEX: 04--><ion-tab tabIcon="md-globe"        tabTitle="WebSite"        [root]="pagesInTabs.website"></ion-tab>
+    <!-- INDEX: 00><ion-tab tabIcon="ios-chatbubbles" tabTitle="Show News"      [root]="pagesInTabs.home"></ion-tab-->
+    <!-- INDEX: 05--><!--ion-tab [root]="tab6"></ion-tab-->
+    <!-- INDEX: 06--><ion-tab [root]="pagesInTabs.markets"></ion-tab>
+  </ion-tabs><!-- END REGISTER ALL TABS -->
+
+
+</ion-content>
+<!---------------------------------------------- END TAB CONTENT ------------------------------------------------------>

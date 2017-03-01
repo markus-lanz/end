@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import{UtilityService} from '../../providers/utility-service';
-import{OrderBy} from '../../providers/orderBy';
-import{ProductOVDetailsPage} from '../product-ov-details/product-ov-details';
+import{UtilityService} from '../../../providers/utility-service';
+import{OrderBy} from '../../../providers/orderBy';
+import{ProductOVDetailsPage} from '../../product-ov-details/product-ov-details';
 /*
   Generated class for the Productoverview page.
 

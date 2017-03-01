@@ -3,10 +3,10 @@ import { Component,animate,transition,trigger,state,style  } from '@angular/core
 import { NavController, NavParams } from 'ionic-angular';
 import { ContentForm } from '../../providers/content-form';
 import { FormPage } from "../form/form";
-import { TestPage } from "../test/test";
+import { TabMainPage } from "../tab-main/tab-main";
 import { DataGlancePage } from "../data-glance/data-glance";
 import{SomethingnewPage} from'../somethingnew/somethingnew';
-import {ProductsgroupsPage} from '../productsgroups/productsgroups';
+import {ProductsgroupsPage} from '../NEWS/productsgroups/productsgroups';
 
 @Component({
   selector: 'page-home',
@@ -39,7 +39,7 @@ export class HomePage {
     console.log('Hello ContentForm Provider');
     //navCtrlHome.setRoot(HomePage);
     this.pages = [
-      { title: 'TEST', component: TestPage,icon: 'calendar' }];
+      { title: 'TEST', component: TabMainPage,icon: 'calendar' }];
 
 
     this.pageName = DataGlancePage;

@@ -1,138 +1,121 @@
-import { Component,ViewChild } from '@angular/core';
-import { Platform,Events,MenuController, Nav,ToastController } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { HomePage }   from '../pages/home/home';
-import { VideosPage } from '../pages/videos/videos';
-import { TestPage }   from '../pages/test/test';
-import { NewsPage }   from '../pages/news/news';
-import { EbooksPage } from '../pages/ebooks/ebooks';
-//
-import { MarketsPage } from '../pages/markets/markets';
-
-import {NavbarPage} from '../pages/navbar/navbar'
-import {VideomodalPage} from '../pages/videomodal/videomodal'
-
-// menu 1
-import  {FormPage} from '../pages/form/form';
-import {DataGlancePage} from '../pages/data-glance/data-glance';
-
-// menu 2
-import{NewproductsPage} from '../pages/newproducts/newproducts';
-import{ProductoverviewPage} from '../pages/productoverview/productoverview';
-import {MediainterviewPage} from '../pages/mediainterview/mediainterview';
-
-
-import{ProductsgroupsPage} from '../pages/productsgroups/productsgroups';
-
-// market
-import{DeCoatingsPage} from '../pages/de-coatings/de-coatings';
-import{WoodFurniturePage} from '../pages/wood-furniture/wood-furniture';
-import{TransportationPage} from '../pages/transportation/transportation';
-import{MarineprotectivePage} from '../pages/marineprotective/marineprotective';
-import{SpecialCoatingsPage} from '../pages/special-coatings/special-coatings';
-
-// products Solutions
-import{TechnicalBroshuresPage} from '../pages/technical-broshures/technical-broshures';
-import{TechDataSheetPage} from '../pages/tech-data-sheet/tech-data-sheet';
-import {AdditivesGuidePage} from '../pages/additives-guide/additives-guide';
-import{LapappVideosPage} from '../pages/lapapp-videos/lapapp-videos';
-import{BrandsPage} from '../pages/brands/brands';
-
-
-
-import xml2js from 'xml2js';
-import {Http} from '@angular/http';
+// IMPORTS
 import 'rxjs/add/operator/map';
-import {UtilityService} from "../providers/utility-service";
+import { Platform,
+         Events,
+         MenuController,
+         Nav,
+         ToastController        } from 'ionic-angular';
+import { Http                   } from '@angular/http';
+import { Component,
+         ViewChild              } from '@angular/core';
+import { StatusBar,
+         Splashscreen           } from 'ionic-native';
+import { HomePage               } from '../pages/home/home';
+import { VideosPage             } from '../pages/videos/videos';
+import { TabMainPage            } from '../pages/tab-main/tab-main';
+import { ShowNewsPage           } from '../pages/NEWS/shownews/shownews';
+import { EbooksPage             } from '../pages/ebooks/ebooks';
+import { FormPage               } from '../pages/form/form';
+
+// - Menu 1
+import { DataGlancePage         } from '../pages/data-glance/data-glance';
+// - Menu 2
+import { NewproductsPage        } from '../pages/NEWS/newproducts/newproducts';
+import { ProductoverviewPage    } from '../pages/NEWS/productoverview/productoverview';
+import { MediainterviewPage     } from '../pages/NEWS/mediainterview/mediainterview';
+import { ProductsgroupsPage     } from '../pages/NEWS/productsgroups/productsgroups';
+// - Markets
+import { DeCoatingsPage         } from '../pages/MARKETS/de-coatings/de-coatings';
+import { WoodFurniturePage      } from '../pages/MARKETS/wood-furniture/wood-furniture';
+import { TransportationPage     } from '../pages/MARKETS/transportation/transportation';
+import { MarineprotectivePage   } from '../pages/MARKETS/marineprotective/marineprotective';
+import { SpecialCoatingsPage    } from '../pages/MARKETS/special-coatings/special-coatings';
+// - Products & Solutions
+import { TechnicalBroshuresPage } from '../pages/technical-broshures/technical-broshures';
+import { TechDataSheetPage      } from '../pages/tech-data-sheet/tech-data-sheet';
+import { AdditivesGuidePage     } from '../pages/additives-guide/additives-guide';
+import { LapappVideosPage       } from '../pages/lapapp-videos/lapapp-videos';
+import { BrandsPage             } from '../pages/brands/brands';
+// - PROVIDERS
+import { UtilityService         } from '../providers/utility-service';
 
 
 
+// INTERFACE
 export interface PageInterface {
-  title: string;
-  component: any;
-  icon:string,
-  index?:number,
-  tabComponent?:any
+  title         : string;
+  component     : any;
+  icon          : string,
+  index?        : number,
+  tabComponent? : any
 }
 
 
+// COMPONENT
+@Component( {
+  templateUrl : 'app.html'
+} )
 
-@Component({
-  templateUrl: 'app.html'
-})
+
+
+// EXPORT
 export class MyApp {
 
-  @ViewChild(Nav) nav:Nav;
-  rootPage:any = TestPage;
-  tapPages:Array<{title: string, component: any,tabComponent?: any,index?: number, icon?:string}>;
+  @ViewChild( Nav ) nav : Nav;
 
-  MenuPages1:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
-  MenuPages2:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
-  MenuPages3:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
-  MenuPages4:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
-  MenuPages5:Array<{title: string, component: any,tabComponent?: any,index?: number,icon:string}>;
+  rootPage   : any = TabMainPage;
+
+  //tapPages   : Array <{ title: string, component: any, tabComponent?: any, index?: number, icon: any }>;
+
+  showNews       : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  byk            : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  markets        : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  productGroups  : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  MenuPages5     : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+
+  public xmlItems : any;
+
+  constructor( public platform       : Platform,
+               public menu           : MenuController,
+               public http           : Http,
+               public toastCtrl      : ToastController,
+               public utilityService : UtilityService) {
 
 
-  public xmlItems:any;
-
-  constructor(public platform:Platform,
-              public menu:MenuController,
-              public http:Http,
-              public toastCtrl:ToastController,
-              public utilityService:UtilityService) {
     this.initializeApp();
 
-    // set our app's pages
-    this.tapPages = [
-      {title: 'StartSeite', component: TestPage, tabComponent: HomePage, index: 0, icon: 'contacts'},
-      {title: 'Video', component: TestPage,tabComponent:VideosPage,index: 2,icon: 'information-circle'},
-      {title: 'Ebooks', component: TestPage, tabComponent: EbooksPage, index: 4, icon: 'ios-book'},
-      {title: 'News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'},
-
-    ];
-    /**
-     * {title: 'Home', component: HomePage, icon: 'information-circle'},
-     {title: 'Ebooks', component: TestPage, tabComponent: EbooksPage, index: 4, icon: 'ios-book'},
-     {title: 'Ebooks', component: EbooksPage, icon: 'ios-book'}
-     * @type {{title: string, component: TestPage, tabComponent: HomePage, index: number, icon: string}|{title: string, component: DataGlancePage, icon: string}|{title: string, component: TestPage, tabComponent: DataGlancePage, index: number, icon: string}[]}
-       */
-    //  this.openPage(this.pages[0].component);
 
     // SHOW NEWS
-    this.MenuPages1 = [
-      {title: 'New Products', component: NewproductsPage, icon: 'calendar'},
-      {title: 'ECS Show News', component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'},
-      {title: 'Product Overview', component: ProductoverviewPage, icon: 'contacts'},
-      {title: 'Media Interview', component: MediainterviewPage,icon: 'information-circle'}
+    this.showNews = [
+      { title: 'New Products',     component: TabMainPage, tabComponent: NewproductsPage,     index: 1 },
+      { title: 'Product Overview', component: TabMainPage, tabComponent: ProductsgroupsPage,  index: 2 },
+      { title: 'ECS Show News',    component: TabMainPage, tabComponent: ShowNewsPage,        index: 3 },
+      { title: 'Media Interview',  component: TabMainPage, tabComponent: MediainterviewPage,  index: 4 }
     ];
 
-    // START SOMETHING NEW!
-    this.MenuPages2 = [
-      {title: 'Exhabition Report', component: DataGlancePage, icon: 'calendar'},
-      {title: 'BYK at a glance',   component: TestPage, tabComponent: DataGlancePage, index: 5, icon: 'ios-book'},
-      {title: 'Product Groups',    component: ProductsgroupsPage, icon: 'contacts'},
-      {title: 'Video',             component: TestPage, tabComponent: VideosPage,index: 2,icon: 'information-circle'},
-      {title: 'News',              component: TestPage, tabComponent: NewsPage, index: 3, icon: 'ios-book'}
+    // BYK
+    this.byk = [
+      { title: 'Exhabition Report', component: TabMainPage, tabComponent: FormPage,            index: 5 },
+      { title: 'BYK at a glance',   component: TabMainPage, tabComponent: DataGlancePage,      index: 6 },
+      { title: 'Video',             component: TabMainPage, tabComponent: VideosPage,          index: 7 },
     ];
 
     // MARKETS
-    this.MenuPages3 = [
-      {title: 'Markets', component: TestPage, tabComponent: MarketsPage, index: 6, icon: 'calendar'},
-      {title: 'DECORATIVE COATINGS', component: DeCoatingsPage, icon: 'calendar'},
-      {title: 'WOOD & FURNITURE', component: WoodFurniturePage, icon: 'ios-book'},
-      {title: 'Transportation', component: TransportationPage, icon: 'contacts'},
-      {title: 'Marine & protective', component: MarineprotectivePage,icon: 'information-circle'},
-      {title: 'Special Coatings ', component: SpecialCoatingsPage,icon: 'information-circle'}
+    this.markets = [
+      { title: 'Decorative coatings', component: TabMainPage, tabComponent: DeCoatingsPage,       index:  8 },
+      { title: 'Wood & furniture',    component: TabMainPage, tabComponent: WoodFurniturePage,    index:  9 },
+      { title: 'Transportation',      component: TabMainPage, tabComponent: TransportationPage,   index: 10 },
+      { title: 'Marine & protective', component: TabMainPage, tabComponent: MarineprotectivePage, index: 11 },
+      { title: 'Special Coatings ',   component: TabMainPage, tabComponent: SpecialCoatingsPage,  index: 12 }
     ];
 
     // PRODUCT GROUPS
-    this.MenuPages4 = [
-      {title: 'Technical Brochures', component: TechnicalBroshuresPage, icon: 'calendar'},
-      {title: 'Technical Data Sheet', component:TechDataSheetPage, icon: 'ios-book'},
-      {title: 'Additives Guide', component: AdditivesGuidePage, icon: 'contacts'},
-      {title: 'LAP APP Videos', component: LapappVideosPage,icon: 'information-circle'},
-      {title: 'Brands', component: BrandsPage,icon: 'information-circle'}
+    this.productGroups = [
+      { title: 'Technical Brochures',  component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 11 },
+      { title: 'Technical Data Sheet', component: TabMainPage, tabComponent: TechDataSheetPage,      index : 11 },
+      { title: 'Additives Guide',      component: TabMainPage, tabComponent: AdditivesGuidePage,     index : 11 },
+      { title: 'LAP APP Videos',       component: TabMainPage, tabComponent: LapappVideosPage,       index : 11 },
+      { title: 'Brands',               component: TabMainPage, tabComponent: BrandsPage,             index : 11 }
     ];
 
     this.utilityService.loadXml();
@@ -166,7 +149,10 @@ export class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     if (page.index) {
-      this.nav.setRoot(page.component, {tabIndex: page.index,testData:page.title});
+      console.log('AAA')
+      console.log(page.index)
+      console.log(page.title)
+      this.nav.setRoot( page.component, { tabIndex : page.index, testData : page.title } );
     } else {
     /*  this.nav.setRoot(page.component).catch(() => {
 
@@ -174,7 +160,6 @@ export class MyApp {
       }); */
       // this.nav.setRoot(page.component);
 
-      let fromTab = true;
       this.nav.push(page.component, true);
     }
   }
