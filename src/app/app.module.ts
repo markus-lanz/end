@@ -7,16 +7,14 @@ import { IonicApp,
 import { MyApp                  } from './app.component';
 import { HomePage               } from '../pages/home/home';
 import { FormPage               } from '../pages/form/form';
-import { VideosPage             } from '../pages/videos/videos';
+import { VideosPage             } from '../pages/BYK/videos/videos';
 import { TabMainPage            } from '../pages/tab-main/tab-main';
 import { NavbarPage             } from '../pages/navbar/navbar';
 import { VideomodalPage         } from '../pages/videomodal/videomodal';
 import { PdfmodalPage           } from '../pages/pdfmodal/pdfmodal';
 import { EbooksPage             } from '../pages/ebooks/ebooks';
-import { ProductssolutionsPage  } from '../pages/productssolutions/productssolutions';
-import { SomethingnewPage       } from '../pages/somethingnew/somethingnew';
 import { ShowNewsPage           } from '../pages/NEWS/shownews/shownews';
-import { DataGlancePage         } from '../pages/data-glance/data-glance';
+import { DataGlancePage         } from '../pages/BYK/data-glance/data-glance';
 import { PicmodalPage           } from '../pages/picmodal/picmodal';
 import { MediainterviewPage     } from '../pages/NEWS/mediainterview/mediainterview';
 import { NewproductsPage        } from '../pages/NEWS/newproducts/newproducts';
@@ -33,11 +31,11 @@ import{ TransportationPage      } from '../pages/MARKETS/transportation/transpor
 import{ MarineprotectivePage    } from '../pages/MARKETS/marineprotective/marineprotective';
 import{ SpecialCoatingsPage     } from '../pages/MARKETS/special-coatings/special-coatings';
 // - Products Solutions
-import { TechnicalBroshuresPage } from '../pages/technical-broshures/technical-broshures';
-import { TechDataSheetPage      } from '../pages/tech-data-sheet/tech-data-sheet';
-import { AdditivesGuidePage     } from '../pages/additives-guide/additives-guide';
-import { LapappVideosPage       } from '../pages/lapapp-videos/lapapp-videos';
-import { BrandsPage             } from '../pages/brands/brands';
+import { TechnicalBroshuresPage } from '../pages/PRODUCTSSOLUTIONS/technical-broshures/technical-broshures';
+import { TechDataSheetPage      } from '../pages/PRODUCTSSOLUTIONS/tech-data-sheet/tech-data-sheet';
+import { AdditivesGuidePage     } from '../pages/PRODUCTSSOLUTIONS/additives-guide/additives-guide';
+import { LapappVideosPage       } from '../pages/PRODUCTSSOLUTIONS/lapapp-videos/lapapp-videos';
+import { BrandsPage             } from '../pages/PRODUCTSSOLUTIONS/brands/brands';
 // - Services
 import { ContentForm            } from '../providers/content-form';
 import { UtilityService         } from '../providers/utility-service';
@@ -57,8 +55,6 @@ import { OrderBy                } from '../providers/orderBy';
     PdfmodalPage,
     EbooksPage,
     ProductsgroupsPage,
-    ProductssolutionsPage,
-    SomethingnewPage,
     ShowNewsPage,
     DataGlancePage,
     PicmodalPage,
@@ -108,8 +104,6 @@ import { OrderBy                } from '../providers/orderBy';
     PdfmodalPage,
     EbooksPage,
     ProductsgroupsPage,
-    ProductssolutionsPage,
-    SomethingnewPage,
     ShowNewsPage,
     DataGlancePage,
     PicmodalPage,

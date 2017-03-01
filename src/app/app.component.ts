@@ -11,34 +11,36 @@ import { Component,
 import { StatusBar,
          Splashscreen              } from 'ionic-native';
 import { HomePage                  } from '../pages/home/home';
-import { VideosPage                } from '../pages/videos/videos';
+import { VideosPage                } from '../pages/BYK/videos/videos';
 import { TabMainPage               } from '../pages/tab-main/tab-main';
-import { ShowNewsPage              } from '../pages/NEWS/shownews/shownews';
 import { EbooksPage                } from '../pages/ebooks/ebooks';
 import { FormPage                  } from '../pages/form/form';
 
-// - Menu 1
-import { DataGlancePage            } from '../pages/data-glance/data-glance';
-// - Menu 2
+// - News
+import { ShowNewsPage              } from '../pages/NEWS/shownews/shownews';
 import { NewproductsPage           } from '../pages/NEWS/newproducts/newproducts';
-import { ProductoverviewPage       } from '../pages/NEWS/productoverview/productoverview';
 import { MediainterviewPage        } from '../pages/NEWS/mediainterview/mediainterview';
 import { ProductsgroupsPage        } from '../pages/NEWS/productsgroups/productsgroups';
+
+// - Byk
+import { DataGlancePage            } from '../pages/BYK/data-glance/data-glance';
+
 // - Markets
 import { DeCoatingsPage            } from '../pages/MARKETS/de-coatings/de-coatings';
 import { WoodFurniturePage         } from '../pages/MARKETS/wood-furniture/wood-furniture';
 import { TransportationPage        } from '../pages/MARKETS/transportation/transportation';
 import { MarineprotectivePage      } from '../pages/MARKETS/marineprotective/marineprotective';
 import { SpecialCoatingsPage       } from '../pages/MARKETS/special-coatings/special-coatings';
+
 // - Product Groups
 import { WeetingDispersingPage     } from '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
 
 // - Products & Solutions
-import { TechnicalBroshuresPage    } from '../pages/technical-broshures/technical-broshures';
-import { TechDataSheetPage         } from '../pages/tech-data-sheet/tech-data-sheet';
-import { AdditivesGuidePage        } from '../pages/additives-guide/additives-guide';
-import { LapappVideosPage          } from '../pages/lapapp-videos/lapapp-videos';
-import { BrandsPage                } from '../pages/brands/brands';
+import { TechnicalBroshuresPage    } from '../pages/PRODUCTSSOLUTIONS/technical-broshures/technical-broshures';
+import { TechDataSheetPage         } from '../pages/PRODUCTSSOLUTIONS/tech-data-sheet/tech-data-sheet';
+import { AdditivesGuidePage        } from '../pages/PRODUCTSSOLUTIONS/additives-guide/additives-guide';
+import { LapappVideosPage          } from '../pages/PRODUCTSSOLUTIONS/lapapp-videos/lapapp-videos';
+import { BrandsPage                } from '../pages/PRODUCTSSOLUTIONS/brands/brands';
 // - PROVIDERS
 import { UtilityService            } from '../providers/utility-service';
 
@@ -66,23 +68,21 @@ export class MyApp {
 
   @ViewChild( Nav ) nav : Nav;
 
-  rootPage   : any = TabMainPage;
+  rootPage          : any = TabMainPage;
 
-  //tapPages   : Array <{ title: string, component: any, tabComponent?: any, index?: number, icon: any }>;
+  showNews          : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  byk               : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  markets           : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  productGroups     : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
+  productssolutions : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
 
-  showNews       : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
-  byk            : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
-  markets        : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
-  productGroups  : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
-  MenuPages5     : Array <{ title: string, component: any, tabComponent?: any, index?: number }>;
-
-  public xmlItems : any;
+  public xmlItems   : any;
 
   constructor( public platform       : Platform,
                public menu           : MenuController,
                public http           : Http,
                public toastCtrl      : ToastController,
-               public utilityService : UtilityService) {
+               public utilityService : UtilityService ) {
 
 
     this.initializeApp();
@@ -115,15 +115,17 @@ export class MyApp {
     // PRODUCT GROUPS
     this.productGroups = [
       { title: 'Wetting & Dispersing Additives',       component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 13 },
-      { title: 'Surface Additives',                    component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 441 },
-      { title: 'Rheology Additives',                   component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
-      { title: 'Defoamers & Air Release Additives',    component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
-      { title: 'Wax Additives',                        component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
-      { title: 'Adhesion Promoters & Coupling Agents', component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
-      { title: 'Viscosity Reducers',                   component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
-      { title: 'Processing Additives',                 component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+      { title: 'Surface Additives',                    component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 13 },
+      { title: 'Rheology Additives',                   component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 13 },
+      { title: 'Defoamers & Air Release Additives',    component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 13 },
+      { title: 'Wax Additives',                        component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 14 },
+      { title: 'Adhesion Promoters & Coupling Agents', component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 14 },
+      { title: 'Viscosity Reducers',                   component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 14 },
+      { title: 'Processing Additives',                 component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 14 },
+    ];
 
-
+    // PRODUCTS & SOLUTIONS
+    this.productssolutions = [
       { title: 'Technical Brochures',  component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 11 },
       { title: 'Technical Data Sheet', component: TabMainPage, tabComponent: TechDataSheetPage,      index : 11 },
       { title: 'Additives Guide',      component: TabMainPage, tabComponent: AdditivesGuidePage,     index : 11 },

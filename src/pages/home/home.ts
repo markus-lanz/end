@@ -4,7 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ContentForm } from '../../providers/content-form';
 import { FormPage } from "../form/form";
 import { TabMainPage } from "../tab-main/tab-main";
-import { DataGlancePage } from "../data-glance/data-glance";
+import { DataGlancePage } from "../BYK/data-glance/data-glance";
 import{SomethingnewPage} from'../somethingnew/somethingnew';
 import {ProductsgroupsPage} from '../NEWS/productsgroups/productsgroups';
 

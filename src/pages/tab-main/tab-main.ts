@@ -12,21 +12,25 @@ import { NavController,
 import { Component            } from '@angular/core';
 import { HomePage             } from '../home/home';
 import { FormPage             } from '../form/form';
-import { VideosPage           } from '../videos/videos';
 import { EbooksPage           } from '../ebooks/ebooks';
-import { DataGlancePage       } from '../data-glance/data-glance';
+
 // - News
 import { ShowNewsPage         } from '../NEWS/shownews/shownews';
 import { NewproductsPage      } from '../NEWS/newproducts/newproducts';
 import { MediainterviewPage   } from '../NEWS/mediainterview/mediainterview';
 import { ProductoverviewPage  } from '../NEWS/productoverview/productoverview';
+
 // - Markets
 import { DeCoatingsPage       } from '../MARKETS/de-coatings/de-coatings';
 import { WoodFurniturePage    } from '../MARKETS/wood-furniture/wood-furniture';
 import { TransportationPage   } from '../MARKETS/transportation/transportation';
 import { MarineprotectivePage } from '../MARKETS/marineprotective/marineprotective';
-import { SpecialCoatingsPage   } from '../MARKETS/special-coatings/special-coatings';
+import { SpecialCoatingsPage  } from '../MARKETS/special-coatings/special-coatings';
+
 // - Byk
+import { VideosPage           } from '../BYK/videos/videos';
+import { DataGlancePage       } from '../BYK/data-glance/data-glance';
+
 // Product Groups
 import { WeetingDispersingPage } from '../PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
 
@@ -75,7 +79,7 @@ export class TabMainPage {
       // Product groups
       weetingdispersing : WeetingDispersingPage,
 
-      ebooks          : EbooksPage
+      ebooks            : EbooksPage
 
     };
 

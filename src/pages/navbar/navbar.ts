@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
 import  {FormPage} from '../form/form';
-import {VideosPage} from '../videos/videos';
+import {VideosPage} from '../BYK/videos/videos';
 import {TestPage} from '../tab-main/test';
 
 // services

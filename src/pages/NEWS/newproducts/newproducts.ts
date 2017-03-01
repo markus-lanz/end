@@ -31,50 +31,66 @@ export class NewproductsPage {
     this.productCategory = ut.getResultArray();
     this.productNewList1 = [
       {
-        famName     : 'AQUACER',
-        productName : 'AQUACER 530',
-        file        : 'TDS_AQUACER_530_EN.pdf'
-      },
-
-      {
-        famName     : 'BYKO2BLOCK',
-        productName : 'BYKO2BLOCK-1200',
-        file        : 'TDS_BYKO2BLOCK-1200_EN.pdf'
-      },
-
-      {
-        famName     : 'BYK',
-        productName : 'BYK-SILCLEAN 3701',
-        file        : 'TDS_BYK-SILCLEAN_3701_EN.pdf'
+        productName : 'DISPERBYK-2062',
+        file1       : 'TDS_DISPERBYK-2062_EN.pdf',
+        file2       : 'SDS_DISPERBYK-2062_GB_en.pdf'
       },
       {
-        famName     : 'BYK',
-        productName : 'BYK-C 8003',
-        file        : 'TDS_BYK-C_8003_EN.pdf'
-      }
+        productName : 'OPTIFLO-T 1010',
+        file1       : 'TDS_OPTIFLO-T_1010_EN.pdf',
+        file2       : 'SDS_OPTIFLO-T_1010_GB_en.pdf'
+      },
+      {
+        productName : 'CERATIX 8561',
+        file1       : 'TDS_CERATIX_8561_EN.pdf',
+        file2       : 'SDS_CERATIX_8561_EU_en.pdf'
+      },
+      {
+        productName : 'CERATIX 8563',
+        file1       : 'TDS_CERATIX_8563_EN.pdf',
+        file2       : 'SDS_CERATIX_8563_EU_en.pdf'
+      },
+      {
+        productName : 'CERATIX 8566',
+        file1       : 'TDS_CERATIX_8566_EN.pdf',
+        file2       : 'SDS_CERATIX_8566_EU_en.pdf'
+      },
+      {
+        productName : 'CERAFLOUR 955',
+        file1       : 'TDS_CERAFLOUR_955_EN.pdf',
+        file2       : 'SDS_CERAFLOUR_955_EU_en.pdf'
+      },
+      {
+        productName : 'CERAFLOUR 958',
+        file1       : 'TDS_CERAFLOUR_958_EN.pdf',
+        file2       : 'SDS_CERAFLOUR_958_EU_en.pdf'
+      },
+      {
+        productName : 'CERAFLOUR 959',
+        file1       : 'TDS_CERAFLOUR_959_EN.pdf',
+        file2       : 'SDS_CERAFLOUR_959_EU_en.pdf'
+      },
+      {
+        productName : 'BYK-1788',
+        file1       : 'TDS_BYK-1788_EN.pdf',
+        file2       : 'SDS_BYK-1788_GB_en.pdf'
+      },
+      {
+        productName : 'BYK-1789',
+        file1       : 'TDS_BYK-1789_EN.pdf',
+        file2       : 'SDS_BYK-1789_GB_en.pdf'
+      },
+      {
+        productName : 'AQUACER 1013',
+        file1        : 'TDS_AQUACER_1013_EN.pdf',
+        file2        : 'SDS_AQUACER_1013_EU_en.pdf'
+      },
+      {
+        productName : 'AQUACER 1039',
+        file1        : 'TDS_AQUACER_1039_EN.pdf',
+        file2        : 'SDS_AQUACER_1039_EU_en.pdf'
+      },
     ];
-    this.productNewList2 = [
-      {
-        famName     : 'BYK',
-        productName : 'BYK-1611',
-        file        : 'TDS_BYK-1611_EN.pdf'
-      },
-      {
-        famName     : 'BYK',
-        productName : 'BYK-1617',
-        file        : 'TDS_BYK-1617_EN.pdf'
-      },
-      {
-        famName     : 'BYK',
-        productName : 'BYK-1723',
-        file        : 'TDS_BYK-1723_EN.pdf'
-      },
-      {
-        famName     : 'BYK',
-        productName : 'BYK-1724',
-        file        : 'TDS_BYK-1724_EN.pdf'
-      }];
-
   }
 
   ionViewDidLoad() {
