@@ -24,6 +24,7 @@ import { ProductoverviewPage    } from '../pages/NEWS/productoverview/productove
 import { ProductModalsPage      } from '../pages/product-modals/product-modals';
 import { ProductOVDetailsPage   } from '../pages/product-ov-details/product-ov-details';
 // - Products Group
+import { WeetingDispersingPage     } from  '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
 import { ProductsgroupsPage     } from  '../pages/NEWS/productsgroups/productsgroups';
 // - Market
 import{ DeCoatingsPage          } from '../pages/MARKETS/de-coatings/de-coatings';
@@ -77,7 +78,8 @@ import { OrderBy                } from '../providers/orderBy';
     BrandsPage,
     ProductModalsPage,
     OrderBy,
-    ProductOVDetailsPage
+    ProductOVDetailsPage,
+    WeetingDispersingPage
   ],
   imports         : [
     IonicModule.forRoot( MyApp,
@@ -126,7 +128,8 @@ import { OrderBy                } from '../providers/orderBy';
     LapappVideosPage,
     BrandsPage,
     ProductModalsPage,
-    ProductOVDetailsPage
+    ProductOVDetailsPage,
+    WeetingDispersingPage
   ],
   providers       : [ { provide : ErrorHandler, useClass : IonicErrorHandler }, ContentForm, UtilityService ]
 } )

@@ -8,22 +8,28 @@
 
 // IMPORTS
 import { NavController,
-         NavParams           } from 'ionic-angular';
-import { Component           } from '@angular/core';
-import { HomePage            } from '../home/home';
-import { FormPage            } from '../form/form';
-import { VideosPage          } from '../videos/videos';
-import { EbooksPage          } from '../ebooks/ebooks';
-import { DataGlancePage      } from '../data-glance/data-glance';
+         NavParams            } from 'ionic-angular';
+import { Component            } from '@angular/core';
+import { HomePage             } from '../home/home';
+import { FormPage             } from '../form/form';
+import { VideosPage           } from '../videos/videos';
+import { EbooksPage           } from '../ebooks/ebooks';
+import { DataGlancePage       } from '../data-glance/data-glance';
 // - News
-import { ShowNewsPage        } from '../NEWS/shownews/shownews';
-import { NewproductsPage     } from '../NEWS/newproducts/newproducts';
-import { MediainterviewPage  } from '../NEWS/mediainterview/mediainterview';
-import { ProductoverviewPage } from '../NEWS/productoverview/productoverview';
+import { ShowNewsPage         } from '../NEWS/shownews/shownews';
+import { NewproductsPage      } from '../NEWS/newproducts/newproducts';
+import { MediainterviewPage   } from '../NEWS/mediainterview/mediainterview';
+import { ProductoverviewPage  } from '../NEWS/productoverview/productoverview';
 // - Markets
-import { DeCoatingsPage      } from '../MARKETS/de-coatings/de-coatings';
-import { WoodFurniturePage   } from '../MARKETS/wood-furniture/wood-furniture';
+import { DeCoatingsPage       } from '../MARKETS/de-coatings/de-coatings';
+import { WoodFurniturePage    } from '../MARKETS/wood-furniture/wood-furniture';
+import { TransportationPage   } from '../MARKETS/transportation/transportation';
+import { MarineprotectivePage } from '../MARKETS/marineprotective/marineprotective';
+import { SpecialCoatingsPage   } from '../MARKETS/special-coatings/special-coatings';
 // - Byk
+// Product Groups
+import { WeetingDispersingPage } from '../PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
+
 
 
 
@@ -46,19 +52,29 @@ export class TabMainPage {
   constructor( public navCtrl: NavController, public navParams: NavParams ) {
 
     this.pagesInTabs = {
-      home            : HomePage,
+      home              : HomePage,
 
-      news            : ShowNewsPage,
-      newproducts     : NewproductsPage,
-      productoverview : ProductoverviewPage,
-      mediainterview  : MediainterviewPage,
+      // News
+      news              : ShowNewsPage,
+      newproducts       : NewproductsPage,
+      productoverview   : ProductoverviewPage,
+      mediainterview    : MediainterviewPage,
 
-      form            : FormPage,
-      dataglance      : DataGlancePage,
-      videos          : VideosPage,
+      // Byk
+      form              : FormPage,
+      dataglance        : DataGlancePage,
+      videos            : VideosPage,
 
+      // Markets
       decorativecatings : DeCoatingsPage,
-      woodsfurniture  : WoodFurniturePage,
+      woodsfurniture    : WoodFurniturePage,
+      transportation    : TransportationPage,
+      marineprotective  : MarineprotectivePage,
+      specialcoatings   : SpecialCoatingsPage,
+
+      // Product groups
+      weetingdispersing : WeetingDispersingPage,
+
       ebooks          : EbooksPage
 
     };

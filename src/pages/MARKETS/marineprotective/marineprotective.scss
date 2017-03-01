@@ -1,3 +1,23 @@
 page-marineprotective {
+  .marineprotective {
 
+    color: #777;
+
+    p {
+      color: #777 !important;
+    }
+
+    .infotext {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+
+      p {
+        margin: 0 0 10px 0;
+      }
+    }
+
+    .card {
+      margin: 0;
+    }
+  }
 }

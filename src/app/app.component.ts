@@ -4,40 +4,43 @@ import { Platform,
          Events,
          MenuController,
          Nav,
-         ToastController        } from 'ionic-angular';
-import { Http                   } from '@angular/http';
+         ToastController           } from 'ionic-angular';
+import { Http                      } from '@angular/http';
 import { Component,
-         ViewChild              } from '@angular/core';
+         ViewChild                 } from '@angular/core';
 import { StatusBar,
-         Splashscreen           } from 'ionic-native';
-import { HomePage               } from '../pages/home/home';
-import { VideosPage             } from '../pages/videos/videos';
-import { TabMainPage            } from '../pages/tab-main/tab-main';
-import { ShowNewsPage           } from '../pages/NEWS/shownews/shownews';
-import { EbooksPage             } from '../pages/ebooks/ebooks';
-import { FormPage               } from '../pages/form/form';
+         Splashscreen              } from 'ionic-native';
+import { HomePage                  } from '../pages/home/home';
+import { VideosPage                } from '../pages/videos/videos';
+import { TabMainPage               } from '../pages/tab-main/tab-main';
+import { ShowNewsPage              } from '../pages/NEWS/shownews/shownews';
+import { EbooksPage                } from '../pages/ebooks/ebooks';
+import { FormPage                  } from '../pages/form/form';
 
 // - Menu 1
-import { DataGlancePage         } from '../pages/data-glance/data-glance';
+import { DataGlancePage            } from '../pages/data-glance/data-glance';
 // - Menu 2
-import { NewproductsPage        } from '../pages/NEWS/newproducts/newproducts';
-import { ProductoverviewPage    } from '../pages/NEWS/productoverview/productoverview';
-import { MediainterviewPage     } from '../pages/NEWS/mediainterview/mediainterview';
-import { ProductsgroupsPage     } from '../pages/NEWS/productsgroups/productsgroups';
+import { NewproductsPage           } from '../pages/NEWS/newproducts/newproducts';
+import { ProductoverviewPage       } from '../pages/NEWS/productoverview/productoverview';
+import { MediainterviewPage        } from '../pages/NEWS/mediainterview/mediainterview';
+import { ProductsgroupsPage        } from '../pages/NEWS/productsgroups/productsgroups';
 // - Markets
-import { DeCoatingsPage         } from '../pages/MARKETS/de-coatings/de-coatings';
-import { WoodFurniturePage      } from '../pages/MARKETS/wood-furniture/wood-furniture';
-import { TransportationPage     } from '../pages/MARKETS/transportation/transportation';
-import { MarineprotectivePage   } from '../pages/MARKETS/marineprotective/marineprotective';
-import { SpecialCoatingsPage    } from '../pages/MARKETS/special-coatings/special-coatings';
+import { DeCoatingsPage            } from '../pages/MARKETS/de-coatings/de-coatings';
+import { WoodFurniturePage         } from '../pages/MARKETS/wood-furniture/wood-furniture';
+import { TransportationPage        } from '../pages/MARKETS/transportation/transportation';
+import { MarineprotectivePage      } from '../pages/MARKETS/marineprotective/marineprotective';
+import { SpecialCoatingsPage       } from '../pages/MARKETS/special-coatings/special-coatings';
+// - Product Groups
+import { WeetingDispersingPage     } from '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
+
 // - Products & Solutions
-import { TechnicalBroshuresPage } from '../pages/technical-broshures/technical-broshures';
-import { TechDataSheetPage      } from '../pages/tech-data-sheet/tech-data-sheet';
-import { AdditivesGuidePage     } from '../pages/additives-guide/additives-guide';
-import { LapappVideosPage       } from '../pages/lapapp-videos/lapapp-videos';
-import { BrandsPage             } from '../pages/brands/brands';
+import { TechnicalBroshuresPage    } from '../pages/technical-broshures/technical-broshures';
+import { TechDataSheetPage         } from '../pages/tech-data-sheet/tech-data-sheet';
+import { AdditivesGuidePage        } from '../pages/additives-guide/additives-guide';
+import { LapappVideosPage          } from '../pages/lapapp-videos/lapapp-videos';
+import { BrandsPage                } from '../pages/brands/brands';
 // - PROVIDERS
-import { UtilityService         } from '../providers/utility-service';
+import { UtilityService            } from '../providers/utility-service';
 
 
 
@@ -111,6 +114,16 @@ export class MyApp {
 
     // PRODUCT GROUPS
     this.productGroups = [
+      { title: 'Wetting & Dispersing Additives',       component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 13 },
+      { title: 'Surface Additives',                    component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 441 },
+      { title: 'Rheology Additives',                   component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+      { title: 'Defoamers & Air Release Additives',    component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+      { title: 'Wax Additives',                        component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+      { title: 'Adhesion Promoters & Coupling Agents', component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+      { title: 'Viscosity Reducers',                   component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+      { title: 'Processing Additives',                 component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 41 },
+
+
       { title: 'Technical Brochures',  component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 11 },
       { title: 'Technical Data Sheet', component: TabMainPage, tabComponent: TechDataSheetPage,      index : 11 },
       { title: 'Additives Guide',      component: TabMainPage, tabComponent: AdditivesGuidePage,     index : 11 },
