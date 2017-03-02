@@ -1,17 +1,31 @@
-import { Component,NgZone } from '@angular/core';
-import { NavController, NavParams,ActionSheetController,ViewController,ToastController} from 'ionic-angular';
-import { CameraPreview, CameraPreviewRect,Camera } from 'ionic-native';
-
 /*
-  Generated class for the Picmodal page.
+ Generated class for the Picmodal page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
+
+
+// IMPORTS
+import { Component,
+         NgZone                 } from '@angular/core';
+import { NavController,
+         NavParams,
+         ActionSheetController,
+         ViewController,
+         ToastController        } from 'ionic-angular';
+import { CameraPreview,
+         Camera                 } from 'ionic-native';
+
+
+// COMPONENT
 @Component({
-  selector: 'page-picmodal',
-  templateUrl: 'picmodal.html'
+  selector    : 'page-picmodal',
+  templateUrl : 'picmodal.html'
 })
+
+
+// EXPORTS
 export class PicmodalPage {
 
   public getWidth: number;

@@ -15,10 +15,11 @@ import { FormPage             } from '../form/form';
 import { EbooksPage           } from '../ebooks/ebooks';
 
 // - News
-import { ShowNewsPage         } from '../NEWS/shownews/shownews';
-import { NewproductsPage      } from '../NEWS/newproducts/newproducts';
-import { MediainterviewPage   } from '../NEWS/mediainterview/mediainterview';
-import { ProductoverviewPage  } from '../NEWS/productoverview/productoverview';
+import { ShowNewsPage             } from '../NEWS/shownews/shownews';
+import { NewproductsPage          } from '../NEWS/newproducts/newproducts';
+import { MediainterviewPage       } from '../NEWS/mediainterview/mediainterview';
+import { ProductoverviewPage      } from '../NEWS/productoverview/productoverview';
+import { ProductPresentationsPage } from '../NEWS/product-presentations/prodcut-presentations';
 
 // - Markets
 import { DeCoatingsPage       } from '../MARKETS/de-coatings/de-coatings';
@@ -59,10 +60,11 @@ export class TabMainPage {
       home              : HomePage,
 
       // News
-      news              : ShowNewsPage,
-      newproducts       : NewproductsPage,
-      productoverview   : ProductoverviewPage,
-      mediainterview    : MediainterviewPage,
+      news                 : ShowNewsPage,
+      newproducts          : NewproductsPage,
+      productoverview      : ProductoverviewPage,
+      mediainterview       : MediainterviewPage,
+      productpresentations : ProductPresentationsPage,
 
       // Byk
       form              : FormPage,

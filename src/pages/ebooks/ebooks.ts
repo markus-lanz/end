@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import {FileOpener} from 'ionic-native';
-import {InAppBrowser} from 'ionic-native';
-import{UtilityService} from '../../providers/utility-service';
+import { Component      } from '@angular/core';
+import { NavController,
+         NavParams      } from 'ionic-angular';
+import { InAppBrowser   } from 'ionic-native';
+import { UtilityService } from '../../providers/utility-service';
 /*
   Generated class for the Ebooks page.
 

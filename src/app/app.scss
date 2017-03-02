@@ -96,12 +96,52 @@ video::-webkit-media-controls-panel {
   min-height: 1.2rem;
 }
 
+@font-face {
+  font-weight : normal;
+  font-style  : normal;
+  font-family : 'lteBold';
+  src         : url( '../assets/fonts/lte50329.eot' );
+  src         : url( '../assets/fonts/lte50329.eot?#iefix' )  format( 'embedded-opentype' ),
+                url( '../assets/fonts/lte50329.woff2' )       format( 'woff2' ),
+                url( '../assets/fonts/lte50329.woff' )        format( 'woff' ),
+                url( '../assets/fonts/lte50329.ttf' )         format( 'truetype' ),
+                url( '../assets/fonts/lte50329.svg#lteBold' ) format( 'svg' );
+}
+
+@font-face {
+  font-weight : normal;
+  font-style  : normal;
+  font-family : 'lteSlim';
+  src         : url( '../assets/fonts/lte52125.eot' );
+  src         : url( '../assets/fonts/lte52125.eot?#iefix' )  format( 'embedded-opentype' ),
+                url( '../assets/fonts/lte52125.woff2' )       format( 'woff2' ),
+                url( '../assets/fonts/lte52125.woff' )        format( 'woff' ),
+                url( '../assets/fonts/lte52125.ttf' )         format( 'truetype' ),
+                url( '../assets/fonts/lte52125.svg#lteSlim' ) format( 'svg' );
+}
+
+@font-face {
+  font-weight : normal;
+  font-style  : normal;
+  font-family : 'lte';
+  src         : url( '../assets/fonts/lte50329.eot' );
+  src         : url( '../assets/fonts/lte50329.eot?#iefix' ) format( 'embedded-opentype' ),
+                url( '../assets/fonts/lte50329.woff2')       format( 'woff2' ),
+                url( '../assets/fonts/lte50329.woff')        format( 'woff' ),
+                url( '../assets/fonts/lte50329.ttf')         format( 'truetype' ),
+                url( '../assets/fonts/lte50329.svg#lte' )    format( 'svg' );
+}
+
+ion-content{
+  font-family: lteSlim;
+}
 
 
 /******************************************************** TABBAR ******************************************************/
 .tabbar {
   justify-content : flex-end !important;
   padding         : 6px 0;
+  font-family     : 'lteBold';
 
   .tab-button {
     max-width    : 100px;

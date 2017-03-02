@@ -23,12 +23,9 @@ import { InAppBrowser   } from 'ionic-native';
 // EXPORT
 export class NewproductsPage {
   productNewList1 = null;
-  productNewList2 = null;
-  productCategory = null;
 
   constructor( public navCtrl : NavController, public navParams : NavParams, public ut : UtilityService ) {
 
-    this.productCategory = ut.getResultArray();
     this.productNewList1 = [
       {
         productName : 'DISPERBYK-2062',
@@ -98,9 +95,6 @@ export class NewproductsPage {
   }
 
   openDataSheet(filename) {
-   console.log(filename)
-    const name = 'ng-book.pdf';
-    //InAppBrowser.open('assets/ng-book.pdf','_system','location=yes');
     new InAppBrowser(`assets/productfiles/${filename}`, '_blank', 'location=no');
 
   }

@@ -111,8 +111,7 @@ export class UtilityService {
   parseProductData(data){
     return new Promise(resolve =>
     {
-      let k,
-        arr    = [],arr2 =[],j,
+        let arr    = [],arr2 =[],j,
         parser = new xml2js.Parser(
           {
             trim: true,

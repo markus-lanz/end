@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import {HomePage} from "../home/home";
-import  {FormPage} from '../form/form';
-import {VideosPage} from '../BYK/videos/videos';
-import {TestPage} from '../tab-main/test';
-
-// services
-import {ContentForm} from '../providers/content-form';
 /*
-  Generated class for the Navbar page.
+ Generated class for the Navbar page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
+
+import { Component  } from '@angular/core';
+import { NavController,
+         NavParams  } from 'ionic-angular';
+import { HomePage   } from "../home/home";
+import { FormPage   } from '../form/form';
+import { VideosPage } from '../BYK/videos/videos';
+
+
 @Component({
   selector: 'page-navbar',
   templateUrl: 'navbar.html'

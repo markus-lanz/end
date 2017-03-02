@@ -1,45 +1,47 @@
 // IMPORTS
 import { NgModule,
-         ErrorHandler           } from '@angular/core';
+         ErrorHandler             } from '@angular/core';
 import { IonicApp,
          IonicModule,
-         IonicErrorHandler      } from 'ionic-angular';
-import { MyApp                  } from './app.component';
-import { HomePage               } from '../pages/home/home';
-import { FormPage               } from '../pages/form/form';
-import { VideosPage             } from '../pages/BYK/videos/videos';
-import { TabMainPage            } from '../pages/tab-main/tab-main';
-import { NavbarPage             } from '../pages/navbar/navbar';
-import { VideomodalPage         } from '../pages/videomodal/videomodal';
-import { PdfmodalPage           } from '../pages/pdfmodal/pdfmodal';
-import { EbooksPage             } from '../pages/ebooks/ebooks';
-import { ShowNewsPage           } from '../pages/NEWS/shownews/shownews';
-import { DataGlancePage         } from '../pages/BYK/data-glance/data-glance';
-import { PicmodalPage           } from '../pages/picmodal/picmodal';
-import { MediainterviewPage     } from '../pages/NEWS/mediainterview/mediainterview';
-import { NewproductsPage        } from '../pages/NEWS/newproducts/newproducts';
-import { ProductoverviewPage    } from '../pages/NEWS/productoverview/productoverview';
-import { ProductModalsPage      } from '../pages/product-modals/product-modals';
-import { ProductOVDetailsPage   } from '../pages/product-ov-details/product-ov-details';
+         IonicErrorHandler        } from 'ionic-angular';
+import { MyApp                    } from './app.component';
+import { HomePage                 } from '../pages/home/home';
+import { FormPage                 } from '../pages/form/form';
+import { VideosPage               } from '../pages/BYK/videos/videos';
+import { TabMainPage              } from '../pages/tab-main/tab-main';
+import { NavbarPage               } from '../pages/navbar/navbar';
+import { VideomodalPage           } from '../pages/videomodal/videomodal';
+import { PdfmodalPage             } from '../pages/pdfmodal/pdfmodal';
+import { EbooksPage               } from '../pages/ebooks/ebooks';
+import { ShowNewsPage             } from '../pages/NEWS/shownews/shownews';
+import { DataGlancePage           } from '../pages/BYK/data-glance/data-glance';
+import { PicmodalPage             } from '../pages/picmodal/picmodal';
+import { MediainterviewPage       } from '../pages/NEWS/mediainterview/mediainterview';
+import { NewproductsPage          } from '../pages/NEWS/newproducts/newproducts';
+import { ProductoverviewPage      } from '../pages/NEWS/productoverview/productoverview';
+import { ProductModalsPage        } from '../pages/product-modals/product-modals';
+import { ProductOVDetailsPage     } from '../pages/product-ov-details/product-ov-details';
+import { ProductPresentationsPage } from '../pages/NEWS/product-presentations/prodcut-presentations';
+
 // - Products Group
-import { WeetingDispersingPage     } from  '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
-import { ProductsgroupsPage     } from  '../pages/NEWS/productsgroups/productsgroups';
+import { WeetingDispersingPage    } from  '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
+import { ProductsgroupsPage       } from  '../pages/NEWS/productsgroups/productsgroups';
 // - Market
-import{ DeCoatingsPage          } from '../pages/MARKETS/de-coatings/de-coatings';
-import{ WoodFurniturePage       } from '../pages/MARKETS/wood-furniture/wood-furniture';
-import{ TransportationPage      } from '../pages/MARKETS/transportation/transportation';
-import{ MarineprotectivePage    } from '../pages/MARKETS/marineprotective/marineprotective';
-import{ SpecialCoatingsPage     } from '../pages/MARKETS/special-coatings/special-coatings';
+import{ DeCoatingsPage            } from '../pages/MARKETS/de-coatings/de-coatings';
+import{ WoodFurniturePage         } from '../pages/MARKETS/wood-furniture/wood-furniture';
+import{ TransportationPage        } from '../pages/MARKETS/transportation/transportation';
+import{ MarineprotectivePage      } from '../pages/MARKETS/marineprotective/marineprotective';
+import{ SpecialCoatingsPage       } from '../pages/MARKETS/special-coatings/special-coatings';
 // - Products Solutions
-import { TechnicalBroshuresPage } from '../pages/PRODUCTSSOLUTIONS/technical-broshures/technical-broshures';
-import { TechDataSheetPage      } from '../pages/PRODUCTSSOLUTIONS/tech-data-sheet/tech-data-sheet';
-import { AdditivesGuidePage     } from '../pages/PRODUCTSSOLUTIONS/additives-guide/additives-guide';
-import { LapappVideosPage       } from '../pages/PRODUCTSSOLUTIONS/lapapp-videos/lapapp-videos';
-import { BrandsPage             } from '../pages/PRODUCTSSOLUTIONS/brands/brands';
+import { TechnicalBroshuresPage   } from '../pages/PRODUCTSSOLUTIONS/technical-broshures/technical-broshures';
+import { TechDataSheetPage        } from '../pages/PRODUCTSSOLUTIONS/tech-data-sheet/tech-data-sheet';
+import { AdditivesGuidePage       } from '../pages/PRODUCTSSOLUTIONS/additives-guide/additives-guide';
+import { LapappVideosPage         } from '../pages/PRODUCTSSOLUTIONS/lapapp-videos/lapapp-videos';
+import { BrandsPage               } from '../pages/PRODUCTSSOLUTIONS/brands/brands';
 // - Services
-import { ContentForm            } from '../providers/content-form';
-import { UtilityService         } from '../providers/utility-service';
-import { OrderBy                } from '../providers/orderBy';
+import { ContentForm              } from '../providers/content-form';
+import { UtilityService           } from '../providers/utility-service';
+import { OrderBy                  } from '../providers/orderBy';
 
 
 // MODULE
@@ -75,7 +77,8 @@ import { OrderBy                } from '../providers/orderBy';
     ProductModalsPage,
     OrderBy,
     ProductOVDetailsPage,
-    WeetingDispersingPage
+    WeetingDispersingPage,
+    ProductPresentationsPage
   ],
   imports         : [
     IonicModule.forRoot( MyApp,
@@ -123,7 +126,8 @@ import { OrderBy                } from '../providers/orderBy';
     BrandsPage,
     ProductModalsPage,
     ProductOVDetailsPage,
-    WeetingDispersingPage
+    WeetingDispersingPage,
+    ProductPresentationsPage
   ],
   providers       : [ { provide : ErrorHandler, useClass : IonicErrorHandler }, ContentForm, UtilityService ]
 } )
