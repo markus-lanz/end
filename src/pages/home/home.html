@@ -1,0 +1,201 @@
+<ion-content class="home card-background-page">
+
+  <ion-grid>
+
+    <ion-row center responsive-sm responsive-md  responsive-lg>
+
+
+
+      <!-- NEWS -->
+      <ion-col width-20 >
+
+        <!-- Ion-card -->
+        <ion-card>
+
+          <ion-item>
+            <p class="carditem-title">NEWS</p>
+          </ion-item>
+          <img src="assets/img/home/item1.jpg" [@visibilityImgChanged]="showImgC1"/>
+
+          <ion-row class="linkarea">
+            <ion-col width-20 offset-80>
+              <button *ngIf="showbtnC1" ion-button icon-only clear right (click)="CardIsClicked('card1')" style="float: right">
+                <img src="assets/img/arrow_right.jpg" />
+              </button>
+              <button *ngIf="!showbtnC1" ion-button icon-only clear right (click)="CardIsClickedBack('card1')" style="float: right">
+                <img src="assets/img/arrow_left.jpg" />
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <div class="card-title" [@visibilityChanged]="shown ==='card1'" *ngIf="shown==='card1'">
+            <ion-list class="linklist">
+              <button ion-item class="card-items" (click)="navigateToForm()">NEW PRODUCTS</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">ECS SHOWNEWS</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">MEDIA INTERVIEW</button>
+            </ion-list>
+          </div>
+
+        </ion-card><!-- End Ion-card -->
+
+      </ion-col><!-- END NEWS-->
+
+
+
+      <!-- START SOMETHING NEW -->
+      <ion-col width-20 >
+
+        <!-- Ion-card -->
+        <ion-card>
+
+          <ion-item>
+            <p class="carditem-title">START<br>SOMETHING NEW !</p>
+          </ion-item>
+          <img src="assets/img/home/item2.jpg" [@visibilityImgChanged]="showImgC2"/>
+
+          <ion-row class="linkarea">
+            <ion-col width-20 offset-80>
+              <button *ngIf="showbtnC2" ion-button icon-only clear right (click)="CardIsClicked('card2')" style="float: right">
+                <img src="assets/img/arrow_right.jpg" />
+              </button>
+              <button *ngIf="!showbtnC2" ion-button icon-only clear right (click)="CardIsClickedBack('card2')" style="float: right">
+                <img src="assets/img/arrow_left.jpg" />
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <div class="card-title" [@visibilityChanged]="shown ==='card2'" *ngIf="shown==='card2'">
+            <ion-list class="linklist">
+              <button ion-item class="card-items" (click)="navigateToPage('FormPage')">SCAN & EXHIBITION REPORT</button>
+              <button ion-item class="card-items" (click)="navigateToPage(pageName)">Byk at a glance</button>
+              <button ion-item class="card-items">VIDEO</button>
+            </ion-list>
+          </div>
+
+        </ion-card><!-- End Ion-card -->
+
+      </ion-col><!-- END START SOMETHING NEW -->
+
+
+
+      <!-- MARKETS -->
+      <ion-col width-20 >
+
+        <!-- Ion-card -->
+        <ion-card>
+
+          <ion-item>
+            <p class="carditem-title">MARKETS</p>
+          </ion-item>
+          <img src="assets/img/home/item3.jpg" [@visibilityImgChanged]="showImgC3"/>
+
+          <ion-row class="linkarea">
+            <ion-col width-20 offset-80>
+              <button *ngIf="showbtnC3" ion-button icon-only clear right (click)="CardIsClicked('card3')" style="float: right">
+                <img src="assets/img/arrow_right.jpg" />
+              </button>
+              <button *ngIf="!showbtnC3" ion-button icon-only clear right (click)="CardIsClickedBack('card3')" style="float: right">
+                <img src="assets/img/arrow_left.jpg" />
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <div class="card-title" [@visibilityChanged]="shown ==='card3'" *ngIf="shown==='card3'">
+            <ion-list class="linklist">
+              <button ion-item class="card-items" (click)="navigateToForm()">DECORATIVE COATINGS</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">WOORD & FURNITURE</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">TRANSPORTATION</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">MARINE & PROTECTIVE</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">SPECIAL COATINGS</button>
+            </ion-list>
+          </div>
+
+        </ion-card><!-- End Ion-card -->
+
+      </ion-col><!-- END MARKETS -->
+
+
+
+      <!-- PRODUCTS GROUPS -->
+      <ion-col width-20 >
+
+        <!-- Ion-card -->
+        <ion-card>
+
+          <ion-item>
+            <p class="carditem-title">PRODUCT GROUPS</p>
+          </ion-item>
+          <img src="assets/img/home/item4.jpg" [@visibilityImgChanged]="showImgC4"/>
+
+          <ion-row class="linkarea">
+            <ion-col width-20 offset-80>
+              <button *ngIf="showbtnC4" ion-button icon-only clear right (click)="CardIsClicked('card4')" style="float: right">
+                <img src="assets/img/arrow_right.jpg" />
+              </button>
+              <button *ngIf="!showbtnC4" ion-button icon-only clear right (click)="CardIsClickedBack('card4')" style="float: right">
+                <img src="assets/img/arrow_left.jpg" />
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <div class="card-title" [@visibilityChanged]="shown ==='card4'" *ngIf="shown==='card4'">
+            <ion-list class="linklist">
+              <button ion-item class="card-items" (click)="navigateToForm()">WETTING & DISPERING</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">SURFACE ADDITIVES</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">RHEOLOGY ADITIVES</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">DEFOAMERS AND AIR RELEASE ADDITIVES</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">WAX ADDITIVES</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">ADHESION PROMOTERS AND COUPLING AGENTS</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">VISCOSITY REFUCERS</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">PROCESSING ADDITIVES</button>
+            </ion-list>
+          </div>
+
+        </ion-card><!-- End Ion-card -->
+
+      </ion-col><!-- END PRODUCTS GROUPS -->
+
+
+
+      <!-- PRODUCTS & SOLUTIONS -->
+      <ion-col width-20 >
+
+        <!-- Ion-card -->
+        <ion-card>
+
+          <ion-item>
+            <p class="carditem-title">PRODUCTS & SOLUTIONS</p>
+          </ion-item>
+          <img src="assets/img/home/item5.jpg" [@visibilityImgChanged]="showImgC5"/>
+
+          <ion-row class="linkarea">
+            <ion-col width-20 offset-80>
+              <button *ngIf="showbtnC5" ion-button icon-only clear right (click)="CardIsClicked('card5')" style="float: right">
+                <img src="assets/img/arrow_right.jpg" />
+              </button>
+              <button *ngIf="!showbtnC5" ion-button icon-only clear right (click)="CardIsClickedBack('card5')" style="float: right">
+                <img src="assets/img/arrow_left.jpg" />
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <div class="card-title" [@visibilityChanged]="shown ==='card5'" *ngIf="shown==='card5'">
+            <ion-list class="linklist">
+              <button ion-item class="card-items" (click)="navigateToForm()">TECHNICAL DATA SHEETS & BROSCHURES</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">ADDITIVES BY NAME</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">LAP APPLICATION VIDEOS</button>
+              <button ion-item class="card-items" (click)="navigateToForm()">BRAND OF BYK</button>
+            </ion-list>
+          </div>
+
+        </ion-card><!-- End Ion-card -->
+
+      </ion-col><!-- END PRODUCTS & SOLUTIONS -->
+
+
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

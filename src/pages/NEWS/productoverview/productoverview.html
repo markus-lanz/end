@@ -1,0 +1,156 @@
+<!--
+  Generated template for the Productoverview page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+
+  <!-- CONTENT TITLE -->
+  <div class="contenttitle">
+    <ion-title>Product overview</ion-title>
+  </div><!-- END CONTENT TITLE -->
+
+  <ion-row>
+    <ion-label>Product Overview</ion-label>
+    <div>
+      <p> Our detailed product pages provide you with all relevant in-depth information on a single page.
+        You have free access to download
+        technical data sheets and requlatory affairs documents</p>
+    </div>
+
+  </ion-row>
+<ion-row>
+<ion-col width-20>
+
+  <ion-list>
+    <ion-list-header>
+   A
+ </ion-list-header>
+        <ion-item  *ngFor="let catA of productA |orderBy" (click)="gotoDetailsPage(catA.famName,'A')">{{catA.famName}}</ion-item>
+    </ion-list>
+  </ion-col>
+
+    <ion-col width-20>
+
+      <ion-list>
+        <ion-list-header>
+     B
+   </ion-list-header>
+        <ion-item  *ngFor="let catB of productB |orderBy" (click)="gotoDetailsPage(catB.famName,'B')">{{catB.famName}}</ion-item>
+        </ion-list>
+    </ion-col>
+        <ion-col width-20>
+
+          <ion-list>
+            <ion-list-header>
+   C
+ </ion-list-header>
+            <ion-item  *ngFor="let catC of productC | orderBy" (click)="gotoDetailsPage(catC.famName,'C')">{{catC.famName}}</ion-item>
+            </ion-list>
+        </ion-col>
+            <ion-col width-20>
+              <ion-list>
+                <ion-list-header>
+   D
+ </ion-list-header>
+                <ion-item  *ngFor="let catD of productD | orderBy" (click)="gotoDetailsPage(catD.famName,'D')">{{catD.famName}}</ion-item>
+                </ion-list>
+            </ion-col>
+                <ion-col width-20>
+
+                  <ion-list>
+                    <ion-list-header>
+   F
+ </ion-list-header>
+                    <ion-item  *ngFor="let catF of productF | orderBy" (click)="gotoDetailsPage(catF.famName,'F')">{{catF.famName}}</ion-item>
+                    </ion-list>
+                </ion-col>
+</ion-row>
+<ion-row>
+<ion-col width-20>
+  <ion-list>
+    <ion-list-header>
+   G
+ </ion-list-header>
+    <ion-item  *ngFor="let catG of productG | orderBy" (click)="gotoDetailsPage(catG.famName,'G')">{{catG.famName}}</ion-item>
+    </ion-list>
+</ion-col>
+    <ion-col width-20>
+      <ion-list>
+        <ion-list-header>
+   H
+ </ion-list-header>
+        <ion-item  *ngFor="let catH of productH | orderBy" (click)="gotoDetailsPage(catH.famName,'H')">{{catH.famName}}</ion-item>
+        </ion-list>
+    </ion-col>
+        <ion-col width-20>
+          <ion-list>
+            <ion-list-header>
+   L
+ </ion-list-header>
+            <ion-item  *ngFor="let catL of productL | orderBy" (click)="gotoDetailsPage(catL.famName,'L')">{{catL.famName}}</ion-item>
+            </ion-list>
+        </ion-col>
+            <ion-col width-20>
+              <ion-list>
+                <ion-list-header>
+   M
+ </ion-list-header>
+                <ion-item  *ngFor="let catM of productM | orderBy" (click)="gotoDetailsPage(catM.famName,'M')">{{catM.famName}}</ion-item>
+                </ion-list>
+            </ion-col>
+                <ion-col width-20>
+                  <ion-list>
+                    <ion-list-header>
+   N
+ </ion-list-header>
+                    <ion-item  *ngFor="let catN of productN | orderBy" (click)="gotoDetailsPage(catN.famName,'N')">{{catN.famName}}</ion-item>
+                    </ion-list>
+                </ion-col>
+</ion-row>
+<ion-row>
+<ion-col width-20>
+  <ion-list>
+    <ion-list-header>
+   O
+ </ion-list-header>
+    <ion-item  *ngFor="let catO of productO | orderBy" (click)="gotoDetailsPage(catO.famName,'O')">{{catO.famName}}</ion-item>
+    </ion-list>
+</ion-col>
+    <ion-col width-20>
+      <ion-list>
+        <ion-list-header>
+   R
+ </ion-list-header>
+        <ion-item  *ngFor="let catR of productR |orderBy" (click)="gotoDetailsPage(catR.famName,'R')">{{catR.famName}}</ion-item>
+        </ion-list>
+    </ion-col>
+        <ion-col width-20>
+          <ion-list>
+            <ion-list-header>
+   S
+ </ion-list-header>
+            <ion-item  *ngFor="let catS of productS |orderBy" (click)="gotoDetailsPage(catS.famName,'S')">{{catS.famName}}</ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col width-20>
+          <ion-list>
+            <ion-list-header>
+   T
+ </ion-list-header>
+            <ion-item  *ngFor="let catT of productT | orderBy" (click)="gotoDetailsPage(catT.famName,'T')">{{catT.famName}}</ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col width-20>
+          <ion-list>
+            <ion-list-header>
+   V
+  </ion-list-header>
+            <ion-item  *ngFor="let catV of productV | orderBy" (click)="gotoDetailsPage(catV.famName,'V')">{{catV.famName}}</ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+
+</ion-content>
