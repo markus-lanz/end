@@ -171,6 +171,63 @@ export class UtilityService {
           });
       });
   }
+productsData = null;
+_productsDataFromXMl = null;
+
+setProductsDataFromXMl(arr:any){
+this._productsDataFromXMl = arr;
+}
+getProductsDataFromXMl():any{
+return this._productsDataFromXMl;
+}
+
+  loadXmlProductData(){
+    this.http.get('assets/app-data-files/products.xml')
+      .map(res => res.text())
+      .subscribe((dataxml)=>
+      {
+        this.parseProductsFromXML(dataxml)
+          .then((dataxml)=>
+          {
+            this.productsData = dataxml;
+            this.setProductsDataFromXMl(this.productsData);
+            console.log(this.productsData);
+            this.presentToast('success','Your Data has been successfully processed');
+          })
+          .catch(()=>{
+            this.presentToast('error','Your Data cannot be processed');
+
+          });
+      });
+  }
+  parseProductsFromXML(data){
+    return new Promise(resolve =>
+    {
+      let k,
+        arr    = [],
+        parser = new xml2js.Parser(
+          {
+            trim: true,
+            explicitArray: true
+          });
+
+      parser.parseString(data, function (err, result)
+      {
+        const obj = result.additives;
+        for(k in obj.samples)
+        {
+          const item = obj.samples[k];
+          arr.push({
+            additive 		    : item.additive[0],
+            size 	    : item.size[0],
+            id : item.id[0]
+          });
+        }
+
+        resolve(arr);
+      });
+    });
+  }
 
   parseXML(data){
     return new Promise(resolve =>

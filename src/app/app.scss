@@ -96,6 +96,19 @@ video::-webkit-media-controls-panel {
   min-height: 1.2rem;
 }
 
+.missing-content{
+  font-size  : 15rem;
+  text-align : center;
+  margin     : 100px 0;
+  color      : #c0c0c0;
+
+  span{
+    display   : block;
+    margin    : auto;
+    font-size : 2rem;
+  }
+}
+
 @font-face {
   font-weight : normal;
   font-style  : normal;

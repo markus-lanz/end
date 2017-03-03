@@ -15,10 +15,19 @@
 
   <ion-grid>
 
-    <!-- APRIL 1 -->
-
+    <ion-row *ngFor="let items of presentation">
+      <ion-col width-10 >
+        {{ items.headline }}
+      </ion-col>
+      <ion-col width-90>
+        <p *ngFor="let attr of items.attributes">
+          {{ attr.title }}
+          <br>
+          {{ attr.info }}
+        </p>
+      </ion-col>
+    </ion-row>
 
   </ion-grid>
-
 
 </ion-content>
