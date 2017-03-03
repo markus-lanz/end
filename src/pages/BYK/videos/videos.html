@@ -14,13 +14,13 @@
 
 <ion-grid>
   <ion-row center responsive-sm responsive-md  responsive-lg>
-    <ion-col width-33>
-      <ion-card>
-        <video >
-          <source src="assets/videos/ceramic.m4v" type="video/mp4" />
-        </video>
-        <ion-card-content>
 
+    <ion-col width-33>
+      <ion-card (click)="presentVideoModal( 'assets/videos/ceramic.m4v' )">
+
+        <img src="assets/videos/vid1.jpg" />
+
+        <ion-card-content>
           <ion-card-title>
             Nine Inch Nails Live
           </ion-card-title>
@@ -29,16 +29,46 @@
             responsible for bringing the music to a mass audience.
           </p>
         </ion-card-content>
-        <ion-row>
-          <ion-col offset-75>
-            <button ion-button icon-left clear small right="" (click)="presentVideoModal('assets/videos/ceramic.m4v')">
-              <ion-icon name="ios-play"></ion-icon>
-              <div>Play</div>
-            </button>
-          </ion-col>
-          </ion-row>
+
       </ion-card>
     </ion-col>
+
+    <ion-col width-33>
+      <ion-card (click)="presentVideoModal( 'assets/videos/ceramic.m4v' )">
+
+        <img src="assets/videos/vid1.jpg" />
+
+        <ion-card-content>
+          <ion-card-title>
+            Nine Inch Nails Live
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-col>
+
+    <ion-col width-33>
+      <ion-card (click)="presentVideoModal( 'assets/videos/ceramic.m4v' )">
+
+        <img src="assets/videos/vid1.jpg" />
+
+        <ion-card-content>
+          <ion-card-title>
+            Nine Inch Nails Live
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-col>
+
   </ion-row>
 
 

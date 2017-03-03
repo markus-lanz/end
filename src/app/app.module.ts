@@ -9,7 +9,6 @@ import { HomePage                 } from '../pages/home/home';
 import { FormPage                 } from '../pages/form/form';
 import { VideosPage               } from '../pages/BYK/videos/videos';
 import { TabMainPage              } from '../pages/tab-main/tab-main';
-import { NavbarPage               } from '../pages/navbar/navbar';
 import { VideomodalPage           } from '../pages/videomodal/videomodal';
 import { PdfmodalPage             } from '../pages/pdfmodal/pdfmodal';
 import { EbooksPage               } from '../pages/ebooks/ebooks';
@@ -21,9 +20,10 @@ import { NewproductsPage          } from '../pages/NEWS/newproducts/newproducts'
 import { ProductoverviewPage      } from '../pages/NEWS/productoverview/productoverview';
 import { ProductModalsPage        } from '../pages/product-modals/product-modals';
 import { ProductOVDetailsPage     } from '../pages/product-ov-details/product-ov-details';
-import { ProductPresentationsPage } from '../pages/NEWS/product-presentations/prodcut-presentations';
+import { ProductPresentationsPage } from '../pages/NEWS/product-presentations/product-presentations';
 
 // - Products Group
+import { WaxAdditivesPage         } from  '../pages/PRODUCTGROUPS/wax-additives/wax-additives';
 import { WeetingDispersingPage    } from  '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
 import { ProductsgroupsPage       } from  '../pages/NEWS/productsgroups/productsgroups';
 // - Market
@@ -52,7 +52,6 @@ import { OrderBy                  } from '../providers/orderBy';
     FormPage,
     VideosPage,
     TabMainPage,
-    NavbarPage,
     VideomodalPage,
     PdfmodalPage,
     EbooksPage,
@@ -78,7 +77,8 @@ import { OrderBy                  } from '../providers/orderBy';
     OrderBy,
     ProductOVDetailsPage,
     WeetingDispersingPage,
-    ProductPresentationsPage
+    ProductPresentationsPage,
+    WaxAdditivesPage
   ],
   imports         : [
     IonicModule.forRoot( MyApp,
@@ -102,7 +102,6 @@ import { OrderBy                  } from '../providers/orderBy';
     FormPage,
     VideosPage,
     TabMainPage,
-    NavbarPage,
     VideomodalPage,
     PdfmodalPage,
     EbooksPage,
@@ -127,7 +126,8 @@ import { OrderBy                  } from '../providers/orderBy';
     ProductModalsPage,
     ProductOVDetailsPage,
     WeetingDispersingPage,
-    ProductPresentationsPage
+    ProductPresentationsPage,
+    WaxAdditivesPage
   ],
   providers       : [ { provide : ErrorHandler, useClass : IonicErrorHandler }, ContentForm, UtilityService ]
 } )

@@ -5,11 +5,11 @@ import {Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import {PicmodalPage} from '../picmodal/picmodal';
 
 /*
-  Generated class for the Form page.
+ Generated class for the Form page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
 @Component({
   selector: 'page-form',
   templateUrl: 'form.html'
@@ -19,10 +19,18 @@ export class FormPage {
 
 
 
-
+  onChange(change){
+    alert('test')
+    if(change ==='mr'){
+      this.contentFromModel.Mrs = false;
+    }
+    else if(change === 'mrs'){
+      this.contentFromModel.Mr = false;
+    }
+  }
   activitiesObject ={};
   contentFromModel= null;
-  myForm;
+  myForm = null;
   contentFromService =  null;
   ordersObject = {};
   literaturObject = {};
@@ -32,15 +40,19 @@ export class FormPage {
   authors = null;
   from :any;
   to:any;
+  endUseArray = null;
+  productGroupArray = null;
+  customerRolleArray = null;
+  classificationArray = null;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-                public alertCtrl : AlertController, public cFormService:ContentForm,private formBuilder: FormBuilder,
-  public viewCtrl: ViewController,public modalCtrl:ModalController,public toastCtrl:ToastController) {
+              public alertCtrl : AlertController, public cFormService:ContentForm,private formBuilder: FormBuilder,
+              public viewCtrl: ViewController,public modalCtrl:ModalController,public toastCtrl:ToastController) {
 
     this.contentFromService = cFormService;
     this.wizzardStep = cFormService.getWizzardStep();
     this.contentFromModel = cFormService.getNewContentFormModel();
     this.activitiesObject = cFormService.getNewRequiredAction();
-     this.ordersObject = cFormService.getNewOrder();
+    this.ordersObject = cFormService.getNewOrder();
     this.products = cFormService.getProductsData();
     this.units= cFormService.getUnits();
     this.literaturObject = cFormService.getNewLiteratur();
@@ -49,10 +61,25 @@ export class FormPage {
     console.log(this.wizzardStep);
     this.from = navParams.data.from;
     this.to = navParams.data.to;
-
+    this.endUseArray = cFormService.getEndUseArray();
+    this.customerRolleArray = cFormService.getCustomerRolle();
+    this.classificationArray = cFormService.getClassificationArray();
+    this.productGroupArray = cFormService.getProductGroupArray();
 
 
   }
+
+  _selectedProductGroup = null;
+
+  updateSelection(position, items, title){
+    for(let it of items) {
+      if(position != it.index){
+        it.checked = false;
+        this._selectedProductGroup = title;
+      }
+    }
+  }
+
 
 // dispaly picViewer
 
@@ -86,73 +113,73 @@ export class FormPage {
         this.wizzardStep = 'meetings_details';
         this.step_2 = false;
         break;
-     case "meetings_details":
+      case "meetings_details":
         this.wizzardStep = 'required_actions';
-       this.step_3 = false;
-            break;
-     case "required_actions":
-       this.wizzardStep= 'sample_order';
-       this.step_4 = false;
-            break;
-     case "sample_order":
-       this.wizzardStep='literatur';
-       this.step_5 = false;
-       break;
-     case "literatur":
-       this.wizzardStep ='role_class';
-       this.step_6 = false;
-       break;
-     case "role_class":
-       this.wizzardStep='end_use';
-       this.step_7 = false;
-            break;
-     case "end_use":
-            this.wizzardStep = 'author_date';
-       this.step_8 = false;
-            break;
-     case "author_date":
-       this.wizzardStep = 'process';
-       this.step_9 = false;
-       break;
-     case "process":
-      // this.wizzardStep = 'process';
-       break;
+        this.step_3 = false;
+        break;
+      case "required_actions":
+        this.wizzardStep= 'sample_order';
+        this.step_4 = false;
+        break;
+      case "sample_order":
+        this.wizzardStep='literatur';
+        this.step_5 = false;
+        break;
+      case "literatur":
+        this.wizzardStep ='role_class';
+        this.step_6 = false;
+        break;
+      case "role_class":
+        this.wizzardStep='end_use';
+        this.step_7 = false;
+        break;
+      case "end_use":
+        this.wizzardStep = 'author_date';
+        this.step_8 = false;
+        break;
+      case "author_date":
+        this.wizzardStep = 'process';
+        this.step_9 = false;
+        break;
+      case "process":
+        // this.wizzardStep = 'process';
+        break;
 
     }
   }
 
   prvStep(preStep:string){
-  switch(preStep){
-  case "meetings_details":
-    this.wizzardStep = 'visitor_data';
-    break;
-  case "required_actions":
-    this.wizzardStep= 'meetings_details';
-    break;
-  case "sample_order":
-    this.wizzardStep='required_actions';
-    break;
-  case "literatur":
-    this.wizzardStep ='sample_order';
-    break;
-  case "role_class":
-    this.wizzardStep='literatur';
-    break;
-  case "end_use":
-    this.wizzardStep = 'role_class';
-    break;
-  case "author_date":
-    this.wizzardStep = 'end_use';
-    break;
-  case "process":
-     this.wizzardStep = 'author_date';
-    break;
+    switch(preStep){
+      case "meetings_details":
+        this.wizzardStep = 'visitor_data';
+        break;
+      case "required_actions":
+        this.wizzardStep= 'meetings_details';
+        break;
+      case "sample_order":
+        this.wizzardStep='required_actions';
+        break;
+      case "literatur":
+        this.wizzardStep ='sample_order';
+        break;
+      case "role_class":
+        this.wizzardStep='literatur';
+        break;
+      case "end_use":
+        this.wizzardStep = 'role_class';
+        break;
+      case "author_date":
+        this.wizzardStep = 'end_use';
+        break;
+      case "process":
+        this.wizzardStep = 'author_date';
+        break;
 
+    }
   }
-}
 
 
-save(form){
+  save(form){
 
   }
   ionViewDidLoad() {
@@ -166,7 +193,7 @@ save(form){
     let alert =  this.alertCtrl.create({
       title: 'SCAN BUSINESS CARD?',
       message: 'Please take a business card and scan it with the camera of this device',
-     // cssClass :'alert-wrapper',
+      // cssClass :'alert-wrapper',
       buttons: [
         {
           text: 'Quit',
@@ -193,7 +220,7 @@ save(form){
 
 
   addActivity(event) {
-   this.contentFromModel.required_action.push(this.activitiesObject);
+    this.contentFromModel.required_action.push(this.activitiesObject);
     this.activitiesObject = {};
     event.preventDefault();
   }
@@ -221,14 +248,14 @@ save(form){
     this.contentFromModel.literatur.splice(index,1);
   }
 
-   searchQuery:string = '';
+  searchQuery:string = '';
 
   getProducts(ev:any){
-     this.products = this.cFormService.getProductsData();
+    this.products = this.cFormService.getProductsData();
     //this.cFormService.initializeItems();
     // set val to the Value of the searchbar
     let val = ev.target.value;
-   console.log(val)
+    console.log(val)
     // if the Value is an empty String don't filter the items
     if(val && val.trim() !=''){
       this.products = this.products.filter( (item) =>{
@@ -237,9 +264,8 @@ save(form){
       })
     }
   }
-/*
+
   parseResutl(){
     this.cFormService.parseJsonToXML(this.contentFromModel);
   }
-  */
 }

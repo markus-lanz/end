@@ -18,7 +18,7 @@ import { ShowNewsPage              } from '../pages/NEWS/shownews/shownews';
 import { NewproductsPage           } from '../pages/NEWS/newproducts/newproducts';
 import { MediainterviewPage        } from '../pages/NEWS/mediainterview/mediainterview';
 import { ProductsgroupsPage        } from '../pages/NEWS/productsgroups/productsgroups';
-import { ProductPresentationsPage  } from '../pages/NEWS/product-presentations/prodcut-presentations';
+import { ProductPresentationsPage  } from '../pages/NEWS/product-presentations/product-presentations';
 
 // - Byk
 import { DataGlancePage            } from '../pages/BYK/data-glance/data-glance';
@@ -32,6 +32,7 @@ import { SpecialCoatingsPage       } from '../pages/MARKETS/special-coatings/spe
 
 // - Product Groups
 import { WeetingDispersingPage     } from '../pages/PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
+import { WaxAdditivesPage          } from '../pages/PRODUCTGROUPS/wax-additives/wax-additives';
 
 // - Products & Solutions
 import { TechnicalBroshuresPage    } from '../pages/PRODUCTSSOLUTIONS/technical-broshures/technical-broshures';
@@ -117,10 +118,10 @@ export class MyApp {
       { title: 'Surface Additives',                    component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 14 },
       { title: 'Rheology Additives',                   component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 14 },
       { title: 'Defoamers & Air Release Additives',    component: TabMainPage, tabComponent: WeetingDispersingPage,  index : 14 },
-      { title: 'Wax Additives',                        component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 15 },
-      { title: 'Adhesion Promoters & Coupling Agents', component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 15 },
-      { title: 'Viscosity Reducers',                   component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 15 },
-      { title: 'Processing Additives',                 component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 15 },
+      { title: 'Wax Additives',                        component: TabMainPage, tabComponent: WaxAdditivesPage,       index : 15 },
+      { title: 'Adhesion Promoters & Coupling Agents', component: TabMainPage, tabComponent: WaxAdditivesPage,       index : 15 },
+      { title: 'Viscosity Reducers',                   component: TabMainPage, tabComponent: WaxAdditivesPage,       index : 15 },
+      { title: 'Processing Additives',                 component: TabMainPage, tabComponent: WaxAdditivesPage,       index : 15 },
     ];
 
     // PRODUCTS & SOLUTIONS

@@ -19,7 +19,7 @@ import { ShowNewsPage             } from '../NEWS/shownews/shownews';
 import { NewproductsPage          } from '../NEWS/newproducts/newproducts';
 import { MediainterviewPage       } from '../NEWS/mediainterview/mediainterview';
 import { ProductoverviewPage      } from '../NEWS/productoverview/productoverview';
-import { ProductPresentationsPage } from '../NEWS/product-presentations/prodcut-presentations';
+import { ProductPresentationsPage } from '../NEWS/product-presentations/product-presentations';
 
 // - Markets
 import { DeCoatingsPage       } from '../MARKETS/de-coatings/de-coatings';
@@ -34,6 +34,8 @@ import { DataGlancePage       } from '../BYK/data-glance/data-glance';
 
 // Product Groups
 import { WeetingDispersingPage } from '../PRODUCTGROUPS/weeting-dispersing/weeting-dispersing';
+import { WaxAdditivesPage      } from '../PRODUCTGROUPS/wax-additives/wax-additives';
+
 
 
 
@@ -80,6 +82,7 @@ export class TabMainPage {
 
       // Product groups
       weetingdispersing : WeetingDispersingPage,
+      waxadditives      : WaxAdditivesPage,
 
       ebooks            : EbooksPage
 

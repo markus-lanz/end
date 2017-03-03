@@ -15,8 +15,8 @@ import { VideomodalPage            } from '../../videomodal/videomodal';
 
 // COMPONENT
 @Component( {
-  selector: 'page-videos',
-  templateUrl: 'videos.html'
+  selector    : 'page-videos',
+  templateUrl : 'videos.html'
 } )
 
 
@@ -28,17 +28,16 @@ export class VideosPage {
    public modalCtrl:ModalController) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VideosPage');
+    console.log( 'ionViewDidLoad VideosPage' );
   }
 
   // dispaly Video
-  presentVideoModal(name){
-    let videoModal = this.modalCtrl.create(VideomodalPage,{ videoId:name });
-
-
+  presentVideoModal( name ){
+    let videoModal = this.modalCtrl.create( VideomodalPage, { videoId : name } );
     videoModal.present();
+
     videoModal.onDidDismiss(data =>{
-      console.log(data);
+      console.log( data );
     });
   }
 }
