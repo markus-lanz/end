@@ -36,8 +36,8 @@
 
   <ion-grid>
   <ion-row responsive-sm responsive-md  responsive-lg>
-    <ion-toolbar no-border-top>
-      <ion-segment [(ngModel)]="wizzardStep">
+    <ion-toolbar no-border>
+      <ion-segment class='wizard' [(ngModel)]="wizzardStep">
         <ion-segment-button value="visitor_data" >
           Visitor Data
         </ion-segment-button>
