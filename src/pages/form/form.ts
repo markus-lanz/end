@@ -281,6 +281,7 @@ switch(wizzardStep){
   getClassName(step) {
 
       if (step === 'visitor_data' && this.step_1 === true) {
+
           return 'entered';
       }
       else if (step === 'meetings_details' && this.step_2 === true) {
