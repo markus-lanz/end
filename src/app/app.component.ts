@@ -126,11 +126,11 @@ export class MyApp {
 
     // PRODUCTS & SOLUTIONS
     this.productssolutions = [
-      { title: 'Technical Brochures',    component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 11 },
-      { title: 'Technical Data Sheets',  component: TabMainPage, tabComponent: TechDataSheetPage,      index : 11 },
-      { title: 'Additive Guide',         component: TabMainPage, tabComponent: AdditivesGuidePage,     index : 11 },
-      { title: 'Lab Application Videos', component: TabMainPage, tabComponent: LapappVideosPage,       index : 11 },
-      { title: 'Brands of BYK',          component: TabMainPage, tabComponent: BrandsPage,             index : 11 }
+      { title: 'Technical Brochures',    component: TabMainPage, tabComponent: TechnicalBroshuresPage, index : 16 },
+      { title: 'Technical Data Sheets',  component: TabMainPage, tabComponent: TechDataSheetPage,      index :  3 },
+      { title: 'Additive Guide',         component: TabMainPage, tabComponent: AdditivesGuidePage,     index : 17 },
+      { title: 'Lab Application Videos', component: TabMainPage, tabComponent: LapappVideosPage,       index : 18 },
+      { title: 'Brands of BYK',          component: TabMainPage, tabComponent: BrandsPage,             index : 19 }
     ];
 
     this.utilityService.loadXml();
