@@ -22,50 +22,55 @@ page-form {
     }
 
     .wizard{
-      border : 1px solid #c0c0c0;
-      border-radius: 4px;
+      border        : 1px solid #c0c0c0;
+      border-radius : 8px;
     }
 
     .segment-button{
-      overflow: visible;
-      border : none;
+      overflow : visible;
+      border   : none;
+      height   : 100%;
 
-      &:first-child{
-        border-bottom-left-radius: 8px;
-        border-top-left-radius: 8px;
+      &.segment-activated{
+        background : #00A6EB;
+
+        &:after{
+          border-left : 20px solid #00A6EB !important;
+        }
       }
+
+
 
 
       &:after{
-        content: " ";
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
-        border-bottom: 20px solid transparent;
-        border-left: 20px solid #fff;
-        position: absolute;
-        top: 50%;
-        margin-top: -20px;
-        margin-left: -16px;
-        left: 100%;
-        z-index: 5;
+        content       : " ";
+        display       : block;
+        width         : 0;
+        height        : 0;
+        border-top    : 20px solid transparent; /* Go big on the size, and let overflow hide */
+        border-bottom : 20px solid transparent;
+        border-left   : 20px solid #fff;
+        position      : absolute;
+        top           : 50%;
+        margin-top    : -20px;
+        margin-left   : -1px;
+        left          : 100%;
+        z-index       : 5;
       }
 
       &:before{
-        content: " ";
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
-        border-bottom: 20px solid transparent;
-        border-left: 20px solid #cfcfcf;
-        position: absolute;
-        top: 50%;
-        margin-top: -20px;
-        margin-left: -15px;
-        left: 100%;
-        z-index: 1;
+        content       : " ";
+        display       : block;
+        width         : 0;
+        height        : 0;
+        border-top    : 20px solid transparent; /* Go big on the size, and let overflow hide */
+        border-bottom : 20px solid transparent;
+        border-left   : 20px solid #c0c0c0;
+        position      : absolute;
+        top           : 50%;
+        margin-top    : -20px;
+        left          : 100%;
+        z-index       : 1;
       }
 
       &:last-child{
@@ -75,8 +80,8 @@ page-form {
       }
 
       //background-color: red !important;
-      opacity: 1;
-      transition: 100ms all linear;
+      opacity    : 1;
+      transition : 100ms all linear;
     }
 
   }
