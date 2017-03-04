@@ -91,6 +91,9 @@ page-form {
     .wizard{
       border        : 1px solid #c0c0c0;
       border-radius : 8px;
+      overflow      : hidden;
+      position      : relative;
+      z-index       : 100;
     }
 
     .segment-button{
@@ -99,7 +102,7 @@ page-form {
       opacity     : 1;
       //line-height : 3rem;
       color       : #00A6EB;
-      height      : 40px;
+      height      : 38px;
 
       &.entered{
         background : #eee;
