@@ -175,27 +175,27 @@ export class UtilityService {
 
 
  literaturData =  null;
- 
+
 _literaturDataFromXMl = null;
-  /*
+
 setLiteraturDataFromXMl(arr:any){
 this._literaturDataFromXMl = arr;
 }
-*/
+
 getLiteraturDataFromXMl():any{
 return this._literaturDataFromXMl;
 }
-/*loadXmlLiteraturData(){
+loadXmlLiteraturData(){
   this.http.get('assets/app-data-files/literature.xml')
     .map(res => res.text())
     .subscribe((dataLit)=>
     {
-      this.parseProductsFromXML(dataLit)
+      this.parseLiteratursFromXML(dataLit)
         .then((dataLit)=>
         {
-          this.productsData = dataxml;
-          this.setProductsDataFromXMl(this.productsData);
-          console.log(this.productsData);
+          this.literaturData = dataLit;
+          this.setLiteraturDataFromXMl(this.literaturData);
+
           this.presentToast('success','Your Data has been successfully processed');
         })
         .catch(()=>{
@@ -204,7 +204,7 @@ return this._literaturDataFromXMl;
         });
     });
 }
-parseProductsFromXML(data){
+parseLiteratursFromXML(data){
   return new Promise(resolve =>
   {
     let k,
@@ -217,14 +217,17 @@ parseProductsFromXML(data){
 
     parser.parseString(data, function (err, result)
     {
-      const obj = result.additives;
+
+      const obj = result.dataSet;
       for(k in obj.samples)
       {
-        const item = obj.samples[k];
+        const item = obj.item[k];
         arr.push({
-          additive 		    : item.additive[0],
-          size 	    : item.size[0],
-          id : item.id[0]
+          cattitle1 		    : item.cattitle1[0],
+          cattitle2	    : item.cattitle2[0],
+           brochurecode: item.brochurecode[0],
+          brochuretitle  : item.brochuretitle[0],
+            file  : item.file[0]
         });
       }
 
@@ -232,7 +235,7 @@ parseProductsFromXML(data){
     });
   });
 }
-*/
+
 
 productsData = null;
 _productsDataFromXMl = null;
