@@ -74,10 +74,11 @@ page-form {
   }
 
   .toolbar{
-    background : #fff;
-    min-height : 35px;
-    opacity    : 1;
-    transition : 100ms all linear;
+    background    : #fff;
+    min-height    : 35px;
+    opacity       : 1;
+    transition    : 100ms all linear;
+    margin-bottom : 30px;
 
     .toolbar-background{
       background: #fff;
@@ -98,7 +99,7 @@ page-form {
       opacity     : 1;
       //line-height : 3rem;
       color       : #00A6EB;
-      height      : 50px;
+      height      : 40px;
 
       &.entered{
         background : #eee;
