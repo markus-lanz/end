@@ -16,6 +16,65 @@ page-form {
     .toolbar-background{
       background: #fff;
     }
+
+    .toolbar-content{
+      border : 1px solid #c0c0c0;
+      border-radius: 4px;
+    }
+
+    .segment-button{
+      overflow: visible;
+      border : none;
+
+      &:first-child{
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+
+
+      &:after{
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #fff;
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        margin-left: -16px;
+        left: 100%;
+        z-index: 5;
+      }
+
+      &:before{
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #cfcfcf;
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        margin-left: -15px;
+        left: 100%;
+        z-index: 1;
+      }
+
+      &:last-child{
+        &:after, &:before{
+          content : none;
+        }
+      }
+
+      //background-color: red !important;
+      opacity: 1;
+      transition: 100ms all linear;
+    }
+
   }
 }
 .item-ios {
@@ -40,42 +99,4 @@ page-form {
 }
 form{
   width:100%;
-}
-.segment-button{
-  overflow: visible;
-
-  &:after{
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #fff;
-    position: absolute;
-    top: 50%;
-    margin-top: -20px;
-    left: 100%;
-    z-index: 5;
-  }
-
-  &:before{
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent; /* Go big on the size, and let overflow hide */
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #cfcfcf;
-    position: absolute;
-    top: 50%;
-    margin-top: -20px;
-    margin-left: 1px;
-    left: 100%;
-    z-index: 1;
-  }
-  color: #fff;
-  //background-color: red !important;
-  opacity: 1;
-  transition: 100ms all linear;
 }
