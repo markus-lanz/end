@@ -278,63 +278,8 @@ switch(wizzardStep){
     }
   }
 
-  getStyle(step){
-
-  if(step === 'visitor_data' && this.step_1 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else if(step === 'meetings_details' && this.step_2 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else if(step === 'sample_order' && this.step_3 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else if(step === 'literatur' && this.step_4 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else  if(step === 'role_class' && this.step_5 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else if(step === 'end_use' && this.step_6 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else if(step === 'author_date' && this.step_7 === true){
-    return this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  else if(step === 'process' && this.step_8 === true){
-    return  this.currentStyles = {
-        // CSS styles: set per current state of component properties
-        'background-color':'blue'
-      };
-  }
-  }
-  currentStyles: {};
-  setCurrentStyles() {
-    this.currentStyles = {
-      // CSS styles: set per current state of component properties
-      'background-color':'blue'
-    };
+  getClassName(step) {
+    return 'entered';
   }
 
 
