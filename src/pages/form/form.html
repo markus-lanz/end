@@ -11,28 +11,28 @@
   <ion-row responsive-sm responsive-md  responsive-lg>
     <ion-toolbar no-border>
       <ion-segment class='wizard' [(ngModel)]="wizzardStep">
-        <ion-segment-button (click)="StepStill('visitor_data')" value="visitor_data" [ngStyle]="getStyle('visitor_data')">
+        <ion-segment-button (click)="StepStill('visitor_data')" value="visitor_data" [ngClass]="getClassName('visitor_data')">
           Visitor Data
         </ion-segment-button>
-        <ion-segment-button  (click)="StepStill('meetings_details')" value="meetings_details" [ngStyle]="getStyle('meetings_details')">
+        <ion-segment-button  (click)="StepStill('meetings_details')" value="meetings_details" [ngClass]="getClassName('meetings_details')">
           Meetings Details
         </ion-segment-button>
-        <ion-segment-button (click)="StepStill('sample_order')" value="sample_order" [ngStyle]="getStyle('sample_order')">
+        <ion-segment-button (click)="StepStill('sample_order')" value="sample_order" [ngClass]="getClassName('sample_order')">
           Sample Order
         </ion-segment-button>
-        <ion-segment-button (click)="StepStill('literatur')" value="literatur" [ngStyle]="getStyle('literatur')">
+        <ion-segment-button (click)="StepStill('literatur')" value="literatur" [ngClass]="getClassName('literatur')">
           Utertatur
         </ion-segment-button>
-        <ion-segment-button (click)="StepStill('role_class')" value="role_class" [ngStyle]="getStyle('role_class')">
+        <ion-segment-button (click)="StepStill('role_class')" value="role_class" [ngClass]="getClassName('role_class')">
           Role & Classification
         </ion-segment-button>
-        <ion-segment-button (click)="StepStill('end_use')" value="end_use" [ngStyle]="getStyle('end_use')">
+        <ion-segment-button (click)="StepStill('end_use')" value="end_use" [ngClass]="getClassName('end_use')">
           End Use
         </ion-segment-button>
-        <ion-segment-button (click)="StepStill('author_date')" value="author_date" [ngStyle]="getStyle('author_date')">
+        <ion-segment-button (click)="StepStill('author_date')" value="author_date" [ngClass]="getClassName('author_date')">
           Author & Date
         </ion-segment-button>
-        <ion-segment-button value="process" (click)="StepStill('process')" [ngStyle]="getStyle('process')">
+        <ion-segment-button value="process" (click)="StepStill('process')" [ngClass]="getClassName('process')">
           <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
         </ion-segment-button>
 
@@ -60,7 +60,7 @@
                     <ion-label class="infolabel">VISITOR DATA <span>(fill in or scan business card)</span></ion-label>
                   </ion-col>
 
-                  <ion-col width-20 style="text-align: right">
+                  <ion-col width-33 style="text-align: right">
                     <div style="display:inline-flex;">
                       <ion-checkbox style="margin:13px 8px 13px 0" mode="ios" item-left [(ngModel)]="contentFromModel.Mr" name="ra_Mr" required (click)="onChange('mr')"  #ra_Mr="ngModel"></ion-checkbox>
                       <label style="margin:13px 8px 13px 0">Mr*</label>
@@ -77,29 +77,24 @@
                 <!-- Name -->
                 <ion-row>
                   <ion-col width-100 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl bdrr">
                       <ion-label>Name*</ion-label>
                       <ion-input mode="md" type="text" [(ngModel)]="contentFromModel.name" name="name1" required #name1="ngModel"></ion-input>
                     </ion-item>
-
                   </ion-col>
-                  <div *ngIf="(name1.invalid && name1.pristine)"
-                            class="alert alert-danger">
-                    Name is required
-                  </div>
                 </ion-row><!-- END Name -->
 
                 <!-- Company -->
                 <ion-row>
                   <ion-col width-50 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl bdrr">
                       <ion-label>Company</ion-label>
                       <ion-input type="text" [(ngModel)]="contentFromModel.company" name="company"></ion-input>
                     </ion-item>
                   </ion-col>
 
                   <ion-col width-50 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrr">
                       <ion-label>Dept.</ion-label>
                       <ion-input type="text"  [(ngModel)]="contentFromModel.dept" name="dept"></ion-input>
                     </ion-item>
@@ -109,7 +104,7 @@
                 <!-- Address -->
                 <ion-row>
                   <ion-col width-100 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl bdrr">
                       <ion-label>Adress</ion-label>
                       <ion-input type="text" [(ngModel)]="contentFromModel.adress" name="adress"></ion-input>
                     </ion-item>
@@ -119,14 +114,14 @@
                 <!-- Country & Language -->
                 <ion-row>
                   <ion-col width-50 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl">
                       <ion-label>Country</ion-label>
                       <ion-input type="text" [(ngModel)]="contentFromModel.country" name="country"></ion-input>
                     </ion-item>
                   </ion-col>
 
                   <ion-col width-50 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl bdrr">
                       <ion-label>Language</ion-label>
                       <ion-input type="text"  [(ngModel)]="contentFromModel.language" name="language"></ion-input>
                     </ion-item>
@@ -137,14 +132,14 @@
                 <!-- Phone & Fax -->
                 <ion-row>
                   <ion-col width-50 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl">
                       <ion-label>Phone</ion-label>
                       <ion-input type="text" [(ngModel)]="contentFromModel.phone" name="phone"></ion-input>
                     </ion-item>
                   </ion-col>
 
                   <ion-col width-50 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrl bdrr">
                       <ion-label>Fax</ion-label>
                       <ion-input type="text"  [(ngModel)]="contentFromModel.fax" name="fax"></ion-input>
                     </ion-item>
@@ -154,7 +149,7 @@
                 <!-- E-mail -->
                 <ion-row>
                   <ion-col width-100 class="nopadding">
-                    <ion-item class="bla">
+                    <ion-item class="bla bdrt bdrr bdrl bdrb">
                       <ion-label>Email*</ion-label>
                       <ion-input type="text" [(ngModel)]="contentFromModel.e_mail" name="e_mail"></ion-input>
                     </ion-item>
@@ -204,7 +199,6 @@
           </div>
 
           <div *ngIf="wizzardStep ==='meetings_details'" >
-
             <ion-row>
               <ion-col>
                 <ion-label>MEETING DETAILS</ion-label>

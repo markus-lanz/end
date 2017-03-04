@@ -41,13 +41,34 @@ page-form {
   }
 
   .bla {
+
     &.item-block {
       padding : 0;
 
       .item-inner {
-        border     : 1px solid #c0c0c0;
-        padding    : 8px;
+        padding    : 0 8px;
         box-shadow : none;
+      }
+    }
+
+    &.bdrr{
+      .item-inner{
+        border-right : 1px solid #c0c0c0;
+      }
+    }
+    &.bdrl{
+      .item-inner{
+        border-left : 1px solid #c0c0c0;
+      }
+    }
+    &.bdrt{
+      .item-inner{
+        border-top : 1px solid #c0c0c0;
+      }
+    }
+    &.bdrb{
+      .item-inner{
+        border-bottom : 1px solid #c0c0c0;
       }
     }
   }
@@ -84,6 +105,15 @@ page-form {
 
         &:after{
           border-left : 20px solid #00A6EB !important;
+        }
+      }
+
+      &.entered{
+        background : #c0c0c0;
+        color      : #999;
+
+        &:after{
+          border-left : 20px solid #c0c0c0 !important;
         }
       }
 
