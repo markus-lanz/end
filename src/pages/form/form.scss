@@ -34,6 +34,7 @@ page-form {
       border      : none;
       line-height : 4rem;
       color       : #00A6EB;
+      height      : 100%;
 
       &.segment-activated{
         background : #00A6EB;
@@ -81,6 +82,7 @@ page-form {
       }
 
       &:last-child{
+        width : 40px;
         &:after, &:before{
           content : none;
         }
