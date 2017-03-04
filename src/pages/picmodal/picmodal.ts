@@ -39,28 +39,7 @@ export class PicmodalPage {
               public actionsheetCtrl: ActionSheetController,public viewCtrl: ViewController,private zone:NgZone,public toastCtrl:ToastController) {
 
 
-  /*
-   CameraPreview.setOnPictureTakenHandler().subscribe((result) => {
-     console.log(result);
-      (<HTMLImageElement>document.getElementById('pic')).src = result[0];
-     this.picRes = result[0];
-     let tostsucees= this.toastCtrl.create({
-       message:`${result}`,
-       showCloseButton: true,
-       closeButtonText: 'Ok'
-     });
-     tostsucees.present();
-     this.stopCamera();
 
-   });
-    */
-    this.zone.run(() => {
-      this.getWidth = window.innerWidth;
-
-      this.getHeight = window.innerHeight;
-
-    });
-    this.calcWidth = this.getWidth -80;
 
 
   }
@@ -76,17 +55,19 @@ export class PicmodalPage {
       Camera.getPicture({
         quality:50,
         destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.CAMERA,
         targetWidth: 200,
         targetHeight: 200,
-        correctOrientation:true
+        saveToPhotoAlbum: true,
+        correctOrientation: true
       }).then((imageData) => {
         // imageData is either a base64 encoded string or a file URI
         // If it's base64:
         let base64Image = 'data:image/jpeg;base64,' + imageData;
-        this.picRes = base64Image;
-        (<HTMLImageElement>document.getElementById('pic')).src = base64Image;
+        //this.picRes = base64Image;
+      //  (<HTMLImageElement>document.getElementById('pics')).src = base64Image;
       }, (err) => {
-        // Handle error
+        console.log(err);
       });
 
 

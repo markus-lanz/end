@@ -348,7 +348,33 @@ export class ContentForm {
 )
  }
 
+savedSentReport(model){
+console.log(model)
+let visitCard = this.getPicAtt();
+let picAtta;
+if(visitCard){
+picAtta = visitCard;
+} else {
+ picAtta ='';
+}
+ let modelToSend = `
+  <div>
+  <h4>Name</h4>
+  <p>${model.name}</p>
+  </div>
+  `;
+cordova.plugins.email.open({
+  to: 'max@mustermann.de',
+  cc: 'erika@mustermann.de',
+  bcc: ['john@doe.com', 'jane@doe.com'],
+  //attachments: [],
+  subject: 'Exhibition Report',
+  body: `${modelToSend}`,
+  isHtml: true
+});
 
+
+}
 
   sendData():any{
 

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController,ViewController,ModalController,ToastController} from 'ionic-angular';
 import {ContentForm} from '../../providers/content-form';
+import{UtilityService} from '../../providers/utility-service';
 import {Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import {PicmodalPage} from '../picmodal/picmodal';
-
+import{ProductSearchModalPage} from '../product-search-modal/product-search-modal';
+import{UnitSearchModalPage} from '../unit-search-modal/unit-search-modal';
+import {Camera} from 'ionic-native';
 /*
   Generated class for the Form page.
 
@@ -19,11 +22,18 @@ export class FormPage {
 
 
 
-  activitiesObject ={};
+ activitiesObject ={};
+  tempOrderProduct = {
+  'product':''
+  }
+  tempOrderUnit ={
+  'unit':''
+  }
+
   contentFromModel= null;
   myForm;
   contentFromService =  null;
-  ordersObject = {};
+ //ordersObject = {};
   literaturObject = {};
   authorObject = {};
   units= null;
@@ -35,16 +45,18 @@ export class FormPage {
   productGroupArray = null;
   customerRolleArray = null;
   classificationArray = null;
+  productSearchBarData = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                 public alertCtrl : AlertController, public cFormService:ContentForm,private formBuilder: FormBuilder,
-  public viewCtrl: ViewController,public modalCtrl:ModalController,public toastCtrl:ToastController) {
+  public viewCtrl: ViewController,public modalCtrl:ModalController,public toastCtrl:ToastController,
+  public utService:UtilityService) {
 
     this.contentFromService = cFormService;
     this.wizzardStep = cFormService.getWizzardStep();
     this.contentFromModel = cFormService.getNewContentFormModel();
     this.activitiesObject = cFormService.getNewRequiredAction();
-     this.ordersObject = cFormService.getNewOrder();
+  //  this.ordersObject = cFormService.getNewOrder();
     this.products = cFormService.getProductsData();
     this.units= cFormService.getUnits();
     this.literaturObject = cFormService.getNewLiteratur();
@@ -57,7 +69,8 @@ export class FormPage {
    this.customerRolleArray = cFormService.getCustomerRolle();
    this.classificationArray = cFormService.getClassificationArray();
    this.productGroupArray = cFormService.getProductGroupArray();
-
+   this.productSearchBarData = utService.getProductsDataFromXMl();
+    //this.ordersObject.product = 'data.additive;'
 
 
   }
@@ -128,7 +141,8 @@ export class FormPage {
     }
 
 // dispaly picViewer
- pic = null;
+  pic = null;
+/*
   presentPicModal(){
     let picModal = this.modalCtrl.create(PicmodalPage);
     picModal.present();
@@ -138,56 +152,124 @@ export class FormPage {
         this.cFormService.setPicAtt(data.src2);
     //   this.pic = data;
     });
+  }*/
+
+  // SearchProduct Modal
+  presentSearchProductsModal(){
+    let proModal = this.modalCtrl.create(ProductSearchModalPage);
+    proModal.present();
+    proModal.onDidDismiss(data =>{
+    if(data){
+    this.tempOrderProduct.product = data.additive;
+    }
+
+    });
   }
+  // SearchUnit Modal
+  presentSearchUnitsModal(){
+    let unitModal = this.modalCtrl.create(UnitSearchModalPage);
+    unitModal.present();
+    unitModal.onDidDismiss(data =>{
+    if(data){
+    this.tempOrderUnit.unit = data.size;
+    }
+
+    });
+  }
+  presentPicModal(){
+  Camera.getPicture({
+    quality:50,
+    destinationType: Camera.DestinationType.DATA_URL,
+    targetWidth: 200,
+    targetHeight: 200,
+    saveToPhotoAlbum: true,
+    correctOrientation: true
+  }).then((imageData) => {
+  let base64Image = 'data:image/jpeg;base64,' + imageData;
+(<HTMLImageElement>document.getElementById('bsCard')).src = base64Image;
+  this.cFormService.setPicAtt(imageData);
+
+  }, (err) => {
+    console.log(err);
+  });
+
+  }
+
 
   logForm() {
     console.log(this.myForm)
   }
 
-  step_1 = false;
-  step_2 = true;
-  step_3 = true;
-  step_4 = true;
-  step_5 = true;
-  step_6 = true;
-  step_7 = true;
-  step_8 = true;
-  step_9 = true;
+  step_1 = true;
+  step_2 = false;
+  step_3 = false;
+  step_4 = false;
+  step_5 = false;
+  step_6 = false;
+  step_7 = false;
+  step_8 = false;
+  step_9 = false;
 
+StepStill(wizzardStep :string){
+switch(wizzardStep){
+  case "visitor_data":
+    this.step_1 = true;
+    break;
+ case "meetings_details":
+   this.step_2 = true;
+        break;
+ case "sample_order":
+   this.step_3 = true;
+   break;
+ case "literatur":
+   this.step_4 = true;
+   break;
+ case "role_class":
+   this.step_5 = true;
+        break;
+ case "end_use":
+   this.step_6 = true;
+        break;
+ case "author_date":
+   this.step_7 = true;
+   break;
+ case "process":
+   this.step_8 = true;
+   break;
 
+}
+}
   nextStep(wizzardStep :string){
     switch(wizzardStep){
       case "visitor_data":
         this.wizzardStep = 'meetings_details';
-        this.step_2 = false;
+
+        this.step_1 = true;
         break;
      case "meetings_details":
-        this.wizzardStep = 'required_actions';
-       this.step_3 = false;
-            break;
-     case "required_actions":
-       this.wizzardStep= 'sample_order';
-       this.step_4 = false;
+        this.wizzardStep = 'sample_order';
+
+       this.step_2 = true;
             break;
      case "sample_order":
        this.wizzardStep='literatur';
-       this.step_5 = false;
+       this.step_3 = true;
        break;
      case "literatur":
        this.wizzardStep ='role_class';
-       this.step_6 = false;
+       this.step_4 = true;
        break;
      case "role_class":
        this.wizzardStep='end_use';
-       this.step_7 = false;
+       this.step_5 = true;
             break;
      case "end_use":
             this.wizzardStep = 'author_date';
-       this.step_8 = false;
+       this.step_6 = true;
             break;
      case "author_date":
        this.wizzardStep = 'process';
-       this.step_9 = false;
+       this.step_7 = true;
        break;
      case "process":
       // this.wizzardStep = 'process';
@@ -196,35 +278,64 @@ export class FormPage {
     }
   }
 
-  prvStep(preStep:string){
-  switch(preStep){
-  case "meetings_details":
-    this.wizzardStep = 'visitor_data';
-    break;
-  case "required_actions":
-    this.wizzardStep= 'meetings_details';
-    break;
-  case "sample_order":
-    this.wizzardStep='required_actions';
-    break;
-  case "literatur":
-    this.wizzardStep ='sample_order';
-    break;
-  case "role_class":
-    this.wizzardStep='literatur';
-    break;
-  case "end_use":
-    this.wizzardStep = 'role_class';
-    break;
-  case "author_date":
-    this.wizzardStep = 'end_use';
-    break;
-  case "process":
-     this.wizzardStep = 'author_date';
-    break;
+  getStyle(step){
 
+  if(step === 'visitor_data' && this.step_1 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
   }
-}
+  else if(step === 'meetings_details' && this.step_2 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  else if(step === 'sample_order' && this.step_3 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  else if(step === 'literatur' && this.step_4 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  else  if(step === 'role_class' && this.step_5 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  else if(step === 'end_use' && this.step_6 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  else if(step === 'author_date' && this.step_7 === true){
+    return this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  else if(step === 'process' && this.step_8 === true){
+    return  this.currentStyles = {
+        // CSS styles: set per current state of component properties
+        'background-color':'blue'
+      };
+  }
+  }
+  currentStyles: {};
+  setCurrentStyles() {
+    this.currentStyles = {
+      // CSS styles: set per current state of component properties
+      'background-color':'blue'
+    };
+  }
 
 
 save(form){
@@ -276,9 +387,20 @@ save(form){
   deleteActivity(index) {
     this.contentFromModel.required_action.splice(index, 1);
   }
-  addOrder(event){
-    this.contentFromModel.orders.push(this.ordersObject);
-    this.ordersObject = {}//this.cFormService.getNewOrder();
+
+  addOrder(event,unit,product){
+  const tempObject = {
+   'product': product,
+   'unit': unit
+  }
+
+    this.contentFromModel.orders.push(tempObject);
+    this.tempOrderProduct = {
+    'product':''
+    }
+    this.tempOrderUnit ={
+    'unit':''
+    }
     event.preventDefault();
   }
 
@@ -316,6 +438,10 @@ save(form){
   parseResutl(){
     this.cFormService.parseJsonToXML(this.contentFromModel);
   }
+processedReport(){
+  this.cFormService.savedSentReport(this.contentFromModel);
+}
+
   openmail(){
     this.cFormService.sendData();
   }

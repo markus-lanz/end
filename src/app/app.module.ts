@@ -42,7 +42,8 @@ import { BrandsPage               } from '../pages/PRODUCTSSOLUTIONS/brands/bran
 import { ContentForm              } from '../providers/content-form';
 import { UtilityService           } from '../providers/utility-service';
 import { OrderBy                  } from '../providers/orderBy';
-
+import{ProductSearchModalPage} from '../pages/product-search-modal/product-search-modal';
+import{UnitSearchModalPage} from '../pages/unit-search-modal/unit-search-modal';
 
 // MODULE
 @NgModule( {
@@ -78,7 +79,9 @@ import { OrderBy                  } from '../providers/orderBy';
     ProductOVDetailsPage,
     WeetingDispersingPage,
     ProductPresentationsPage,
-    WaxAdditivesPage
+    WaxAdditivesPage,
+    ProductSearchModalPage,
+    UnitSearchModalPage
   ],
   imports         : [
     IonicModule.forRoot( MyApp,
@@ -127,7 +130,9 @@ import { OrderBy                  } from '../providers/orderBy';
     ProductOVDetailsPage,
     WeetingDispersingPage,
     ProductPresentationsPage,
-    WaxAdditivesPage
+    WaxAdditivesPage,
+    ProductSearchModalPage,
+    UnitSearchModalPage
   ],
   providers       : [ { provide : ErrorHandler, useClass : IonicErrorHandler }, ContentForm, UtilityService ]
 } )

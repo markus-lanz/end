@@ -11,31 +11,28 @@
   <ion-row responsive-sm responsive-md  responsive-lg>
     <ion-toolbar no-border>
       <ion-segment class='wizard' [(ngModel)]="wizzardStep">
-        <ion-segment-button value="visitor_data" >
+        <ion-segment-button (click)="StepStill('visitor_data')" value="visitor_data" [ngStyle]="getStyle('visitor_data')">
           Visitor Data
         </ion-segment-button>
-        <ion-segment-button value="meetings_details" [disabled]="step_2">
-          Meetings Details{{step_2}}
+        <ion-segment-button  (click)="StepStill('meetings_details')" value="meetings_details" [ngStyle]="getStyle('meetings_details')">
+          Meetings Details
         </ion-segment-button>
-        <ion-segment-button value="required_actions" [disabled]="step_3">
-          Required Actions
-        </ion-segment-button>
-        <ion-segment-button value="sample_order" [disabled]="step_4">
+        <ion-segment-button (click)="StepStill('sample_order')" value="sample_order" [ngStyle]="getStyle('sample_order')">
           Sample Order
         </ion-segment-button>
-        <ion-segment-button value="literatur" [disabled]="step_5">
+        <ion-segment-button (click)="StepStill('literatur')" value="literatur" [ngStyle]="getStyle('literatur')">
           Utertatur
         </ion-segment-button>
-        <ion-segment-button value="role_class" [disabled]="step_6">
+        <ion-segment-button (click)="StepStill('role_class')" value="role_class" [ngStyle]="getStyle('role_class')">
           Role & Classification
         </ion-segment-button>
-        <ion-segment-button value="end_use" [disabled]="step_7">
+        <ion-segment-button (click)="StepStill('end_use')" value="end_use" [ngStyle]="getStyle('end_use')">
           End Use
         </ion-segment-button>
-        <ion-segment-button value="author_date" [disabled]="step_8">
+        <ion-segment-button (click)="StepStill('author_date')" value="author_date" [ngStyle]="getStyle('author_date')">
           Author & Date
         </ion-segment-button>
-        <ion-segment-button value="process" [disabled]="step_9">
+        <ion-segment-button value="process" (click)="StepStill('process')" [ngStyle]="getStyle('process')">
           <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
         </ion-segment-button>
 
@@ -300,31 +297,22 @@
               <ion-col width-45 >
                 <ion-item>
                   <ion-label>Select a Product</ion-label>
-                  <ion-select [(ngModel)]="ordersObject.product" name="selectOp" placeholder="Product">
-                    <ion-option *ngFor="let pro of products" >{{pro.title}}</ion-option>
-                  </ion-select>
+                    <ion-input type="text" (click)="presentSearchProductsModal()" [(ngModel)]="tempOrderProduct.product" name="e_product"></ion-input>
+
                 </ion-item>
-                <!--
-                  <ion-searchbar  [(ngModel)]="ordersObject.product" name="selection" (ionInput)="getProducts($event)"></ion-searchbar>
-                  <ion-list>
-                    <ion-item *ngFor="let item of products">
-                      {{ item.title }}
-                    </ion-item>
-                  </ion-list>
-                     -->
+
 
               </ion-col>
               <ion-col width-45>
                 <ion-item>
                   <ion-label>Unit</ion-label>
-                  <ion-select [(ngModel)]="ordersObject.unit" name="selectOp" placeholder="Unit">
-                    <ion-option *ngFor="let unt of units" >{{unt.title}}</ion-option>
-                  </ion-select>
+                  <ion-icon name="ios-add-circle"></ion-icon>
+                <ion-input type="text" (click)="presentSearchUnitsModal()" [(ngModel)]="tempOrderUnit.unit" name="e_unit"></ion-input>
                 </ion-item>
 
               </ion-col>
               <ion-col width-10>
-                <button ion-button [disabled]="(!ordersObject.unit) && (!ordersObject.product)" icon-only  clear (click)="addOrder($event)">
+                <button ion-button [disabled]="(!tempOrderProduct.product) && (!tempOrderUnit.unit)" icon-only  clear (click)="addOrder($event,tempOrderUnit.unit,tempOrderProduct.product)">
                   <ion-icon  name="ios-add-circle"></ion-icon>
                 </button>
               </ion-col>
@@ -500,6 +488,20 @@
               </ion-col>
             </ion-row>
           </div>
+          <div *ngIf="wizzardStep === 'process'">
+            <ion-label>Processed Report</ion-label>
+            <ion-row>
+              <ion-col width-100>
+                  <button  ion-button outline icon-right (click)="processedReport()">
+                    Report Saved And Send
+                    <ion-icon name="ios-checkmark-circle-outline">
+                    </ion-icon>
+                  </button>
+              </ion-col>
+            </ion-row>
+
+          </div>
+
 
 
 

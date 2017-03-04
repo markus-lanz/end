@@ -135,6 +135,7 @@ export class MyApp {
 
     this.utilityService.loadXml();
     this.utilityService.loadProductData();
+    this.utilityService.loadXmlProductData();
   }
 
 
