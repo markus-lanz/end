@@ -95,25 +95,26 @@ page-form {
     .segment-button{
       overflow    : visible;
       border      : none;
+      opacity     : 1;
       //line-height : 3rem;
       color       : #00A6EB;
       //height      : 100%;
 
-      &.segment-activated{
-        background : #00A6EB;
-        color      : #fff;
-
-        &:after{
-          border-left : 20px solid #00A6EB !important;
-        }
-      }
-
       &.entered{
-        background : #c0c0c0;
+        background : #eee;
         color      : #999;
 
         &:after{
-          border-left : 20px solid #c0c0c0 !important;
+          border-left : 20px solid #eee !important;
+        }
+      }
+
+      &.segment-activated{
+        background : #00A6EB !important;
+        color      : #fff !important;
+
+        &:after{
+          border-left : 20px solid #00A6EB !important;
         }
       }
 

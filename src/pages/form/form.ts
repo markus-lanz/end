@@ -279,7 +279,31 @@ switch(wizzardStep){
   }
 
   getClassName(step) {
-    return 'entered';
+
+      if (step === 'visitor_data' && this.step_1 === true) {
+          return 'entered';
+      }
+      else if (step === 'meetings_details' && this.step_2 === true) {
+          return  'entered';
+      }
+      else if (step === 'sample_order' && this.step_3 === true) {
+          return  'entered';
+      }
+      else if (step === 'literatur' && this.step_4 === true) {
+          return  'entered';
+      }
+      else if (step === 'role_class' && this.step_5 === true) {
+          return  'entered';
+      }
+      else if (step === 'end_use' && this.step_6 === true) {
+          return  'entered';
+      }
+      else if (step === 'author_date' && this.step_7 === true) {
+          return  'entered';
+      }
+      else if (step === 'process' && this.step_8 === true) {
+          return  'entered';
+      }
   }
 
 
