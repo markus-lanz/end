@@ -177,13 +177,15 @@ export class UtilityService {
  literaturData =  null;
  
 _literaturDataFromXMl = null;
+  /*
 setLiteraturDataFromXMl(arr:any){
 this._literaturDataFromXMl = arr;
 }
+*/
 getLiteraturDataFromXMl():any{
 return this._literaturDataFromXMl;
 }
-loadXmlLiteraturData(){
+/*loadXmlLiteraturData(){
   this.http.get('assets/app-data-files/literature.xml')
     .map(res => res.text())
     .subscribe((dataLit)=>
@@ -230,7 +232,7 @@ parseProductsFromXML(data){
     });
   });
 }
-
+*/
 
 productsData = null;
 _productsDataFromXMl = null;

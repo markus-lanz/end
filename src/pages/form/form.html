@@ -43,45 +43,41 @@
   <ion-row padding responsive-sm responsive-md  responsive-lg>
 
 
-      <form   name="myForm" novalidate (ngSubmit)="save(myForm)">
+      <form name="myForm" novalidate (ngSubmit)="save(myForm)">
 
 
-          <div *ngIf="wizzardStep === 'visitor_data'">
+          <div *ngIf="wizzardStep === 'visitor_data'" class="step1">
 
-            <!-- name -->
-            <ion-row>
-            <ion-col width-67>
             <ion-row>
 
-              <ion-col>
-                <ion-label>VISITOR DATA</ion-label>
-              </ion-col>
+              <!---------------------------------------------- DATA INFO ---------------------------------------------->
+              <ion-col width-67>
 
-                <ion-col width-20>
-                    <ion-item>
-                      <ion-label>Mr*</ion-label>
-                      <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.Mr" name="ra_Mr" required (click)="onChange('mr')"  #ra_Mr="ngModel"></ion-checkbox>
-                    </ion-item>
+                <!-- Info & Gender -->
+                <ion-row>
+
+                  <ion-col>
+                    <ion-label class="infolabel">VISITOR DATA <span>(fill in or scan business card)</span></ion-label>
                   </ion-col>
-                  <ion-col width-20>
-                    <ion-item>
-                      <ion-label>Mrs*</ion-label>
-                      <ion-checkbox mode="ios" item-left [(ngModel)]="contentFromModel.Mrs" (click)="onChange('mrs')" name="ra_Mrs" required #ra_Mrs="ngModel"></ion-checkbox>
 
-                    </ion-item>
-                    <ion-item *ngIf="(ra_Mr.invalid && ra_Mrs.invalid) || (ra_Mrs.value ==='false' && ra_Mr.value ==='false' )"
-                         class="alert alert-danger">
-                      Mrs/Mr is required
-                    </ion-item>
-                  </ion-col>
-    {{ra_Mr.invalid}}
-                  {{ra_Mrs.value}}
-
+                  <ion-col width-20 style="text-align: right">
+                    <div style="display:inline-flex;">
+                      <ion-checkbox style="margin:13px 8px 13px 0" mode="ios" item-left [(ngModel)]="contentFromModel.Mr" name="ra_Mr" required (click)="onChange('mr')"  #ra_Mr="ngModel"></ion-checkbox>
+                      <label style="margin:13px 8px 13px 0">Mr*</label>
+                    </div>
+                    <div style="display:inline-flex;">
+                      <ion-checkbox style="margin:13px 8px 13px 0" mode="ios" item-left [(ngModel)]="contentFromModel.Mrs" (click)="onChange('mrs')" name="ra_Mrs" required #ra_Mrs="ngModel"></ion-checkbox>
+                      <label style="margin:13px 8px 13px 0">Mrs*</label>
+                    </div>
+                  </ion-col><!-- END Info & Gender -->
 
                 </ion-row>
+
+
+                <!-- Name -->
                 <ion-row>
-                  <ion-col width-100>
-                    <ion-item>
+                  <ion-col width-100 class="nopadding">
+                    <ion-item class="bla">
                       <ion-label>Name*</ion-label>
                       <ion-input mode="md" type="text" [(ngModel)]="contentFromModel.name" name="name1" required #name1="ngModel"></ion-input>
                     </ion-item>
@@ -91,118 +87,120 @@
                             class="alert alert-danger">
                     Name is required
                   </div>
+                </ion-row><!-- END Name -->
+
+                <!-- Company -->
+                <ion-row>
+                  <ion-col width-50 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Company</ion-label>
+                      <ion-input type="text" [(ngModel)]="contentFromModel.company" name="company"></ion-input>
+                    </ion-item>
+                  </ion-col>
+
+                  <ion-col width-50 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Dept.</ion-label>
+                      <ion-input type="text"  [(ngModel)]="contentFromModel.dept" name="dept"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row><!-- END Company -->
+
+                <!-- Address -->
+                <ion-row>
+                  <ion-col width-100 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Adress</ion-label>
+                      <ion-input type="text" [(ngModel)]="contentFromModel.adress" name="adress"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row><!-- END Address -->
+
+                <!-- Country & Language -->
+                <ion-row>
+                  <ion-col width-50 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Country</ion-label>
+                      <ion-input type="text" [(ngModel)]="contentFromModel.country" name="country"></ion-input>
+                    </ion-item>
+                  </ion-col>
+
+                  <ion-col width-50 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Language</ion-label>
+                      <ion-input type="text"  [(ngModel)]="contentFromModel.language" name="language"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row><!-- END Country & Language -->
+
+
+                <!-- Phone & Fax -->
+                <ion-row>
+                  <ion-col width-50 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Phone</ion-label>
+                      <ion-input type="text" [(ngModel)]="contentFromModel.phone" name="phone"></ion-input>
+                    </ion-item>
+                  </ion-col>
+
+                  <ion-col width-50 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Fax</ion-label>
+                      <ion-input type="text"  [(ngModel)]="contentFromModel.fax" name="fax"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row><!-- END Phone & Fax -->
+
+                <!-- E-mail -->
+                <ion-row>
+                  <ion-col width-100 class="nopadding">
+                    <ion-item class="bla">
+                      <ion-label>Email*</ion-label>
+                      <ion-input type="text" [(ngModel)]="contentFromModel.e_mail" name="e_mail"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row><!-- END E-Mail -->
+
+              </ion-col>
+
+              <!---------------------------------------------- SCAN INFO ---------------------------------------------->
+              <ion-col width-33 responsive-sm responsive-md  responsive-lg>
+                <ion-row>
+                  <ion-label class="infolabel">
+                    SCAN BUSINESS CARD
+                  </ion-label>
                 </ion-row>
 
-            <ion-row>
-              <ion-col width-50 >
-                <ion-item>
-                  <ion-label>Company</ion-label>
-                  <ion-input type="text" [(ngModel)]="contentFromModel.company" name="company"></ion-input>
-                </ion-item>
+                <ion-row>
+                  <ion-col width-50>
+                    <div class="scanbutton">
+                      <button ion-button icon-right outline small (click)="presentPicModal()">
+                        Renew scan
+                        <ion-icon name=camera></ion-icon>
+                      </button>
+                    </div>
+                  </ion-col>
+                  <ion-col width-50>
+                    <div class="scanbutton" style="text-align: right">
+                      <button ion-button icon-right outline small >
+                        Delete
+                        <ion-icon name="ios-trash"></ion-icon>
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
 
-              </ion-col>
-              <ion-col width-50>
-                <ion-item>
-                  <ion-label>Dept.</ion-label>
-                  <ion-input type="text"  [(ngModel)]="contentFromModel.dept" name="dept"></ion-input>
-                </ion-item>
-
-              </ion-col>
-            </ion-row>
-
-
-            <ion-row>
-              <ion-col width-100>
-                <ion-item>
-                  <ion-label>Adress</ion-label>
-                  <ion-input type="text" [(ngModel)]="contentFromModel.adress" name="adress"></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-
-
-
-            <ion-row>
-              <ion-col width-50>
-                <ion-item>
-                  <ion-label>Country</ion-label>
-                  <ion-input type="text" [(ngModel)]="contentFromModel.country" name="country"></ion-input>
-                </ion-item>
-
-              </ion-col>
-              <ion-col width-50>
-                <ion-item>
-                  <ion-label>Language</ion-label>
-                  <ion-input type="text"  [(ngModel)]="contentFromModel.language" name="language"></ion-input>
-                </ion-item>
+                <ion-row >
+                  <ion-col>
+                    <div style="text-align: center">
+                      <img id="bsCard" height="200" src="assets/img/prescan.jpg" style="text-align: center;margin: auto;display: block;width:100%">
+                    </div>
+                  </ion-col>
+                </ion-row>
 
               </ion-col>
             </ion-row>
-            <ion-row>
-              <ion-col width-50>
-                <ion-item>
-                  <ion-label>Phone</ion-label>
-                  <ion-input type="text" [(ngModel)]="contentFromModel.phone" name="phone"></ion-input>
-                </ion-item>
 
-              </ion-col>
-              <ion-col width-50>
-                <ion-item>
-                  <ion-label>Fax</ion-label>
-                  <ion-input type="text"  [(ngModel)]="contentFromModel.fax" name="fax"></ion-input>
-                </ion-item>
-
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col width-100>
-                <ion-item>
-                  <ion-label>Email*</ion-label>
-                  <ion-input type="text" [(ngModel)]="contentFromModel.e_mail" name="e_mail"></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-
-            </ion-col>
-            <ion-col width-33 responsive-sm responsive-md  responsive-lg>
-              <ion-row>
-                <ion-label>
-                  SCAN BUSINESS CARD
-                </ion-label>
-
-              </ion-row>
-              <ion-row>
-                <ion-col width-50>
-                  <div style="text-align: center">
-                    <button ion-button icon-right outline small (click)="presentPicModal()">
-                      Renew scan
-                      <ion-icon name=camera></ion-icon>
-                    </button>
-                  </div>
-                </ion-col>
-                <ion-col width-50>
-                  <div style="text-align: center">
-                    <button ion-button icon-right  outline small >
-                      Delete
-                      <ion-icon name="ios-trash"></ion-icon>
-                    </button>
-                  </div>
-                </ion-col>
-              </ion-row>
-
-              <ion-row >
-                <ion-col>
-                  <div style="text-align: center">
-                    <img id="bsCard" width="300" height="200" style="text-align: center;margin: auto;display: block">
-                  </div>
-
-                </ion-col>
-
-
-              </ion-row>
-
-            </ion-col>
-            </ion-row>
           </div>
 
           <div *ngIf="wizzardStep ==='meetings_details'" >
