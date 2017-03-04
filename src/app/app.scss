@@ -159,6 +159,12 @@ ion-content{
   .tab-button {
     max-width    : 100px;
     border-right : 1px solid #c0c0c0;
+    min-height   : 40px;
+
+    .tab-button-icon {
+      font-size : 25px;
+      height    : 25px;
+    }
 
     &:last-child{
       border-right : none;
@@ -195,7 +201,6 @@ ion-content{
   text-align: left;
   font-weight: normal;
   font-size: 2.2rem;
-  margin-bottom: 20px;
   padding: 10px;
 }
 
