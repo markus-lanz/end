@@ -136,6 +136,7 @@ export class MyApp {
     this.utilityService.loadXml();
     this.utilityService.loadProductData();
     this.utilityService.loadXmlProductData();
+    this.utilityService.loadXmlLiteraturData();
   }
 
 
@@ -145,10 +146,10 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       //this.menu.open();
-      StatusBar.styleDefault();
-      StatusBar.overlaysWebView(true);
+    //  StatusBar.styleDefault();
+    //  StatusBar.overlaysWebView(false);
      // StatusBar.backgroundColorByHexString('#ffffff');
-
+  StatusBar.hide();
       Splashscreen.hide();
 
     });

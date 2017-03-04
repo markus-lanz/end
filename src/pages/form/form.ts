@@ -71,7 +71,7 @@ export class FormPage {
    this.productGroupArray = cFormService.getProductGroupArray();
    this.productSearchBarData = utService.getProductsDataFromXMl();
     //this.ordersObject.product = 'data.additive;'
-
+  
 
   }
      checked = {};
