@@ -7,6 +7,8 @@ import {PicmodalPage} from '../picmodal/picmodal';
 import{ProductSearchModalPage} from '../product-search-modal/product-search-modal';
 import{UnitSearchModalPage} from '../unit-search-modal/unit-search-modal';
 import {Camera} from 'ionic-native';
+import {LiteratureSearchModalPage} from '../literature-search-modal/literature-search-modal';
+import { InAppBrowser   } from 'ionic-native';
 /*
   Generated class for the Form page.
 
@@ -29,6 +31,13 @@ export class FormPage {
   tempOrderUnit ={
   'unit':''
   }
+  tempLiterature = {
+  'cattitle1': '',
+  'cattitle2': '',
+   'brochurecode': '',
+  'brochuretitle': '',
+    'file'  : ''
+  }
 
   contentFromModel= null;
   myForm;
@@ -46,6 +55,7 @@ export class FormPage {
   customerRolleArray = null;
   classificationArray = null;
   productSearchBarData = null;
+  litSearchBarData = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                 public alertCtrl : AlertController, public cFormService:ContentForm,private formBuilder: FormBuilder,
@@ -71,14 +81,14 @@ export class FormPage {
    this.productGroupArray = cFormService.getProductGroupArray();
    this.productSearchBarData = utService.getProductsDataFromXMl();
     //this.ordersObject.product = 'data.additive;'
-  
+  this.litSearchBarData = utService.getLiteraturDataFromXMl();
+
 
   }
      checked = {};
     _selectedProductGroup = null;
 
     onChange(change){
-       alert('test')
      if(change ==='mr'){
        this.contentFromModel.Mrs = false;
      }
@@ -97,48 +107,75 @@ export class FormPage {
      }
   }
 
-    onChangeProductGroup(position, items, title):any{
+    onChangeProductGroup(checked,position, items, title):any{
     console.log(position)
       console.log(title)
     items.filter((des,index) =>{
 
     if(position != index){
-      des.checked = false;
-      this.contentFromModel.ProductGroup = title;
+     if(checked === true){
+     des.checked = false;
+     this.contentFromModel.ProductGroup = title;
+     } else {
+      this.contentFromModel.ProductGroup = '';
+     }
+
     }
     });
 
     }
-    onChangeEndUse(position, items, title):any{
+    onChangeEndUse(checked,position, items, title):any{
     items.filter((des,index) =>{
     if(position != index){
-      des.checked = false;
-      this.contentFromModel.EndUse = title;
+    if(checked === true){
+    des.checked = false;
+    this.contentFromModel.EndUse = title;
+    } else {
+      this.contentFromModel.EndUse  = '';
+    }
+
     }
     });
 
     }
-    onChangeClassification(position, items, title):any{
+    onChangeClassification(checked,position, items, title):any{
     items.filter((des,index) =>{
     if(position != index){
-      des.checked = false;
-      this.contentFromModel.Classification = title;
+    if(checked === true){
+    des.checked = false;
+    this.contentFromModel.Classification = title;
+    } else{
+    this.contentFromModel.Classification = '';
+    }
+
     }
     });
 
     }
 
-    onChangeCustomerRolle(position, items, title):any{
+    onChangeCustomerRolle(checked,position, items, title):any{
     console.log(position)
     console.log(title)
+    console.log(checked)
     items.filter((des,index) =>{
     if(position != index){
+      if(checked === true){
       des.checked = false;
       this.contentFromModel.CustomerRolle = title;
+      } else{
+        this.contentFromModel.CustomerRolle = '';
+      }
+
     }
     });
 
     }
+
+
+setAuthorEmail(){
+ let authemail = this.authors.filter((item) => item.name === this.contentFromModel.authorName);
+  this.contentFromModel.authorEmail = authemail[0].email;
+}
 
 // dispaly picViewer
   pic = null;
@@ -176,9 +213,103 @@ export class FormPage {
 
     });
   }
+
+literaturModel = [];
+literaturSubCategory = [];
+presentSearchLitModal(){
+  let literModal = this.modalCtrl.create(LiteratureSearchModalPage);
+  literModal.present();
+  literModal.onDidDismiss(data =>{
+  if(data){
+  this.literaturModel = [];
+  let _temp = [];
+
+  this.tempLiterature.cattitle1 = data.cattitle1;
+  this.tempLiterature.cattitle2 = data.cattitle2;
+  this.tempLiterature.brochurecode = data.brochurecode;
+  this.tempLiterature.brochuretitle = data.brochuretitle;
+  this.tempLiterature.file = data.file;
+
+  _temp = this.litSearchBarData.filter( (item) =>{
+    return item.cattitle1 === this.tempLiterature.cattitle1;
+  });
+
+  for(let g in _temp) {
+  console.log(_temp[g].cattitle1)
+    const cat    = _temp[g].cattitle1;
+    const subcat = _temp[g].cattitle2;
+    const code    = _temp[g].brochurecode;
+    const title   = _temp[g].brochuretitle;
+
+    if(this.literaturModel.length > 0){
+    const it = this.literaturModel.findIndex( (item) => item.subcatname === subcat) ;
+     if(it === -1) {
+       this.literaturModel.push({ subcatname : subcat , items : []});
+     }
+
+    }else{
+      this.literaturModel.push({ subcatname : subcat, items : []});
+    }
+  };
+
+
+  console.log(this.literaturModel);
+   for(let ki in this.literaturModel ){
+
+     const subcat = this.literaturModel[ki].subcatname;
+
+
+     let array = _temp.filter((items) =>{
+      return items.cattitle2 === subcat
+     });
+     console.log('Tttttttttttttttttttt');
+//console.log(array)
+    this.literaturModel[ki].items = array
+   }
+  console.log(this.literaturModel);
+
+
+//  this.literaturModel.push(this.tempLiterature);
+  }
+
+
+
+  });
+}
+
+onChangeLiteCode(checked,title):any{
+    const objBroCode = {
+       'brochurecode':''
+    };
+    console.log(checked)
+    if(checked === true){
+    const index =  this.contentFromModel.literatur.findIndex((ite) => ite.brochurecode === title);
+     if(index === -1){
+     objBroCode.brochurecode = title;
+     this.contentFromModel.literatur.push(objBroCode);
+     }
+
+    } else if(checked === false) {
+
+    const indexToRemove =  this.contentFromModel.literatur.findIndex((ite) => ite.brochurecode === title);
+    if(indexToRemove !== -1){
+    this.contentFromModel.literatur.splice(indexToRemove,1);
+
+     }
+    }
+
+
+}
+
+
+viewPdfOfSubCategory(file){
+   new InAppBrowser(`assets/productfiles/${file}`, '_blank', 'location=no');
+}
+
   presentPicModal(){
+
   Camera.getPicture({
-    quality:50,
+    quality:75,
     destinationType: Camera.DestinationType.DATA_URL,
     targetWidth: 200,
     targetHeight: 200,
@@ -313,8 +444,8 @@ save(form){
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormPage');
-    this.scanBsCardAlert();
-    this.viewCtrl.setBackButtonText(this.from);
+    //this.scanBsCardAlert();
+    //this.viewCtrl.setBackButtonText(this.from);
   }
 
   // open Modal to Scan Business Card

@@ -288,6 +288,7 @@
               <ion-col width-45 >
                 <ion-item>
                   <ion-label>Select a Product</ion-label>
+                     <ion-icon item-right name="ios-search" (click)="presentSearchProductsModal()"></ion-icon>
                     <ion-input type="text" (click)="presentSearchProductsModal()" [(ngModel)]="tempOrderProduct.product" name="e_product"></ion-input>
 
                 </ion-item>
@@ -297,6 +298,7 @@
               <ion-col width-45>
                 <ion-item>
                   <ion-label>Unit</ion-label>
+                     <ion-icon item-right  name="ios-search" (click)="presentSearchUnitsModal()" ></ion-icon>
                   <ion-icon name="ios-add-circle"></ion-icon>
                 <ion-input type="text" (click)="presentSearchUnitsModal()" [(ngModel)]="tempOrderUnit.unit" name="e_unit"></ion-input>
                 </ion-item>
@@ -347,43 +349,45 @@
             <ion-label>Literatur</ion-label>
             <ion-row>
               <ion-col width-45>
-                <ion-item>
-                  <ion-label>Select a topic</ion-label>
-                  <ion-select [(ngModel)]="literaturObject.topic" name="selectTopic" placeholder="topic">
-                    <ion-option *ngFor="let pro of products" >{{pro.title}}</ion-option>
-                  </ion-select>
+                  <ion-label>Select a category</ion-label>
+                <ion-item (click)="presentSearchLitModal()">
+                  <ion-label>search category</ion-label>
+                 <ion-icon item-left  name="ios-search" ></ion-icon>
+
                 </ion-item>
                 </ion-col>
-              <ion-col width-10>
-                <button ion-button [disabled]="(!literaturObject.topic)" icon-only  clear (click)="addLiteratur($event)">
+              <ion-col width-45 *ngIf="literaturModel.length > 0">
+                            <ion-label>{{tempLiterature.cattitle1}}</ion-label>
+                            <ion-row  *ngFor="let lit of  literaturModel; let i=index">
+                              <ion-col width-45>
+                                <ion-label>
+                                  {{ lit.subcatname }}
+                                </ion-label>
+                                <ion-list >
+                                    <ion-item  *ngFor="let subitem of lit.items; let si=index">
+                                      <ion-label>
+                                        {{subitem.brochurecode}}, {{subitem.brochuretitle}}</ion-label>
+                                        <ion-icon item-left name="ios-eye" (click)="viewPdfOfSubCategory(subitem.file)" ></ion-icon>
+                                          <ion-checkbox mode="ios" item-left [(ngModel)]="subitem.checked" (click)="onChangeLiteCode(subitem.checked,subitem.brochurecode)"
+                                           name="ra_{{subitem.brochuretitle}}"></ion-checkbox>
+                                    </ion-item>
+                                </ion-list>
+                              </ion-col>
+                            <!--  <ion-col width-20 style="text-align:start">
+                                <button ion-button (click)="deleteLiteratur(i)" icon-only  clear >
+                                  <ion-icon name="ios-trash"></ion-icon>
+                                </button>
+                              </ion-col> -->
+                              <ion-col width-20>
+
+                              </ion-col>
+                            </ion-row>
+              <!--  <button ion-button [disabled]="(!literaturObject.topic)" icon-only  clear (click)="addLiteratur($event)">
                   <ion-icon  name="ios-add-circle"></ion-icon>
-                </button>
+                </button> -->
               </ion-col>
             </ion-row>
 
-            <ion-row  *ngFor="let lit of  contentFromModel.literatur; let i=index">
-              <ion-col width-10>
-
-              </ion-col>
-              <ion-col width-5 style="text-align: end">
-                <ion-icon name="ios-download-outline" icon-only style="font-size:3rem" clear></ion-icon>
-              </ion-col>
-
-              <ion-col width-45>
-                <ion-item>
-                  {{ lit.topic }}
-                </ion-item>
-
-              </ion-col>
-              <ion-col width-20 style="text-align:start">
-                <button ion-button (click)="deleteLiteratur(i)" icon-only  clear >
-                  <ion-icon name="ios-trash"></ion-icon>
-                </button>
-              </ion-col>
-              <ion-col width-20>
-
-              </ion-col>
-            </ion-row>
             <ion-row >
               <ion-col width-100>
                 <ion-item>
@@ -402,7 +406,7 @@
              <ion-col width-25 *ngFor ="let cur of customerRolleArray;let cr=index">
                <ion-item >
                  <ion-label>{{cur.title}}</ion-label>
-                 <ion-checkbox mode="ios" item-left [(ngModel)]="cur.checked" (click)="onChangeCustomerRolle(cr,customerRolleArray,cur.title)"  name="radio_{{cur.title}}"></ion-checkbox>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="cur.checked" (click)="onChangeCustomerRolle(cur.checked,cr,customerRolleArray,cur.title)"  name="radio_{{cur.title}}"></ion-checkbox>
                </ion-item>
              </ion-col>
 
@@ -413,7 +417,7 @@
              <ion-col width-25 *ngFor ="let cla of classificationArray;let ca=index">
                <ion-item >
                  <ion-label>{{cla.title}}</ion-label>
-                 <ion-checkbox mode="ios" item-left [(ngModel)]="cla.checked" (click)="onChangeClassification(ca,classificationArray,cla.title)"  name="radio_{{cla.title}}"></ion-checkbox>
+                 <ion-checkbox mode="ios" item-left [(ngModel)]="cla.checked" (click)="onChangeClassification(cla.checked,ca,classificationArray,cla.title)"  name="radio_{{cla.title}}"></ion-checkbox>
                </ion-item>
              </ion-col>
 
@@ -426,7 +430,7 @@
                <ion-col width-25 *ngFor ="let eu of endUseArray;let ea=index">
                  <ion-item >
                    <ion-label>{{eu.title}}</ion-label>
-                   <ion-checkbox mode="ios" item-left [(ngModel)]="eu.checked" (click)="onChangeEndUse(ea,endUseArray,eu.title)"  name="radio_{{eu.title}}"></ion-checkbox>
+                   <ion-checkbox mode="ios" item-left [(ngModel)]="eu.checked" (click)="onChangeEndUse(eu.checked,ea,endUseArray,eu.title)"  name="radio_{{eu.title}}"></ion-checkbox>
                  </ion-item>
                </ion-col>
 
@@ -437,7 +441,7 @@
                <ion-col width-20 *ngFor ="let pg of productGroupArray;let pi=index">
                  <ion-item>
                    <ion-label>{{pg.title}}</ion-label>
-                     <ion-checkbox mode="ios" (click)="onChangeProductGroup(pi,productGroupArray,pg.title)" item-left [(ngModel)]="pg.checked" name="radio_{{pg.title}}"></ion-checkbox>
+                     <ion-checkbox mode="ios" (click)="onChangeProductGroup(pg.checked,pi,productGroupArray,pg.title)" item-left [(ngModel)]="pg.checked" name="radio_{{pg.title}}"></ion-checkbox>
                  </ion-item>
                </ion-col>
              </ion-row>
@@ -448,8 +452,8 @@
               <ion-col width-100>
                 <ion-item>
                   <ion-label>Select your name</ion-label>
-                  <ion-select [(ngModel)]="contentFromModel.authorName" name="selectAuthor" placeholder="Name,Surname">
-                    <ion-option *ngFor="let auth of authors" >{{auth.name}}</ion-option>
+                  <ion-select [(ngModel)]="contentFromModel.authorName"  (ngModelChange)="setAuthorEmail()" name="selectAuthor" placeholder="Name,Surname">
+                    <ion-option *ngFor="let auth of authors"  >{{auth.name}}</ion-option>
                   </ion-select>
                 </ion-item>
               </ion-col>
@@ -458,14 +462,14 @@
               <ion-col width-50 >
                 <ion-item>
                   <ion-label>Add a new Author</ion-label>
-                  <ion-input type="text" [(ngModel)]="contentFromModel.authorName" name="authName"></ion-input>
+                  <ion-input type="text" [(ngModel)]="contentFromModel.newAuthorName" name="newauthName"></ion-input>
                 </ion-item>
 
               </ion-col>
               <ion-col width-50>
                 <ion-item>
                   <ion-label>E-Mail</ion-label>
-                  <ion-input type="text"  [(ngModel)]="contentFromModel.authorEmail" name="authEmail"></ion-input>
+                  <ion-input type="text"  [(ngModel)]="contentFromModel.newAuthorEmail" name="newauthEmail"></ion-input>
                 </ion-item>
 
               </ion-col>

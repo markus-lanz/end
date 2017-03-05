@@ -87,6 +87,8 @@ export class ContentForm {
     'endUseOthers':'',
     'authorName':'',
     'authorEmail':'',
+    'newAuthorName':'',
+    'newAuthorEmail':'',
     'date':'',
     'EndUse':'',
     'ProductGroup':'',
@@ -175,18 +177,28 @@ export class ContentForm {
     'product': '',
     'unit': ''
   };
+
+
  _authorNames= [
+ {
+ name:'Dr. Mössmer, Stefan',
+ email:'Stefan.Moessmer@altana.com'
+},
    {
-   name:'Max',
-   email:'Email@test.com'
+   name:'Kremser, Sven',
+   email:'Sven.Kremser@altana.com'
  },
    {
-     name:'MaxMusterMann_1',
-     email:'Email@test.com'
+     name:'  Krohnen, Marcel',
+     email:'Frank.Massia@altana.com'
    },
    {
-     name:'MaxMusterMann_2',
-     email:'Email@test.com'
+     name:'Massia, Frank',
+     email:'Frank.Massia@altana.com'
+   },
+   {
+     name:'Nagel, Carsten',
+     email:'Carsten.Nagel@altana.com'
    }
  ];
 

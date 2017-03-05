@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<dataSet>
+<dataset>
 	<item>
 		<cattitle1>Additives for Liquid Coatings</cattitle1>
 		<cattitle2>Product Groups (background information, working mechanisms, theory and practice)</cattitle2>
@@ -404,6 +404,7 @@
 		<cattitle2>Product Guides (in tabular form)</cattitle2>
 		<brochurecode>B-G2</brochurecode>
 		<brochuretitle>Additives for "Greener" Systems</brochuretitle>
+		<file>BYK_B-G2_GreenerSystems_US.pdf</file>
 	</item>
 	<item>
 		<cattitle1>Greenability</cattitle1>
@@ -615,4 +616,4 @@
 		<brochuretitle>Solvent-borne and Solvent-free Floor Coatings</brochuretitle>
 		<file>BYK_FL-TI1_FloorCoatings_EN.pdf</file>
 	</item>
-</dataSet>
+</dataset>

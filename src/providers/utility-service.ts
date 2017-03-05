@@ -218,16 +218,16 @@ parseLiteratursFromXML(data){
     parser.parseString(data, function (err, result)
     {
 
-      const obj = result.dataSet;
-      for(k in obj.samples)
+      const obj = result.dataset;
+      for(k in obj.item)
       {
-        const item = obj.item[k];
+        const it = obj.item[k];
         arr.push({
-          cattitle1 		    : item.cattitle1[0],
-          cattitle2	    : item.cattitle2[0],
-           brochurecode: item.brochurecode[0],
-          brochuretitle  : item.brochuretitle[0],
-            file  : item.file[0]
+          cattitle1 		    : it.cattitle1[0],
+          cattitle2	    : it.cattitle2[0],
+           brochurecode: it.brochurecode[0],
+          brochuretitle  : it.brochuretitle[0],
+            file  : it.file[0]
         });
       }
 

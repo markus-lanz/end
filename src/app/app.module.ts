@@ -44,6 +44,7 @@ import { UtilityService           } from '../providers/utility-service';
 import { OrderBy                  } from '../providers/orderBy';
 import{ProductSearchModalPage} from '../pages/product-search-modal/product-search-modal';
 import{UnitSearchModalPage} from '../pages/unit-search-modal/unit-search-modal';
+import{LiteratureSearchModalPage} from '../pages/literature-search-modal/literature-search-modal';
 
 // MODULE
 @NgModule( {
@@ -81,7 +82,8 @@ import{UnitSearchModalPage} from '../pages/unit-search-modal/unit-search-modal';
     ProductPresentationsPage,
     WaxAdditivesPage,
     ProductSearchModalPage,
-    UnitSearchModalPage
+    UnitSearchModalPage,
+    LiteratureSearchModalPage
   ],
   imports         : [
     IonicModule.forRoot( MyApp,
@@ -132,7 +134,8 @@ import{UnitSearchModalPage} from '../pages/unit-search-modal/unit-search-modal';
     ProductPresentationsPage,
     WaxAdditivesPage,
     ProductSearchModalPage,
-    UnitSearchModalPage
+    UnitSearchModalPage,
+    LiteratureSearchModalPage
   ],
   providers       : [ { provide : ErrorHandler, useClass : IonicErrorHandler }, ContentForm, UtilityService ]
 } )
