@@ -1,9 +1,49 @@
 page-newproducts {
 
-  .newproducts{
-    ion-col + ion-col {
-      border-left : 2px solid red;
-      border-bottom : 2px solid red;
+  .newproducts {
+
+    ion-col {
+      padding: 0;
+
+      &:nth-child(4n) {
+
+        .bla {
+          border-right: none;
+        }
+      }
+
+      &:nth-last-child( -n + 4 ) {
+        .bla {
+          border-bottom: none;
+        }
+      }
+
+    }
+
+    .bla {
+
+      border-bottom: 1px solid #eee;
+      border-right: 1px solid #eee;
+
+      &.item-block {
+        padding: 20px;
+
+        .itemheadline {
+          font-size     : 2rem;
+          margin-bottom :15px;
+        }
+
+        .link{
+          margin-bottom: 8px;
+        }
+
+        .item-inner {
+          padding: 0;
+          box-shadow: none;
+          border: none;
+        }
+      }
+
     }
   }
 }
